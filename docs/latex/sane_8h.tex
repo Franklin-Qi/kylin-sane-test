@@ -1,0 +1,1146 @@
+\hypertarget{sane_8h}{}\doxysection{include/sane/sane.h 文件参考}
+\label{sane_8h}\index{include/sane/sane.h@{include/sane/sane.h}}
+
+
+\mbox{\hyperlink{sane_8h}{sane.\+h}} A\+P\+I规范文档  
+
+
+此图展示该文件直接或间接的被哪些文件引用了\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{sane_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structSANE__Device}{S\+A\+N\+E\+\_\+\+Device}}
+\item 
+struct \mbox{\hyperlink{structSANE__Range}{S\+A\+N\+E\+\_\+\+Range}}
+\item 
+struct \mbox{\hyperlink{structSANE__Option__Descriptor}{S\+A\+N\+E\+\_\+\+Option\+\_\+\+Descriptor}}
+\item 
+struct \mbox{\hyperlink{structSANE__Parameters}{S\+A\+N\+E\+\_\+\+Parameters}}
+\end{DoxyCompactItemize}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{sane_8h_af62062d17b89208f2362f06597819cdd}{S\+A\+N\+E\+\_\+\+C\+U\+R\+R\+E\+N\+T\+\_\+\+M\+A\+J\+OR}}~1
+\item 
+\#define \mbox{\hyperlink{sane_8h_af904b0e8c497ffd75ab69842c3ead825}{S\+A\+N\+E\+\_\+\+C\+U\+R\+R\+E\+N\+T\+\_\+\+M\+I\+N\+OR}}~0
+\item 
+\#define \mbox{\hyperlink{sane_8h_ae46c2944619dc79d653e5ef619105aed}{S\+A\+N\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+C\+O\+DE}}(major,  minor,  build)
+\item 
+\#define \mbox{\hyperlink{sane_8h_a27ef1a3c2953c88b0887708d6ff9cccb}{S\+A\+N\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+OR}}(code)~((((\mbox{\hyperlink{sane_8h_aa65d63e57d37984b9d873811a7544b4a}{S\+A\+N\+E\+\_\+\+Word}})(code)) $>$$>$ 24) \&   0xff)
+\item 
+\#define \mbox{\hyperlink{sane_8h_acdc450ffae31df04ed7274873caed77d}{S\+A\+N\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+OR}}(code)~((((\mbox{\hyperlink{sane_8h_aa65d63e57d37984b9d873811a7544b4a}{S\+A\+N\+E\+\_\+\+Word}})(code)) $>$$>$ 16) \&   0xff)
+\item 
+\#define \mbox{\hyperlink{sane_8h_aa363ddb1b970b05268839aefb8931f0e}{S\+A\+N\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+B\+U\+I\+LD}}(code)~((((\mbox{\hyperlink{sane_8h_aa65d63e57d37984b9d873811a7544b4a}{S\+A\+N\+E\+\_\+\+Word}})(code)) $>$$>$  0) \& 0xffff)
+\item 
+\#define \mbox{\hyperlink{sane_8h_abacc34fe4cf46568bfccadba9c9d8781}{S\+A\+N\+E\+\_\+\+F\+A\+L\+SE}}~0
+\item 
+\#define \mbox{\hyperlink{sane_8h_af094e0be9cabde26db0fbaedf830077a}{S\+A\+N\+E\+\_\+\+T\+R\+UE}}~1
+\item 
+\#define \mbox{\hyperlink{sane_8h_aed6bb644c1b084f957114ad852e08c9c}{S\+A\+N\+E\+\_\+\+F\+I\+X\+E\+D\+\_\+\+S\+C\+A\+L\+E\+\_\+\+S\+H\+I\+FT}}~16
+\item 
+\#define \mbox{\hyperlink{sane_8h_a829f2992b16b123c2200c39968a73d80}{S\+A\+N\+E\+\_\+\+F\+IX}}(v)~((\mbox{\hyperlink{sane_8h_aa65d63e57d37984b9d873811a7544b4a}{S\+A\+N\+E\+\_\+\+Word}}) ((v) $\ast$ (1 $<$$<$ \mbox{\hyperlink{sane_8h_aed6bb644c1b084f957114ad852e08c9c}{S\+A\+N\+E\+\_\+\+F\+I\+X\+E\+D\+\_\+\+S\+C\+A\+L\+E\+\_\+\+S\+H\+I\+FT}})))
+\item 
+\#define \mbox{\hyperlink{sane_8h_a5c6e54440adafb4789f243e05f9c7cbf}{S\+A\+N\+E\+\_\+\+U\+N\+F\+IX}}(v)~((double)(v) / (1 $<$$<$ \mbox{\hyperlink{sane_8h_aed6bb644c1b084f957114ad852e08c9c}{S\+A\+N\+E\+\_\+\+F\+I\+X\+E\+D\+\_\+\+S\+C\+A\+L\+E\+\_\+\+S\+H\+I\+FT}}))
+\item 
+\#define \mbox{\hyperlink{sane_8h_add39ed451474e21f8a418bba2dfc13ab}{S\+A\+N\+E\+\_\+\+C\+A\+P\+\_\+\+S\+O\+F\+T\+\_\+\+S\+E\+L\+E\+CT}}~(1 $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{sane_8h_a1d881025e167a2f81a978d0d34be9fb0}{S\+A\+N\+E\+\_\+\+C\+A\+P\+\_\+\+H\+A\+R\+D\+\_\+\+S\+E\+L\+E\+CT}}~(1 $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{sane_8h_ab9b6dcaec64ec76abffc3e6ea1f3253e}{S\+A\+N\+E\+\_\+\+C\+A\+P\+\_\+\+S\+O\+F\+T\+\_\+\+D\+E\+T\+E\+CT}}~(1 $<$$<$ 2)
+\item 
+\#define \mbox{\hyperlink{sane_8h_a2805bbfe0b2cfe373955bbc18510483d}{S\+A\+N\+E\+\_\+\+C\+A\+P\+\_\+\+E\+M\+U\+L\+A\+T\+ED}}~(1 $<$$<$ 3)
+\item 
+\#define \mbox{\hyperlink{sane_8h_afd89b61b31442307fb6e0c1a32e53087}{S\+A\+N\+E\+\_\+\+C\+A\+P\+\_\+\+A\+U\+T\+O\+M\+A\+T\+IC}}~(1 $<$$<$ 4)
+\item 
+\#define \mbox{\hyperlink{sane_8h_a9e7916a94af7f94342c95c7d1e09631c}{S\+A\+N\+E\+\_\+\+C\+A\+P\+\_\+\+I\+N\+A\+C\+T\+I\+VE}}~(1 $<$$<$ 5)
+\item 
+\#define \mbox{\hyperlink{sane_8h_ae5aa1364e41f98fd14103097e6904885}{S\+A\+N\+E\+\_\+\+C\+A\+P\+\_\+\+A\+D\+V\+A\+N\+C\+ED}}~(1 $<$$<$ 6)
+\item 
+\#define \mbox{\hyperlink{sane_8h_a06a4546d8670453547a8facaaf00fa12}{S\+A\+N\+E\+\_\+\+O\+P\+T\+I\+O\+N\+\_\+\+I\+S\+\_\+\+A\+C\+T\+I\+VE}}(cap)~(((cap) \& \mbox{\hyperlink{sane_8h_a9e7916a94af7f94342c95c7d1e09631c}{S\+A\+N\+E\+\_\+\+C\+A\+P\+\_\+\+I\+N\+A\+C\+T\+I\+VE}}) == 0)
+\item 
+\#define \mbox{\hyperlink{sane_8h_a283c9cc564f748cafc4f0d60e24823cb}{S\+A\+N\+E\+\_\+\+O\+P\+T\+I\+O\+N\+\_\+\+I\+S\+\_\+\+S\+E\+T\+T\+A\+B\+LE}}(cap)~(((cap) \& \mbox{\hyperlink{sane_8h_add39ed451474e21f8a418bba2dfc13ab}{S\+A\+N\+E\+\_\+\+C\+A\+P\+\_\+\+S\+O\+F\+T\+\_\+\+S\+E\+L\+E\+CT}}) != 0)
+\item 
+\#define \mbox{\hyperlink{sane_8h_a2f1730573909a28310318935bd1a296f}{S\+A\+N\+E\+\_\+\+I\+N\+F\+O\+\_\+\+I\+N\+E\+X\+A\+CT}}~(1 $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{sane_8h_a9a34da6251589716a5a1fb7cabbee671}{S\+A\+N\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+E\+L\+O\+A\+D\+\_\+\+O\+P\+T\+I\+O\+NS}}~(1 $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{sane_8h_ab0a396e119d4c0671b2548462316dde3}{S\+A\+N\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+E\+L\+O\+A\+D\+\_\+\+P\+A\+R\+A\+MS}}~(1 $<$$<$ 2)
+\item 
+\#define \mbox{\hyperlink{sane_8h_ace070ffd2e0979afdc42eba707117a65}{S\+A\+N\+E\+\_\+\+M\+A\+X\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+L\+EN}}~128
+\item 
+\#define \mbox{\hyperlink{sane_8h_a2e2ef927dbecaadfdd8444a0bbe23eb1}{S\+A\+N\+E\+\_\+\+M\+A\+X\+\_\+\+P\+A\+S\+S\+W\+O\+R\+D\+\_\+\+L\+EN}}~128
+\end{DoxyCompactItemize}
+\doxysubsection*{类型定义}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{sane_8h_aa65d63e57d37984b9d873811a7544b4a}{S\+A\+N\+E\+\_\+\+Word}} \mbox{\hyperlink{sane_8h_afb77ef4d4ce97f57e5a9e54393f979ee}{S\+A\+N\+E\+\_\+\+Bool}}
+\item 
+typedef int \mbox{\hyperlink{sane_8h_aa65d63e57d37984b9d873811a7544b4a}{S\+A\+N\+E\+\_\+\+Word}}
+\item 
+typedef \mbox{\hyperlink{sane_8h_aa65d63e57d37984b9d873811a7544b4a}{S\+A\+N\+E\+\_\+\+Word}} \mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}}
+\item 
+typedef unsigned char \mbox{\hyperlink{sane_8h_ae81a9c562538e486d29a0e86537763cf}{S\+A\+N\+E\+\_\+\+Byte}}
+\item 
+typedef char \mbox{\hyperlink{sane_8h_a4e81ae30cff3d1b5781b7adbf684aa52}{S\+A\+N\+E\+\_\+\+Char}}
+\item 
+typedef \mbox{\hyperlink{sane_8h_a4e81ae30cff3d1b5781b7adbf684aa52}{S\+A\+N\+E\+\_\+\+Char}} $\ast$ \mbox{\hyperlink{sane_8h_a9e545fc1b64c63611113d93dabbc6270}{S\+A\+N\+E\+\_\+\+String}}
+\item 
+typedef const \mbox{\hyperlink{sane_8h_a4e81ae30cff3d1b5781b7adbf684aa52}{S\+A\+N\+E\+\_\+\+Char}} $\ast$ \mbox{\hyperlink{sane_8h_a9a47323dab2a36db080f1bcc11585af4}{S\+A\+N\+E\+\_\+\+String\+\_\+\+Const}}
+\item 
+typedef void $\ast$ \mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}}
+\item 
+typedef \mbox{\hyperlink{sane_8h_aa65d63e57d37984b9d873811a7544b4a}{S\+A\+N\+E\+\_\+\+Word}} \mbox{\hyperlink{sane_8h_ad3262f83c7fec2066a68928be64c5fe6}{S\+A\+N\+E\+\_\+\+Fixed}}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{sane_8h_a65071043cb6021bddedc7f249d9338ea}{S\+A\+N\+E\+\_\+\+Auth\+\_\+\+Callback}}) (\mbox{\hyperlink{sane_8h_a9a47323dab2a36db080f1bcc11585af4}{S\+A\+N\+E\+\_\+\+String\+\_\+\+Const}} resource, \mbox{\hyperlink{sane_8h_a4e81ae30cff3d1b5781b7adbf684aa52}{S\+A\+N\+E\+\_\+\+Char}} $\ast$username, \mbox{\hyperlink{sane_8h_a4e81ae30cff3d1b5781b7adbf684aa52}{S\+A\+N\+E\+\_\+\+Char}} $\ast$password)
+\end{DoxyCompactItemize}
+\doxysubsection*{枚举}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} \{ \newline
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a5856c36f7cb46b50a1fcdea81f8b139b}{S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+G\+O\+OD}} = 0, 
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a9546eafda7b66421f0fe27db97d7464d}{S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+ED}}, 
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a8b18c5e9a7fd1a9ea6e54a055374efb7}{S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+A\+N\+C\+E\+L\+L\+ED}}, 
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a45d979d5a8bc43741bd874bf044237ed}{S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+B\+U\+SY}}, 
+\newline
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552aa7148d5dbe85059824e9f8110d573131}{S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+V\+AL}}, 
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552af89e9888d716ae6b96adeb66a7a6c07e}{S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+OF}}, 
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552af204f5d74ac5e0af99b03b9de1083f08}{S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+J\+A\+M\+M\+ED}}, 
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a9ad440fa2a49e318b4a7e30393d25ed4}{S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+\_\+\+D\+O\+CS}}, 
+\newline
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a8e6014f8d917df052fc94a5a7131c8ca}{S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+V\+E\+R\+\_\+\+O\+P\+EN}}, 
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a72906f90341d8650afd14c1195b21be8}{S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+O\+\_\+\+E\+R\+R\+OR}}, 
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a882d5c375fb7da926b6789f770af9988}{S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+\_\+\+M\+EM}}, 
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a58a4769b653ccd02161a02e3114d3dcb}{S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+D\+E\+N\+I\+ED}}
+ \}
+\item 
+enum \mbox{\hyperlink{sane_8h_aed3324dea8f24f5381e12e5562aaf72b}{S\+A\+N\+E\+\_\+\+Value\+\_\+\+Type}} \{ \newline
+\mbox{\hyperlink{sane_8h_aed3324dea8f24f5381e12e5562aaf72ba4af54ce4403e7c587775ff842275aa4e}{S\+A\+N\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+B\+O\+OL}} = 0, 
+\mbox{\hyperlink{sane_8h_aed3324dea8f24f5381e12e5562aaf72ba3129c48e1653a2d1d5fbf37994eb0d7a}{S\+A\+N\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+NT}}, 
+\mbox{\hyperlink{sane_8h_aed3324dea8f24f5381e12e5562aaf72baf533aff76f2b61c9e4464ac50f8b766a}{S\+A\+N\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+F\+I\+X\+ED}}, 
+\mbox{\hyperlink{sane_8h_aed3324dea8f24f5381e12e5562aaf72ba498df634f862a8267401634d1728dd3d}{S\+A\+N\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+T\+R\+I\+NG}}, 
+\newline
+\mbox{\hyperlink{sane_8h_aed3324dea8f24f5381e12e5562aaf72ba547670e294cc09e0ca69014dd4db510a}{S\+A\+N\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+B\+U\+T\+T\+ON}}, 
+\mbox{\hyperlink{sane_8h_aed3324dea8f24f5381e12e5562aaf72ba632657c4963a1860dca7d077eac459b9}{S\+A\+N\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+G\+R\+O\+UP}}
+ \}
+\item 
+enum \mbox{\hyperlink{sane_8h_a15e903425f365e0fe30fed1e37446990}{S\+A\+N\+E\+\_\+\+Unit}} \{ \newline
+\mbox{\hyperlink{sane_8h_a15e903425f365e0fe30fed1e37446990a08f694989ea5823c2d825f991ad3a468}{S\+A\+N\+E\+\_\+\+U\+N\+I\+T\+\_\+\+N\+O\+NE}} = 0, 
+\mbox{\hyperlink{sane_8h_a15e903425f365e0fe30fed1e37446990abe30196cbdfd3f4069e1bf834e933a84}{S\+A\+N\+E\+\_\+\+U\+N\+I\+T\+\_\+\+P\+I\+X\+EL}}, 
+\mbox{\hyperlink{sane_8h_a15e903425f365e0fe30fed1e37446990ae551bba514d23aeaf99bed28ae043126}{S\+A\+N\+E\+\_\+\+U\+N\+I\+T\+\_\+\+B\+IT}}, 
+\mbox{\hyperlink{sane_8h_a15e903425f365e0fe30fed1e37446990a56751573aa565e0c164cd1ab9fb01996}{S\+A\+N\+E\+\_\+\+U\+N\+I\+T\+\_\+\+MM}}, 
+\newline
+\mbox{\hyperlink{sane_8h_a15e903425f365e0fe30fed1e37446990a3ee656f5d7afc3be86961859fb0016b8}{S\+A\+N\+E\+\_\+\+U\+N\+I\+T\+\_\+\+D\+PI}}, 
+\mbox{\hyperlink{sane_8h_a15e903425f365e0fe30fed1e37446990a5cc13c79bd7cc2baf15c61347458b86e}{S\+A\+N\+E\+\_\+\+U\+N\+I\+T\+\_\+\+P\+E\+R\+C\+E\+NT}}, 
+\mbox{\hyperlink{sane_8h_a15e903425f365e0fe30fed1e37446990a5dd9658d2d1a4d907ee326b3e17d1217}{S\+A\+N\+E\+\_\+\+U\+N\+I\+T\+\_\+\+M\+I\+C\+R\+O\+S\+E\+C\+O\+ND}}
+ \}
+\item 
+enum \mbox{\hyperlink{sane_8h_a6422f68f593477ab1fd81078e9afc8e9}{S\+A\+N\+E\+\_\+\+Constraint\+\_\+\+Type}} \{ \mbox{\hyperlink{sane_8h_a6422f68f593477ab1fd81078e9afc8e9aa241b482716bc33d0e9cf8b13a5c5af7}{S\+A\+N\+E\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+T\+\_\+\+N\+O\+NE}} = 0, 
+\mbox{\hyperlink{sane_8h_a6422f68f593477ab1fd81078e9afc8e9a2c5b18bc1b10dcb8449651777a858871}{S\+A\+N\+E\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+T\+\_\+\+R\+A\+N\+GE}}, 
+\mbox{\hyperlink{sane_8h_a6422f68f593477ab1fd81078e9afc8e9abd1ba1f152d79a2767dc16dd50e28732}{S\+A\+N\+E\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+T\+\_\+\+W\+O\+R\+D\+\_\+\+L\+I\+ST}}, 
+\mbox{\hyperlink{sane_8h_a6422f68f593477ab1fd81078e9afc8e9afce2c30a30f6acf78bbf31fdd3c0300d}{S\+A\+N\+E\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+T\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+L\+I\+ST}}
+ \}
+\item 
+enum \mbox{\hyperlink{sane_8h_a676e37749b97063237ac22f5d8ae7cd7}{S\+A\+N\+E\+\_\+\+Action}} \{ \mbox{\hyperlink{sane_8h_a676e37749b97063237ac22f5d8ae7cd7a159621772b084fae63cb8a6e9a7232f0}{S\+A\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+G\+E\+T\+\_\+\+V\+A\+L\+UE}} = 0, 
+\mbox{\hyperlink{sane_8h_a676e37749b97063237ac22f5d8ae7cd7a9e38f6099fff31b864ca76a362f7c121}{S\+A\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+S\+E\+T\+\_\+\+V\+A\+L\+UE}}, 
+\mbox{\hyperlink{sane_8h_a676e37749b97063237ac22f5d8ae7cd7ac95cf0bff7559e19f56c06fb2447433e}{S\+A\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+S\+E\+T\+\_\+\+A\+U\+TO}}
+ \}
+\item 
+enum \mbox{\hyperlink{sane_8h_ac5182b25bf83c5e16c4e6e8d998eecac}{S\+A\+N\+E\+\_\+\+Frame}} \{ \newline
+\mbox{\hyperlink{sane_8h_ac5182b25bf83c5e16c4e6e8d998eecaca714285a130698b64e654b0b7084d4869}{S\+A\+N\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+G\+R\+AY}}, 
+\mbox{\hyperlink{sane_8h_ac5182b25bf83c5e16c4e6e8d998eecaca02f8e814fea4e3f8a577579b96feb27b}{S\+A\+N\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+R\+GB}}, 
+\mbox{\hyperlink{sane_8h_ac5182b25bf83c5e16c4e6e8d998eecacabedeb0627576b57ad708c3590600195d}{S\+A\+N\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+R\+ED}}, 
+\mbox{\hyperlink{sane_8h_ac5182b25bf83c5e16c4e6e8d998eecaca69cb439dedf5db3fd5b54e4903c526e6}{S\+A\+N\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+G\+R\+E\+EN}}, 
+\newline
+\mbox{\hyperlink{sane_8h_ac5182b25bf83c5e16c4e6e8d998eecaca14d6443493d7e3e9e1d4761c170dc3d7}{S\+A\+N\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+B\+L\+UE}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} \mbox{\hyperlink{sane_8h_a1498918f9c7e543a4a757482bcffd7a9}{sane\+\_\+init}} (\mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}} $\ast$version\+\_\+code, \mbox{\hyperlink{sane_8h_a65071043cb6021bddedc7f249d9338ea}{S\+A\+N\+E\+\_\+\+Auth\+\_\+\+Callback}} authorize)
+\item 
+void \mbox{\hyperlink{sane_8h_adee134f0b60b099d3ddb144ec7266c6a}{sane\+\_\+exit}} (void)
+\begin{DoxyCompactList}\small\item\em 退出后端 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} \mbox{\hyperlink{sane_8h_a86a720cead710936ba84b6de59b16623}{sane\+\_\+get\+\_\+devices}} (const \mbox{\hyperlink{structSANE__Device}{S\+A\+N\+E\+\_\+\+Device}} $\ast$$\ast$$\ast$device\+\_\+list, \mbox{\hyperlink{sane_8h_afb77ef4d4ce97f57e5a9e54393f979ee}{S\+A\+N\+E\+\_\+\+Bool}} local\+\_\+only)
+\item 
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} \mbox{\hyperlink{sane_8h_adfeda33e4d60e0d6a4e19634cc9c2bae}{sane\+\_\+open}} (\mbox{\hyperlink{sane_8h_a9a47323dab2a36db080f1bcc11585af4}{S\+A\+N\+E\+\_\+\+String\+\_\+\+Const}} devicename, \mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}} $\ast$handle)
+\item 
+void \mbox{\hyperlink{sane_8h_a86bc6c8bf32a9e1ab2dc681dcf8489f1}{sane\+\_\+close}} (\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}} handle)
+\item 
+const \mbox{\hyperlink{structSANE__Option__Descriptor}{S\+A\+N\+E\+\_\+\+Option\+\_\+\+Descriptor}} $\ast$ \mbox{\hyperlink{sane_8h_a7728e01a38c5e18385e383a6ce4a108d}{sane\+\_\+get\+\_\+option\+\_\+descriptor}} (\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}} handle, \mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}} option)
+\item 
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} \mbox{\hyperlink{sane_8h_af97b5a648c359cdeb17844f24e74f21d}{sane\+\_\+control\+\_\+option}} (\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}} handle, \mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}} option, \mbox{\hyperlink{sane_8h_a676e37749b97063237ac22f5d8ae7cd7}{S\+A\+N\+E\+\_\+\+Action}} action, void $\ast$value, \mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}} $\ast$info)
+\item 
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} \mbox{\hyperlink{sane_8h_a28ba54307cb61e48fc1a361be7ad2c6e}{sane\+\_\+get\+\_\+parameters}} (\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}} handle, \mbox{\hyperlink{structSANE__Parameters}{S\+A\+N\+E\+\_\+\+Parameters}} $\ast$params)
+\item 
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} \mbox{\hyperlink{sane_8h_a633f90b105f09ca798ecbf9a77711e7b}{sane\+\_\+start}} (\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}} handle)
+\item 
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} \mbox{\hyperlink{sane_8h_ae5426bddf1bfe3d30370c9fe2d209cc3}{sane\+\_\+read}} (\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}} handle, \mbox{\hyperlink{sane_8h_ae81a9c562538e486d29a0e86537763cf}{S\+A\+N\+E\+\_\+\+Byte}} $\ast$data, \mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}} max\+\_\+length, \mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}} $\ast$length)
+\item 
+void \mbox{\hyperlink{sane_8h_a8facc0281b730ce19e17971e5c042de1}{sane\+\_\+cancel}} (\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}} handle)
+\item 
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} \mbox{\hyperlink{sane_8h_a1ee82e5f0a83ca9c96c17dbbba7cf543}{sane\+\_\+set\+\_\+io\+\_\+mode}} (\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}} handle, \mbox{\hyperlink{sane_8h_afb77ef4d4ce97f57e5a9e54393f979ee}{S\+A\+N\+E\+\_\+\+Bool}} non\+\_\+blocking)
+\item 
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} \mbox{\hyperlink{sane_8h_a6699a6bb08baa461b98d62fcdd82d8d4}{sane\+\_\+get\+\_\+select\+\_\+fd}} (\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}} handle, \mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}} $\ast$fd)
+\item 
+\mbox{\hyperlink{sane_8h_a9a47323dab2a36db080f1bcc11585af4}{S\+A\+N\+E\+\_\+\+String\+\_\+\+Const}} \mbox{\hyperlink{sane_8h_a005fc36c746f3b57fcf8108435f0684d}{sane\+\_\+strstatus}} (\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} status)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+\mbox{\hyperlink{sane_8h}{sane.\+h}} A\+P\+I规范文档 
+
+\begin{DoxyAuthor}{作者}
+yusq 
+\end{DoxyAuthor}
+\begin{DoxyDate}{日期}
+2020年 03月 13日 星期五 17\+:28\+:03 C\+ST
+\end{DoxyDate}
+sane A\+P\+I接口文档用于扫描软件的研发 
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{sane_8h_ae5aa1364e41f98fd14103097e6904885}\label{sane_8h_ae5aa1364e41f98fd14103097e6904885}} 
+\index{sane.h@{sane.h}!SANE\_CAP\_ADVANCED@{SANE\_CAP\_ADVANCED}}
+\index{SANE\_CAP\_ADVANCED@{SANE\_CAP\_ADVANCED}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_CAP\_ADVANCED}{SANE\_CAP\_ADVANCED}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+C\+A\+P\+\_\+\+A\+D\+V\+A\+N\+C\+ED~(1 $<$$<$ 6)}
+
+\mbox{\Hypertarget{sane_8h_afd89b61b31442307fb6e0c1a32e53087}\label{sane_8h_afd89b61b31442307fb6e0c1a32e53087}} 
+\index{sane.h@{sane.h}!SANE\_CAP\_AUTOMATIC@{SANE\_CAP\_AUTOMATIC}}
+\index{SANE\_CAP\_AUTOMATIC@{SANE\_CAP\_AUTOMATIC}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_CAP\_AUTOMATIC}{SANE\_CAP\_AUTOMATIC}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+C\+A\+P\+\_\+\+A\+U\+T\+O\+M\+A\+T\+IC~(1 $<$$<$ 4)}
+
+\mbox{\Hypertarget{sane_8h_a2805bbfe0b2cfe373955bbc18510483d}\label{sane_8h_a2805bbfe0b2cfe373955bbc18510483d}} 
+\index{sane.h@{sane.h}!SANE\_CAP\_EMULATED@{SANE\_CAP\_EMULATED}}
+\index{SANE\_CAP\_EMULATED@{SANE\_CAP\_EMULATED}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_CAP\_EMULATED}{SANE\_CAP\_EMULATED}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+C\+A\+P\+\_\+\+E\+M\+U\+L\+A\+T\+ED~(1 $<$$<$ 3)}
+
+\mbox{\Hypertarget{sane_8h_a1d881025e167a2f81a978d0d34be9fb0}\label{sane_8h_a1d881025e167a2f81a978d0d34be9fb0}} 
+\index{sane.h@{sane.h}!SANE\_CAP\_HARD\_SELECT@{SANE\_CAP\_HARD\_SELECT}}
+\index{SANE\_CAP\_HARD\_SELECT@{SANE\_CAP\_HARD\_SELECT}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_CAP\_HARD\_SELECT}{SANE\_CAP\_HARD\_SELECT}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+C\+A\+P\+\_\+\+H\+A\+R\+D\+\_\+\+S\+E\+L\+E\+CT~(1 $<$$<$ 1)}
+
+\mbox{\Hypertarget{sane_8h_a9e7916a94af7f94342c95c7d1e09631c}\label{sane_8h_a9e7916a94af7f94342c95c7d1e09631c}} 
+\index{sane.h@{sane.h}!SANE\_CAP\_INACTIVE@{SANE\_CAP\_INACTIVE}}
+\index{SANE\_CAP\_INACTIVE@{SANE\_CAP\_INACTIVE}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_CAP\_INACTIVE}{SANE\_CAP\_INACTIVE}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+C\+A\+P\+\_\+\+I\+N\+A\+C\+T\+I\+VE~(1 $<$$<$ 5)}
+
+\mbox{\Hypertarget{sane_8h_ab9b6dcaec64ec76abffc3e6ea1f3253e}\label{sane_8h_ab9b6dcaec64ec76abffc3e6ea1f3253e}} 
+\index{sane.h@{sane.h}!SANE\_CAP\_SOFT\_DETECT@{SANE\_CAP\_SOFT\_DETECT}}
+\index{SANE\_CAP\_SOFT\_DETECT@{SANE\_CAP\_SOFT\_DETECT}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_CAP\_SOFT\_DETECT}{SANE\_CAP\_SOFT\_DETECT}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+C\+A\+P\+\_\+\+S\+O\+F\+T\+\_\+\+D\+E\+T\+E\+CT~(1 $<$$<$ 2)}
+
+\mbox{\Hypertarget{sane_8h_add39ed451474e21f8a418bba2dfc13ab}\label{sane_8h_add39ed451474e21f8a418bba2dfc13ab}} 
+\index{sane.h@{sane.h}!SANE\_CAP\_SOFT\_SELECT@{SANE\_CAP\_SOFT\_SELECT}}
+\index{SANE\_CAP\_SOFT\_SELECT@{SANE\_CAP\_SOFT\_SELECT}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_CAP\_SOFT\_SELECT}{SANE\_CAP\_SOFT\_SELECT}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+C\+A\+P\+\_\+\+S\+O\+F\+T\+\_\+\+S\+E\+L\+E\+CT~(1 $<$$<$ 0)}
+
+\mbox{\Hypertarget{sane_8h_af62062d17b89208f2362f06597819cdd}\label{sane_8h_af62062d17b89208f2362f06597819cdd}} 
+\index{sane.h@{sane.h}!SANE\_CURRENT\_MAJOR@{SANE\_CURRENT\_MAJOR}}
+\index{SANE\_CURRENT\_MAJOR@{SANE\_CURRENT\_MAJOR}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_CURRENT\_MAJOR}{SANE\_CURRENT\_MAJOR}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+C\+U\+R\+R\+E\+N\+T\+\_\+\+M\+A\+J\+OR~1}
+
+S\+A\+NE types and defines \mbox{\Hypertarget{sane_8h_af904b0e8c497ffd75ab69842c3ead825}\label{sane_8h_af904b0e8c497ffd75ab69842c3ead825}} 
+\index{sane.h@{sane.h}!SANE\_CURRENT\_MINOR@{SANE\_CURRENT\_MINOR}}
+\index{SANE\_CURRENT\_MINOR@{SANE\_CURRENT\_MINOR}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_CURRENT\_MINOR}{SANE\_CURRENT\_MINOR}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+C\+U\+R\+R\+E\+N\+T\+\_\+\+M\+I\+N\+OR~0}
+
+\mbox{\Hypertarget{sane_8h_abacc34fe4cf46568bfccadba9c9d8781}\label{sane_8h_abacc34fe4cf46568bfccadba9c9d8781}} 
+\index{sane.h@{sane.h}!SANE\_FALSE@{SANE\_FALSE}}
+\index{SANE\_FALSE@{SANE\_FALSE}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_FALSE}{SANE\_FALSE}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+F\+A\+L\+SE~0}
+
+\mbox{\Hypertarget{sane_8h_a829f2992b16b123c2200c39968a73d80}\label{sane_8h_a829f2992b16b123c2200c39968a73d80}} 
+\index{sane.h@{sane.h}!SANE\_FIX@{SANE\_FIX}}
+\index{SANE\_FIX@{SANE\_FIX}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_FIX}{SANE\_FIX}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+F\+IX(\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})~((\mbox{\hyperlink{sane_8h_aa65d63e57d37984b9d873811a7544b4a}{S\+A\+N\+E\+\_\+\+Word}}) ((v) $\ast$ (1 $<$$<$ \mbox{\hyperlink{sane_8h_aed6bb644c1b084f957114ad852e08c9c}{S\+A\+N\+E\+\_\+\+F\+I\+X\+E\+D\+\_\+\+S\+C\+A\+L\+E\+\_\+\+S\+H\+I\+FT}})))}
+
+并没有要求在以下两个表达式保持为真（即使值w $^\wedge$和d在范围内）： S\+A\+N\+E\+\_\+\+U\+N\+F\+I\+X（\+S\+A\+N\+E\+\_\+\+F\+I\+X（d））== d S\+A\+N\+E\+\_\+\+F\+I\+X（\+S\+A\+N\+E\+\_\+\+U\+N\+F\+I\+X（w））== w 换句话说，固定值和双精度值之间的转换可能是有损的。因此，建议避免在两种表示形式之间重复转换。 \mbox{\Hypertarget{sane_8h_aed6bb644c1b084f957114ad852e08c9c}\label{sane_8h_aed6bb644c1b084f957114ad852e08c9c}} 
+\index{sane.h@{sane.h}!SANE\_FIXED\_SCALE\_SHIFT@{SANE\_FIXED\_SCALE\_SHIFT}}
+\index{SANE\_FIXED\_SCALE\_SHIFT@{SANE\_FIXED\_SCALE\_SHIFT}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_FIXED\_SCALE\_SHIFT}{SANE\_FIXED\_SCALE\_SHIFT}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+F\+I\+X\+E\+D\+\_\+\+S\+C\+A\+L\+E\+\_\+\+S\+H\+I\+FT~16}
+
+定点类型 用于变量，定点值可以在-\/32768到32767.9999之间，分辨率为1/65535 宏\+S\+A\+N\+E\+\_\+\+F\+I\+X\+E\+D\+\_\+\+S\+C\+A\+L\+E\+\_\+\+S\+H\+I\+F\+T给出固定二进制点的位置。该标准将该值定义为16，从而产生1/65536的分辨率。 \mbox{\Hypertarget{sane_8h_a2f1730573909a28310318935bd1a296f}\label{sane_8h_a2f1730573909a28310318935bd1a296f}} 
+\index{sane.h@{sane.h}!SANE\_INFO\_INEXACT@{SANE\_INFO\_INEXACT}}
+\index{SANE\_INFO\_INEXACT@{SANE\_INFO\_INEXACT}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_INFO\_INEXACT}{SANE\_INFO\_INEXACT}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+I\+N\+F\+O\+\_\+\+I\+N\+E\+X\+A\+CT~(1 $<$$<$ 0)}
+
+\mbox{\Hypertarget{sane_8h_a9a34da6251589716a5a1fb7cabbee671}\label{sane_8h_a9a34da6251589716a5a1fb7cabbee671}} 
+\index{sane.h@{sane.h}!SANE\_INFO\_RELOAD\_OPTIONS@{SANE\_INFO\_RELOAD\_OPTIONS}}
+\index{SANE\_INFO\_RELOAD\_OPTIONS@{SANE\_INFO\_RELOAD\_OPTIONS}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_INFO\_RELOAD\_OPTIONS}{SANE\_INFO\_RELOAD\_OPTIONS}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+E\+L\+O\+A\+D\+\_\+\+O\+P\+T\+I\+O\+NS~(1 $<$$<$ 1)}
+
+\mbox{\Hypertarget{sane_8h_ab0a396e119d4c0671b2548462316dde3}\label{sane_8h_ab0a396e119d4c0671b2548462316dde3}} 
+\index{sane.h@{sane.h}!SANE\_INFO\_RELOAD\_PARAMS@{SANE\_INFO\_RELOAD\_PARAMS}}
+\index{SANE\_INFO\_RELOAD\_PARAMS@{SANE\_INFO\_RELOAD\_PARAMS}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_INFO\_RELOAD\_PARAMS}{SANE\_INFO\_RELOAD\_PARAMS}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+E\+L\+O\+A\+D\+\_\+\+P\+A\+R\+A\+MS~(1 $<$$<$ 2)}
+
+\mbox{\Hypertarget{sane_8h_a2e2ef927dbecaadfdd8444a0bbe23eb1}\label{sane_8h_a2e2ef927dbecaadfdd8444a0bbe23eb1}} 
+\index{sane.h@{sane.h}!SANE\_MAX\_PASSWORD\_LEN@{SANE\_MAX\_PASSWORD\_LEN}}
+\index{SANE\_MAX\_PASSWORD\_LEN@{SANE\_MAX\_PASSWORD\_LEN}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_MAX\_PASSWORD\_LEN}{SANE\_MAX\_PASSWORD\_LEN}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+M\+A\+X\+\_\+\+P\+A\+S\+S\+W\+O\+R\+D\+\_\+\+L\+EN~128}
+
+\mbox{\Hypertarget{sane_8h_ace070ffd2e0979afdc42eba707117a65}\label{sane_8h_ace070ffd2e0979afdc42eba707117a65}} 
+\index{sane.h@{sane.h}!SANE\_MAX\_USERNAME\_LEN@{SANE\_MAX\_USERNAME\_LEN}}
+\index{SANE\_MAX\_USERNAME\_LEN@{SANE\_MAX\_USERNAME\_LEN}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_MAX\_USERNAME\_LEN}{SANE\_MAX\_USERNAME\_LEN}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+M\+A\+X\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+L\+EN~128}
+
+\mbox{\Hypertarget{sane_8h_a06a4546d8670453547a8facaaf00fa12}\label{sane_8h_a06a4546d8670453547a8facaaf00fa12}} 
+\index{sane.h@{sane.h}!SANE\_OPTION\_IS\_ACTIVE@{SANE\_OPTION\_IS\_ACTIVE}}
+\index{SANE\_OPTION\_IS\_ACTIVE@{SANE\_OPTION\_IS\_ACTIVE}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_OPTION\_IS\_ACTIVE}{SANE\_OPTION\_IS\_ACTIVE}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+O\+P\+T\+I\+O\+N\+\_\+\+I\+S\+\_\+\+A\+C\+T\+I\+VE(\begin{DoxyParamCaption}\item[{}]{cap }\end{DoxyParamCaption})~(((cap) \& \mbox{\hyperlink{sane_8h_a9e7916a94af7f94342c95c7d1e09631c}{S\+A\+N\+E\+\_\+\+C\+A\+P\+\_\+\+I\+N\+A\+C\+T\+I\+VE}}) == 0)}
+
+\mbox{\Hypertarget{sane_8h_a283c9cc564f748cafc4f0d60e24823cb}\label{sane_8h_a283c9cc564f748cafc4f0d60e24823cb}} 
+\index{sane.h@{sane.h}!SANE\_OPTION\_IS\_SETTABLE@{SANE\_OPTION\_IS\_SETTABLE}}
+\index{SANE\_OPTION\_IS\_SETTABLE@{SANE\_OPTION\_IS\_SETTABLE}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_OPTION\_IS\_SETTABLE}{SANE\_OPTION\_IS\_SETTABLE}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+O\+P\+T\+I\+O\+N\+\_\+\+I\+S\+\_\+\+S\+E\+T\+T\+A\+B\+LE(\begin{DoxyParamCaption}\item[{}]{cap }\end{DoxyParamCaption})~(((cap) \& \mbox{\hyperlink{sane_8h_add39ed451474e21f8a418bba2dfc13ab}{S\+A\+N\+E\+\_\+\+C\+A\+P\+\_\+\+S\+O\+F\+T\+\_\+\+S\+E\+L\+E\+CT}}) != 0)}
+
+\mbox{\Hypertarget{sane_8h_af094e0be9cabde26db0fbaedf830077a}\label{sane_8h_af094e0be9cabde26db0fbaedf830077a}} 
+\index{sane.h@{sane.h}!SANE\_TRUE@{SANE\_TRUE}}
+\index{SANE\_TRUE@{SANE\_TRUE}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_TRUE}{SANE\_TRUE}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+T\+R\+UE~1}
+
+\mbox{\Hypertarget{sane_8h_a5c6e54440adafb4789f243e05f9c7cbf}\label{sane_8h_a5c6e54440adafb4789f243e05f9c7cbf}} 
+\index{sane.h@{sane.h}!SANE\_UNFIX@{SANE\_UNFIX}}
+\index{SANE\_UNFIX@{SANE\_UNFIX}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_UNFIX}{SANE\_UNFIX}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+U\+N\+F\+IX(\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})~((double)(v) / (1 $<$$<$ \mbox{\hyperlink{sane_8h_aed6bb644c1b084f957114ad852e08c9c}{S\+A\+N\+E\+\_\+\+F\+I\+X\+E\+D\+\_\+\+S\+C\+A\+L\+E\+\_\+\+S\+H\+I\+FT}}))}
+
+\mbox{\Hypertarget{sane_8h_aa363ddb1b970b05268839aefb8931f0e}\label{sane_8h_aa363ddb1b970b05268839aefb8931f0e}} 
+\index{sane.h@{sane.h}!SANE\_VERSION\_BUILD@{SANE\_VERSION\_BUILD}}
+\index{SANE\_VERSION\_BUILD@{SANE\_VERSION\_BUILD}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_VERSION\_BUILD}{SANE\_VERSION\_BUILD}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+B\+U\+I\+LD(\begin{DoxyParamCaption}\item[{}]{code }\end{DoxyParamCaption})~((((\mbox{\hyperlink{sane_8h_aa65d63e57d37984b9d873811a7544b4a}{S\+A\+N\+E\+\_\+\+Word}})(code)) $>$$>$  0) \& 0xffff)}
+
+\mbox{\Hypertarget{sane_8h_ae46c2944619dc79d653e5ef619105aed}\label{sane_8h_ae46c2944619dc79d653e5ef619105aed}} 
+\index{sane.h@{sane.h}!SANE\_VERSION\_CODE@{SANE\_VERSION\_CODE}}
+\index{SANE\_VERSION\_CODE@{SANE\_VERSION\_CODE}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_VERSION\_CODE}{SANE\_VERSION\_CODE}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+C\+O\+DE(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{build }\end{DoxyParamCaption})}
+
+{\bfseries 值\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  (  (((\mbox{\hyperlink{sane_8h_aa65d63e57d37984b9d873811a7544b4a}{SANE\_Word}}) (major) \&   0xff) << 24)    \(\backslash\)}
+\DoxyCodeLine{   | (((\mbox{\hyperlink{sane_8h_aa65d63e57d37984b9d873811a7544b4a}{SANE\_Word}}) (minor) \&   0xff) << 16)    \(\backslash\)}
+\DoxyCodeLine{   | (((\mbox{\hyperlink{sane_8h_aa65d63e57d37984b9d873811a7544b4a}{SANE\_Word}}) (build) \& 0xffff) <<  0))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{sane_8h_a27ef1a3c2953c88b0887708d6ff9cccb}\label{sane_8h_a27ef1a3c2953c88b0887708d6ff9cccb}} 
+\index{sane.h@{sane.h}!SANE\_VERSION\_MAJOR@{SANE\_VERSION\_MAJOR}}
+\index{SANE\_VERSION\_MAJOR@{SANE\_VERSION\_MAJOR}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_VERSION\_MAJOR}{SANE\_VERSION\_MAJOR}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+A\+J\+OR(\begin{DoxyParamCaption}\item[{}]{code }\end{DoxyParamCaption})~((((\mbox{\hyperlink{sane_8h_aa65d63e57d37984b9d873811a7544b4a}{S\+A\+N\+E\+\_\+\+Word}})(code)) $>$$>$ 24) \&   0xff)}
+
+\mbox{\Hypertarget{sane_8h_acdc450ffae31df04ed7274873caed77d}\label{sane_8h_acdc450ffae31df04ed7274873caed77d}} 
+\index{sane.h@{sane.h}!SANE\_VERSION\_MINOR@{SANE\_VERSION\_MINOR}}
+\index{SANE\_VERSION\_MINOR@{SANE\_VERSION\_MINOR}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_VERSION\_MINOR}{SANE\_VERSION\_MINOR}}
+{\footnotesize\ttfamily \#define S\+A\+N\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+M\+I\+N\+OR(\begin{DoxyParamCaption}\item[{}]{code }\end{DoxyParamCaption})~((((\mbox{\hyperlink{sane_8h_aa65d63e57d37984b9d873811a7544b4a}{S\+A\+N\+E\+\_\+\+Word}})(code)) $>$$>$ 16) \&   0xff)}
+
+
+
+\doxysubsection{类型定义说明}
+\mbox{\Hypertarget{sane_8h_a65071043cb6021bddedc7f249d9338ea}\label{sane_8h_a65071043cb6021bddedc7f249d9338ea}} 
+\index{sane.h@{sane.h}!SANE\_Auth\_Callback@{SANE\_Auth\_Callback}}
+\index{SANE\_Auth\_Callback@{SANE\_Auth\_Callback}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_Auth\_Callback}{SANE\_Auth\_Callback}}
+{\footnotesize\ttfamily typedef void($\ast$ S\+A\+N\+E\+\_\+\+Auth\+\_\+\+Callback) (\mbox{\hyperlink{sane_8h_a9a47323dab2a36db080f1bcc11585af4}{S\+A\+N\+E\+\_\+\+String\+\_\+\+Const}} resource, \mbox{\hyperlink{sane_8h_a4e81ae30cff3d1b5781b7adbf684aa52}{S\+A\+N\+E\+\_\+\+Char}} $\ast$username, \mbox{\hyperlink{sane_8h_a4e81ae30cff3d1b5781b7adbf684aa52}{S\+A\+N\+E\+\_\+\+Char}} $\ast$password)}
+
+认证功能类型 三个参数传递给授权函数： resource是一个字符串，用于指定需要授权的资源的名称。前端应使用此字符串来构建一个要求用户名和密码的用户提示。 用户名 和密码参数是（指针）的阵列 S\+A\+N\+E\+\_\+\+M\+A\+X\+\_\+\+U\+S\+E\+R\+N\+A\+M\+E\+\_\+\+L\+E\+N和\+S\+A\+N\+E\+\_\+\+M\+A\+X\+\_\+\+P\+A\+S\+S\+W\+O\+R\+D\+\_\+\+L\+EN 字符， 分别授权调用应将输入的用户名和密码放在这些数组中。返回的字符串 必须以\+A\+S\+C\+I\+I-\/\+N\+U\+L终止。 \mbox{\Hypertarget{sane_8h_afb77ef4d4ce97f57e5a9e54393f979ee}\label{sane_8h_afb77ef4d4ce97f57e5a9e54393f979ee}} 
+\index{sane.h@{sane.h}!SANE\_Bool@{SANE\_Bool}}
+\index{SANE\_Bool@{SANE\_Bool}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_Bool}{SANE\_Bool}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{sane_8h_aa65d63e57d37984b9d873811a7544b4a}{S\+A\+N\+E\+\_\+\+Word}} \mbox{\hyperlink{sane_8h_afb77ef4d4ce97f57e5a9e54393f979ee}{S\+A\+N\+E\+\_\+\+Bool}}}
+
+S\+A\+N\+E标准仅基于\+S\+A\+N\+E特定的两种基本类型：\+S\+A\+N\+E字节和字。 typedef some-\/scalar-\/type S\+A\+N\+E\+\_\+\+Byte; typedef some-\/scalar-\/type S\+A\+N\+E\+\_\+\+Word; S\+A\+N\+E\+\_\+\+Byte必须与某种能够容纳0到255范围内的值的标量\+C类型相对应 。\+S\+A\+N\+E\+\_\+\+Word必须能够容纳以下任何一项： 真值\+S\+A\+N\+E\+\_\+\+F\+A\+L\+S\+E和\+S\+A\+N\+E\+\_\+\+T\+R\+UE 范围为-\/2$^\wedge$31 ... 2$^\wedge$31 -\/1的有 符号整数 定点值范围为-\/32768 ... 32767.\+9999，分辨率为1/65536 32位（用于位集） 请注意，\+S\+A\+N\+E标准未定义\+C类型的 S\+A\+N\+E\+\_\+\+Byte和\+S\+A\+N\+E\+\_\+\+Word映射到。例如，在某些平台上，后者可能映射到long int， 而在其他平台上，它可能映射到int。因此，便携式\+S\+A\+N\+E前端或后端必须不依赖于特定的映射。 布尔类型 S\+A\+N\+E\+\_\+\+Bool仅仅是一个别名\+S\+A\+N\+E\+\_\+\+Word。因此，始终使用后一种代替前一种是合法的。 建议每当给定变量或形式参数对布尔对象具有固定解释时，均应使用 S\+A\+N\+E\+\_\+\+Bool。 \mbox{\Hypertarget{sane_8h_ae81a9c562538e486d29a0e86537763cf}\label{sane_8h_ae81a9c562538e486d29a0e86537763cf}} 
+\index{sane.h@{sane.h}!SANE\_Byte@{SANE\_Byte}}
+\index{SANE\_Byte@{SANE\_Byte}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_Byte}{SANE\_Byte}}
+{\footnotesize\ttfamily typedef unsigned char \mbox{\hyperlink{sane_8h_ae81a9c562538e486d29a0e86537763cf}{S\+A\+N\+E\+\_\+\+Byte}}}
+
+字符类型 类型\+S\+A\+N\+E\+\_\+\+Char表示单个文本字符或符号 目前，此类型直接映射到基础C char类型（通常为一个字节）。此类字符的编码当前固定为\+I\+SO L\+A\+T\+I\+N-\/1。 该标准的未来版本可能将此类型映射到更大的类型，并允许多字节编码支持国际化。 结果，应注意避免sizeof（\+S\+A\+N\+E\+\_\+\+Char）== sizeof（char）的假设 。 \mbox{\Hypertarget{sane_8h_a4e81ae30cff3d1b5781b7adbf684aa52}\label{sane_8h_a4e81ae30cff3d1b5781b7adbf684aa52}} 
+\index{sane.h@{sane.h}!SANE\_Char@{SANE\_Char}}
+\index{SANE\_Char@{SANE\_Char}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_Char}{SANE\_Char}}
+{\footnotesize\ttfamily typedef char \mbox{\hyperlink{sane_8h_a4e81ae30cff3d1b5781b7adbf684aa52}{S\+A\+N\+E\+\_\+\+Char}}}
+
+\mbox{\Hypertarget{sane_8h_ad3262f83c7fec2066a68928be64c5fe6}\label{sane_8h_ad3262f83c7fec2066a68928be64c5fe6}} 
+\index{sane.h@{sane.h}!SANE\_Fixed@{SANE\_Fixed}}
+\index{SANE\_Fixed@{SANE\_Fixed}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_Fixed}{SANE\_Fixed}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{sane_8h_aa65d63e57d37984b9d873811a7544b4a}{S\+A\+N\+E\+\_\+\+Word}} \mbox{\hyperlink{sane_8h_ad3262f83c7fec2066a68928be64c5fe6}{S\+A\+N\+E\+\_\+\+Fixed}}}
+
+定点类型 S\+A\+N\+E\+\_\+\+Fixed仅仅是一个别名\+S\+A\+N\+E\+\_\+\+Word 建议每当给定变量或形式参数具有固定解释作为定点对象时，都使用 S\+A\+N\+E\+\_\+\+Fixed。 \mbox{\Hypertarget{sane_8h_adff38d40c72e14125709194edfd45e1b}\label{sane_8h_adff38d40c72e14125709194edfd45e1b}} 
+\index{sane.h@{sane.h}!SANE\_Handle@{SANE\_Handle}}
+\index{SANE\_Handle@{SANE\_Handle}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_Handle}{SANE\_Handle}}
+{\footnotesize\ttfamily typedef void$\ast$ \mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}}}
+
+扫描仪手柄类型 通过称为\+S\+A\+N\+E\+\_\+\+Handle的不透明类型可以访问扫描仪 。 尽管此类型被声明为void指针，但应用程序不得尝试解释\+S\+A\+N\+E\+\_\+\+Handle的值。 特别是，\+S\+A\+N\+E不需要此类型的值是合法指针值。 \mbox{\Hypertarget{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}\label{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}} 
+\index{sane.h@{sane.h}!SANE\_Int@{SANE\_Int}}
+\index{SANE\_Int@{SANE\_Int}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_Int}{SANE\_Int}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{sane_8h_aa65d63e57d37984b9d873811a7544b4a}{S\+A\+N\+E\+\_\+\+Word}} \mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}}}
+
+整数类型 S\+A\+N\+E\+\_\+\+Int用于变量，该变量可以采用-\/2$^\wedge$32至2$^\wedge$31 -\/1之间的整数值 每当给定变量或形式参数具有固定解释作为整数对象时，都使用 S\+A\+N\+E\+\_\+\+Int。 \mbox{\Hypertarget{sane_8h_a9e545fc1b64c63611113d93dabbc6270}\label{sane_8h_a9e545fc1b64c63611113d93dabbc6270}} 
+\index{sane.h@{sane.h}!SANE\_String@{SANE\_String}}
+\index{SANE\_String@{SANE\_String}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_String}{SANE\_String}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{sane_8h_a4e81ae30cff3d1b5781b7adbf684aa52}{S\+A\+N\+E\+\_\+\+Char}}$\ast$ \mbox{\hyperlink{sane_8h_a9e545fc1b64c63611113d93dabbc6270}{S\+A\+N\+E\+\_\+\+String}}}
+
+字符串类型 类型\+S\+A\+N\+E\+\_\+\+String将文本字符串表示为\+C个char值的序列。序列的结尾由\textquotesingle{}\textbackslash{} 0\textquotesingle{}（\+N\+UL ）字符指示 。 类型\+S\+A\+N\+E\+\_\+\+String\+\_\+\+Const由\+S\+A\+N\+E提供，用于声明内容不可更改的字符串。 \mbox{\Hypertarget{sane_8h_a9a47323dab2a36db080f1bcc11585af4}\label{sane_8h_a9a47323dab2a36db080f1bcc11585af4}} 
+\index{sane.h@{sane.h}!SANE\_String\_Const@{SANE\_String\_Const}}
+\index{SANE\_String\_Const@{SANE\_String\_Const}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_String\_Const}{SANE\_String\_Const}}
+{\footnotesize\ttfamily typedef const \mbox{\hyperlink{sane_8h_a4e81ae30cff3d1b5781b7adbf684aa52}{S\+A\+N\+E\+\_\+\+Char}}$\ast$ \mbox{\hyperlink{sane_8h_a9a47323dab2a36db080f1bcc11585af4}{S\+A\+N\+E\+\_\+\+String\+\_\+\+Const}}}
+
+\mbox{\Hypertarget{sane_8h_aa65d63e57d37984b9d873811a7544b4a}\label{sane_8h_aa65d63e57d37984b9d873811a7544b4a}} 
+\index{sane.h@{sane.h}!SANE\_Word@{SANE\_Word}}
+\index{SANE\_Word@{SANE\_Word}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_Word}{SANE\_Word}}
+{\footnotesize\ttfamily typedef int \mbox{\hyperlink{sane_8h_aa65d63e57d37984b9d873811a7544b4a}{S\+A\+N\+E\+\_\+\+Word}}}
+
+
+
+\doxysubsection{枚举类型说明}
+\mbox{\Hypertarget{sane_8h_a676e37749b97063237ac22f5d8ae7cd7}\label{sane_8h_a676e37749b97063237ac22f5d8ae7cd7}} 
+\index{sane.h@{sane.h}!SANE\_Action@{SANE\_Action}}
+\index{SANE\_Action@{SANE\_Action}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_Action}{SANE\_Action}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{sane_8h_a676e37749b97063237ac22f5d8ae7cd7}{S\+A\+N\+E\+\_\+\+Action}}}
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_ACTION\_GET\_VALUE@{SANE\_ACTION\_GET\_VALUE}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_ACTION\_GET\_VALUE@{SANE\_ACTION\_GET\_VALUE}}}\mbox{\Hypertarget{sane_8h_a676e37749b97063237ac22f5d8ae7cd7a159621772b084fae63cb8a6e9a7232f0}\label{sane_8h_a676e37749b97063237ac22f5d8ae7cd7a159621772b084fae63cb8a6e9a7232f0}} 
+S\+A\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+G\+E\+T\+\_\+\+V\+A\+L\+UE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_ACTION\_SET\_VALUE@{SANE\_ACTION\_SET\_VALUE}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_ACTION\_SET\_VALUE@{SANE\_ACTION\_SET\_VALUE}}}\mbox{\Hypertarget{sane_8h_a676e37749b97063237ac22f5d8ae7cd7a9e38f6099fff31b864ca76a362f7c121}\label{sane_8h_a676e37749b97063237ac22f5d8ae7cd7a9e38f6099fff31b864ca76a362f7c121}} 
+S\+A\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+S\+E\+T\+\_\+\+V\+A\+L\+UE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_ACTION\_SET\_AUTO@{SANE\_ACTION\_SET\_AUTO}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_ACTION\_SET\_AUTO@{SANE\_ACTION\_SET\_AUTO}}}\mbox{\Hypertarget{sane_8h_a676e37749b97063237ac22f5d8ae7cd7ac95cf0bff7559e19f56c06fb2447433e}\label{sane_8h_a676e37749b97063237ac22f5d8ae7cd7ac95cf0bff7559e19f56c06fb2447433e}} 
+S\+A\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+S\+E\+T\+\_\+\+A\+U\+TO&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{sane_8h_a6422f68f593477ab1fd81078e9afc8e9}\label{sane_8h_a6422f68f593477ab1fd81078e9afc8e9}} 
+\index{sane.h@{sane.h}!SANE\_Constraint\_Type@{SANE\_Constraint\_Type}}
+\index{SANE\_Constraint\_Type@{SANE\_Constraint\_Type}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_Constraint\_Type}{SANE\_Constraint\_Type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{sane_8h_a6422f68f593477ab1fd81078e9afc8e9}{S\+A\+N\+E\+\_\+\+Constraint\+\_\+\+Type}}}
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_CONSTRAINT\_NONE@{SANE\_CONSTRAINT\_NONE}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_CONSTRAINT\_NONE@{SANE\_CONSTRAINT\_NONE}}}\mbox{\Hypertarget{sane_8h_a6422f68f593477ab1fd81078e9afc8e9aa241b482716bc33d0e9cf8b13a5c5af7}\label{sane_8h_a6422f68f593477ab1fd81078e9afc8e9aa241b482716bc33d0e9cf8b13a5c5af7}} 
+S\+A\+N\+E\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+T\+\_\+\+N\+O\+NE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_CONSTRAINT\_RANGE@{SANE\_CONSTRAINT\_RANGE}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_CONSTRAINT\_RANGE@{SANE\_CONSTRAINT\_RANGE}}}\mbox{\Hypertarget{sane_8h_a6422f68f593477ab1fd81078e9afc8e9a2c5b18bc1b10dcb8449651777a858871}\label{sane_8h_a6422f68f593477ab1fd81078e9afc8e9a2c5b18bc1b10dcb8449651777a858871}} 
+S\+A\+N\+E\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+T\+\_\+\+R\+A\+N\+GE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_CONSTRAINT\_WORD\_LIST@{SANE\_CONSTRAINT\_WORD\_LIST}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_CONSTRAINT\_WORD\_LIST@{SANE\_CONSTRAINT\_WORD\_LIST}}}\mbox{\Hypertarget{sane_8h_a6422f68f593477ab1fd81078e9afc8e9abd1ba1f152d79a2767dc16dd50e28732}\label{sane_8h_a6422f68f593477ab1fd81078e9afc8e9abd1ba1f152d79a2767dc16dd50e28732}} 
+S\+A\+N\+E\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+T\+\_\+\+W\+O\+R\+D\+\_\+\+L\+I\+ST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_CONSTRAINT\_STRING\_LIST@{SANE\_CONSTRAINT\_STRING\_LIST}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_CONSTRAINT\_STRING\_LIST@{SANE\_CONSTRAINT\_STRING\_LIST}}}\mbox{\Hypertarget{sane_8h_a6422f68f593477ab1fd81078e9afc8e9afce2c30a30f6acf78bbf31fdd3c0300d}\label{sane_8h_a6422f68f593477ab1fd81078e9afc8e9afce2c30a30f6acf78bbf31fdd3c0300d}} 
+S\+A\+N\+E\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+N\+T\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+L\+I\+ST&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{sane_8h_ac5182b25bf83c5e16c4e6e8d998eecac}\label{sane_8h_ac5182b25bf83c5e16c4e6e8d998eecac}} 
+\index{sane.h@{sane.h}!SANE\_Frame@{SANE\_Frame}}
+\index{SANE\_Frame@{SANE\_Frame}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_Frame}{SANE\_Frame}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{sane_8h_ac5182b25bf83c5e16c4e6e8d998eecac}{S\+A\+N\+E\+\_\+\+Frame}}}
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_FRAME\_GRAY@{SANE\_FRAME\_GRAY}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_FRAME\_GRAY@{SANE\_FRAME\_GRAY}}}\mbox{\Hypertarget{sane_8h_ac5182b25bf83c5e16c4e6e8d998eecaca714285a130698b64e654b0b7084d4869}\label{sane_8h_ac5182b25bf83c5e16c4e6e8d998eecaca714285a130698b64e654b0b7084d4869}} 
+S\+A\+N\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+G\+R\+AY&band covering human visual range \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_FRAME\_RGB@{SANE\_FRAME\_RGB}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_FRAME\_RGB@{SANE\_FRAME\_RGB}}}\mbox{\Hypertarget{sane_8h_ac5182b25bf83c5e16c4e6e8d998eecaca02f8e814fea4e3f8a577579b96feb27b}\label{sane_8h_ac5182b25bf83c5e16c4e6e8d998eecaca02f8e814fea4e3f8a577579b96feb27b}} 
+S\+A\+N\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+R\+GB&pixel-\/interleaved red/green/blue bands \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_FRAME\_RED@{SANE\_FRAME\_RED}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_FRAME\_RED@{SANE\_FRAME\_RED}}}\mbox{\Hypertarget{sane_8h_ac5182b25bf83c5e16c4e6e8d998eecacabedeb0627576b57ad708c3590600195d}\label{sane_8h_ac5182b25bf83c5e16c4e6e8d998eecacabedeb0627576b57ad708c3590600195d}} 
+S\+A\+N\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+R\+ED&red band only \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_FRAME\_GREEN@{SANE\_FRAME\_GREEN}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_FRAME\_GREEN@{SANE\_FRAME\_GREEN}}}\mbox{\Hypertarget{sane_8h_ac5182b25bf83c5e16c4e6e8d998eecaca69cb439dedf5db3fd5b54e4903c526e6}\label{sane_8h_ac5182b25bf83c5e16c4e6e8d998eecaca69cb439dedf5db3fd5b54e4903c526e6}} 
+S\+A\+N\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+G\+R\+E\+EN&green band only \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_FRAME\_BLUE@{SANE\_FRAME\_BLUE}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_FRAME\_BLUE@{SANE\_FRAME\_BLUE}}}\mbox{\Hypertarget{sane_8h_ac5182b25bf83c5e16c4e6e8d998eecaca14d6443493d7e3e9e1d4761c170dc3d7}\label{sane_8h_ac5182b25bf83c5e16c4e6e8d998eecaca14d6443493d7e3e9e1d4761c170dc3d7}} 
+S\+A\+N\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+B\+L\+UE&blue band only \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}\label{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}} 
+\index{sane.h@{sane.h}!SANE\_Status@{SANE\_Status}}
+\index{SANE\_Status@{SANE\_Status}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_Status}{SANE\_Status}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}}}
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_STATUS\_GOOD@{SANE\_STATUS\_GOOD}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_STATUS\_GOOD@{SANE\_STATUS\_GOOD}}}\mbox{\Hypertarget{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a5856c36f7cb46b50a1fcdea81f8b139b}\label{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a5856c36f7cb46b50a1fcdea81f8b139b}} 
+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+G\+O\+OD&everything A-\/\+OK, 操作成功完成 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_STATUS\_UNSUPPORTED@{SANE\_STATUS\_UNSUPPORTED}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_STATUS\_UNSUPPORTED@{SANE\_STATUS\_UNSUPPORTED}}}\mbox{\Hypertarget{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a9546eafda7b66421f0fe27db97d7464d}\label{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a9546eafda7b66421f0fe27db97d7464d}} 
+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+ED&operation is not supported, 不支持该操作 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_STATUS\_CANCELLED@{SANE\_STATUS\_CANCELLED}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_STATUS\_CANCELLED@{SANE\_STATUS\_CANCELLED}}}\mbox{\Hypertarget{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a8b18c5e9a7fd1a9ea6e54a055374efb7}\label{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a8b18c5e9a7fd1a9ea6e54a055374efb7}} 
+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+A\+N\+C\+E\+L\+L\+ED&operation was cancelled, 操作被取消 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_STATUS\_DEVICE\_BUSY@{SANE\_STATUS\_DEVICE\_BUSY}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_STATUS\_DEVICE\_BUSY@{SANE\_STATUS\_DEVICE\_BUSY}}}\mbox{\Hypertarget{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a45d979d5a8bc43741bd874bf044237ed}\label{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a45d979d5a8bc43741bd874bf044237ed}} 
+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+B\+U\+SY&device is busy; try again later, 设备正忙--请稍后重试 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_STATUS\_INVAL@{SANE\_STATUS\_INVAL}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_STATUS\_INVAL@{SANE\_STATUS\_INVAL}}}\mbox{\Hypertarget{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552aa7148d5dbe85059824e9f8110d573131}\label{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552aa7148d5dbe85059824e9f8110d573131}} 
+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+V\+AL&data is invalid (includes no dev at open), 数据或参数无效 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_STATUS\_EOF@{SANE\_STATUS\_EOF}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_STATUS\_EOF@{SANE\_STATUS\_EOF}}}\mbox{\Hypertarget{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552af89e9888d716ae6b96adeb66a7a6c07e}\label{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552af89e9888d716ae6b96adeb66a7a6c07e}} 
+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+OF&no more data available (end-\/of-\/file), 没有更多可用数据（文件结束） \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_STATUS\_JAMMED@{SANE\_STATUS\_JAMMED}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_STATUS\_JAMMED@{SANE\_STATUS\_JAMMED}}}\mbox{\Hypertarget{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552af204f5d74ac5e0af99b03b9de1083f08}\label{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552af204f5d74ac5e0af99b03b9de1083f08}} 
+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+J\+A\+M\+M\+ED&document feeder jammed, 文档进纸器卡纸 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_STATUS\_NO\_DOCS@{SANE\_STATUS\_NO\_DOCS}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_STATUS\_NO\_DOCS@{SANE\_STATUS\_NO\_DOCS}}}\mbox{\Hypertarget{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a9ad440fa2a49e318b4a7e30393d25ed4}\label{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a9ad440fa2a49e318b4a7e30393d25ed4}} 
+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+\_\+\+D\+O\+CS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_STATUS\_COVER\_OPEN@{SANE\_STATUS\_COVER\_OPEN}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_STATUS\_COVER\_OPEN@{SANE\_STATUS\_COVER\_OPEN}}}\mbox{\Hypertarget{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a8e6014f8d917df052fc94a5a7131c8ca}\label{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a8e6014f8d917df052fc94a5a7131c8ca}} 
+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+V\+E\+R\+\_\+\+O\+P\+EN&scanner cover is open, 扫描仪盖板已打开 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_STATUS\_IO\_ERROR@{SANE\_STATUS\_IO\_ERROR}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_STATUS\_IO\_ERROR@{SANE\_STATUS\_IO\_ERROR}}}\mbox{\Hypertarget{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a72906f90341d8650afd14c1195b21be8}\label{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a72906f90341d8650afd14c1195b21be8}} 
+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+O\+\_\+\+E\+R\+R\+OR&error during device I/O, 设备I / O期间出错 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_STATUS\_NO\_MEM@{SANE\_STATUS\_NO\_MEM}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_STATUS\_NO\_MEM@{SANE\_STATUS\_NO\_MEM}}}\mbox{\Hypertarget{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a882d5c375fb7da926b6789f770af9988}\label{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a882d5c375fb7da926b6789f770af9988}} 
+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+\_\+\+M\+EM&out of memory, 没有内存 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_STATUS\_ACCESS\_DENIED@{SANE\_STATUS\_ACCESS\_DENIED}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_STATUS\_ACCESS\_DENIED@{SANE\_STATUS\_ACCESS\_DENIED}}}\mbox{\Hypertarget{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a58a4769b653ccd02161a02e3114d3dcb}\label{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552a58a4769b653ccd02161a02e3114d3dcb}} 
+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+D\+E\+N\+I\+ED&access to resource has been denied, 对资源的访问已被拒绝 \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{sane_8h_a15e903425f365e0fe30fed1e37446990}\label{sane_8h_a15e903425f365e0fe30fed1e37446990}} 
+\index{sane.h@{sane.h}!SANE\_Unit@{SANE\_Unit}}
+\index{SANE\_Unit@{SANE\_Unit}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_Unit}{SANE\_Unit}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{sane_8h_a15e903425f365e0fe30fed1e37446990}{S\+A\+N\+E\+\_\+\+Unit}}}
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_UNIT\_NONE@{SANE\_UNIT\_NONE}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_UNIT\_NONE@{SANE\_UNIT\_NONE}}}\mbox{\Hypertarget{sane_8h_a15e903425f365e0fe30fed1e37446990a08f694989ea5823c2d825f991ad3a468}\label{sane_8h_a15e903425f365e0fe30fed1e37446990a08f694989ea5823c2d825f991ad3a468}} 
+S\+A\+N\+E\+\_\+\+U\+N\+I\+T\+\_\+\+N\+O\+NE&the value is unit-\/less (e.\+g., \# of scans) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_UNIT\_PIXEL@{SANE\_UNIT\_PIXEL}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_UNIT\_PIXEL@{SANE\_UNIT\_PIXEL}}}\mbox{\Hypertarget{sane_8h_a15e903425f365e0fe30fed1e37446990abe30196cbdfd3f4069e1bf834e933a84}\label{sane_8h_a15e903425f365e0fe30fed1e37446990abe30196cbdfd3f4069e1bf834e933a84}} 
+S\+A\+N\+E\+\_\+\+U\+N\+I\+T\+\_\+\+P\+I\+X\+EL&value is number of pixels \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_UNIT\_BIT@{SANE\_UNIT\_BIT}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_UNIT\_BIT@{SANE\_UNIT\_BIT}}}\mbox{\Hypertarget{sane_8h_a15e903425f365e0fe30fed1e37446990ae551bba514d23aeaf99bed28ae043126}\label{sane_8h_a15e903425f365e0fe30fed1e37446990ae551bba514d23aeaf99bed28ae043126}} 
+S\+A\+N\+E\+\_\+\+U\+N\+I\+T\+\_\+\+B\+IT&value is number of bits \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_UNIT\_MM@{SANE\_UNIT\_MM}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_UNIT\_MM@{SANE\_UNIT\_MM}}}\mbox{\Hypertarget{sane_8h_a15e903425f365e0fe30fed1e37446990a56751573aa565e0c164cd1ab9fb01996}\label{sane_8h_a15e903425f365e0fe30fed1e37446990a56751573aa565e0c164cd1ab9fb01996}} 
+S\+A\+N\+E\+\_\+\+U\+N\+I\+T\+\_\+\+MM&value is millimeters \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_UNIT\_DPI@{SANE\_UNIT\_DPI}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_UNIT\_DPI@{SANE\_UNIT\_DPI}}}\mbox{\Hypertarget{sane_8h_a15e903425f365e0fe30fed1e37446990a3ee656f5d7afc3be86961859fb0016b8}\label{sane_8h_a15e903425f365e0fe30fed1e37446990a3ee656f5d7afc3be86961859fb0016b8}} 
+S\+A\+N\+E\+\_\+\+U\+N\+I\+T\+\_\+\+D\+PI&value is resolution in dots/inch \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_UNIT\_PERCENT@{SANE\_UNIT\_PERCENT}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_UNIT\_PERCENT@{SANE\_UNIT\_PERCENT}}}\mbox{\Hypertarget{sane_8h_a15e903425f365e0fe30fed1e37446990a5cc13c79bd7cc2baf15c61347458b86e}\label{sane_8h_a15e903425f365e0fe30fed1e37446990a5cc13c79bd7cc2baf15c61347458b86e}} 
+S\+A\+N\+E\+\_\+\+U\+N\+I\+T\+\_\+\+P\+E\+R\+C\+E\+NT&value is a percentage \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_UNIT\_MICROSECOND@{SANE\_UNIT\_MICROSECOND}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_UNIT\_MICROSECOND@{SANE\_UNIT\_MICROSECOND}}}\mbox{\Hypertarget{sane_8h_a15e903425f365e0fe30fed1e37446990a5dd9658d2d1a4d907ee326b3e17d1217}\label{sane_8h_a15e903425f365e0fe30fed1e37446990a5dd9658d2d1a4d907ee326b3e17d1217}} 
+S\+A\+N\+E\+\_\+\+U\+N\+I\+T\+\_\+\+M\+I\+C\+R\+O\+S\+E\+C\+O\+ND&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{sane_8h_aed3324dea8f24f5381e12e5562aaf72b}\label{sane_8h_aed3324dea8f24f5381e12e5562aaf72b}} 
+\index{sane.h@{sane.h}!SANE\_Value\_Type@{SANE\_Value\_Type}}
+\index{SANE\_Value\_Type@{SANE\_Value\_Type}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{SANE\_Value\_Type}{SANE\_Value\_Type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{sane_8h_aed3324dea8f24f5381e12e5562aaf72b}{S\+A\+N\+E\+\_\+\+Value\+\_\+\+Type}}}
+
+following are for later sane version, older frontends wont support \begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_TYPE\_BOOL@{SANE\_TYPE\_BOOL}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_TYPE\_BOOL@{SANE\_TYPE\_BOOL}}}\mbox{\Hypertarget{sane_8h_aed3324dea8f24f5381e12e5562aaf72ba4af54ce4403e7c587775ff842275aa4e}\label{sane_8h_aed3324dea8f24f5381e12e5562aaf72ba4af54ce4403e7c587775ff842275aa4e}} 
+S\+A\+N\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+B\+O\+OL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_TYPE\_INT@{SANE\_TYPE\_INT}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_TYPE\_INT@{SANE\_TYPE\_INT}}}\mbox{\Hypertarget{sane_8h_aed3324dea8f24f5381e12e5562aaf72ba3129c48e1653a2d1d5fbf37994eb0d7a}\label{sane_8h_aed3324dea8f24f5381e12e5562aaf72ba3129c48e1653a2d1d5fbf37994eb0d7a}} 
+S\+A\+N\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+I\+NT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_TYPE\_FIXED@{SANE\_TYPE\_FIXED}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_TYPE\_FIXED@{SANE\_TYPE\_FIXED}}}\mbox{\Hypertarget{sane_8h_aed3324dea8f24f5381e12e5562aaf72baf533aff76f2b61c9e4464ac50f8b766a}\label{sane_8h_aed3324dea8f24f5381e12e5562aaf72baf533aff76f2b61c9e4464ac50f8b766a}} 
+S\+A\+N\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+F\+I\+X\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_TYPE\_STRING@{SANE\_TYPE\_STRING}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_TYPE\_STRING@{SANE\_TYPE\_STRING}}}\mbox{\Hypertarget{sane_8h_aed3324dea8f24f5381e12e5562aaf72ba498df634f862a8267401634d1728dd3d}\label{sane_8h_aed3324dea8f24f5381e12e5562aaf72ba498df634f862a8267401634d1728dd3d}} 
+S\+A\+N\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+T\+R\+I\+NG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_TYPE\_BUTTON@{SANE\_TYPE\_BUTTON}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_TYPE\_BUTTON@{SANE\_TYPE\_BUTTON}}}\mbox{\Hypertarget{sane_8h_aed3324dea8f24f5381e12e5562aaf72ba547670e294cc09e0ca69014dd4db510a}\label{sane_8h_aed3324dea8f24f5381e12e5562aaf72ba547670e294cc09e0ca69014dd4db510a}} 
+S\+A\+N\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+B\+U\+T\+T\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SANE\_TYPE\_GROUP@{SANE\_TYPE\_GROUP}!sane.h@{sane.h}}\index{sane.h@{sane.h}!SANE\_TYPE\_GROUP@{SANE\_TYPE\_GROUP}}}\mbox{\Hypertarget{sane_8h_aed3324dea8f24f5381e12e5562aaf72ba632657c4963a1860dca7d077eac459b9}\label{sane_8h_aed3324dea8f24f5381e12e5562aaf72ba632657c4963a1860dca7d077eac459b9}} 
+S\+A\+N\+E\+\_\+\+T\+Y\+P\+E\+\_\+\+G\+R\+O\+UP&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{sane_8h_a8facc0281b730ce19e17971e5c042de1}\label{sane_8h_a8facc0281b730ce19e17971e5c042de1}} 
+\index{sane.h@{sane.h}!sane\_cancel@{sane\_cancel}}
+\index{sane\_cancel@{sane\_cancel}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{sane\_cancel()}{sane\_cancel()}}
+{\footnotesize\ttfamily void sane\+\_\+cancel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}}}]{handle }\end{DoxyParamCaption})}
+
+此功能用于立即或尽快取消由句柄h表示的设备的当前挂起的操作 。 可以随时调用此函数（只要句柄h是有效的句柄），但通常只影响长时间运行的操作（例如图像获取）。 异步调用此函数是安全的（例如，从信号处理程序中）。重要的是要注意，此操作的完成并不意味着当前挂起的操作已被取消。 它仅保证取消已启动。取消仅在取消的呼叫返回时完成（通常状态值为\+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+A\+N\+C\+E\+L\+L\+E\+D）。 由于\+S\+A\+NE A\+P\+I不需要重新输入任何其他操作，因此这意味着前端一定不能 调用任何其他操作，直到返回已取消的操作。 这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sane_8h_a8facc0281b730ce19e17971e5c042de1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sane_8h_a86bc6c8bf32a9e1ab2dc681dcf8489f1}\label{sane_8h_a86bc6c8bf32a9e1ab2dc681dcf8489f1}} 
+\index{sane.h@{sane.h}!sane\_close@{sane\_close}}
+\index{sane\_close@{sane\_close}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{sane\_close()}{sane\_close()}}
+{\footnotesize\ttfamily void sane\+\_\+close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}}}]{handle }\end{DoxyParamCaption})}
+
+此函数终止在参数h中传递的设备句柄与其表示的设备之间的关联。 如果设备当前处于活动状态，则首先执行对sane\+\_\+cancel（）的调用。此函数返回后，不能再使用句柄h。 这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{sane_8h_a86bc6c8bf32a9e1ab2dc681dcf8489f1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sane_8h_af97b5a648c359cdeb17844f24e74f21d}\label{sane_8h_af97b5a648c359cdeb17844f24e74f21d}} 
+\index{sane.h@{sane.h}!sane\_control\_option@{sane\_control\_option}}
+\index{sane\_control\_option@{sane\_control\_option}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{sane\_control\_option()}{sane\_control\_option()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} sane\+\_\+control\+\_\+option (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}}}]{option,  }\item[{\mbox{\hyperlink{sane_8h_a676e37749b97063237ac22f5d8ae7cd7}{S\+A\+N\+E\+\_\+\+Action}}}]{action,  }\item[{void $\ast$}]{value,  }\item[{\mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}} $\ast$}]{info }\end{DoxyParamCaption})}
+
+此功能用于设置或查询由句柄h表示的设备的选件编号n的当前值。 选项a的控制方式由参数a指定 。该参数的可能值将在下面更详细地描述。 该选项的值通过参数v传递 。它是指向保存选项值的内存的指针。 v指向的内存区域必须足够大以容纳整个选项值（由相应选项描述符中的成员大小确定）。 该规则的唯一例外是，在设置字符串选项的值时，参数v指向的字符串可能会更短，因为在遇到 字符串中的第一个\+N\+U\+L终止符时，后端将停止读取选项值。 如果参数i不为\+N\+U\+L\+L，则将设置$\ast$ i的值以提供有关如何满足请求的详细信息。该参数的含义将在下面更详细地描述。
+
+通过调用此函数影响选项的方式由参数a控制，参数a是\+S\+A\+N\+E\+\_\+\+Action类型的值 。可能的值及其含义在表7中描述。
+
+符号 码 描述
+
+S\+A\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+G\+E\+T\+\_\+\+V\+A\+L\+UE 0 获取当前的期权价值。
+
+S\+A\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+S\+E\+T\+\_\+\+V\+A\+L\+UE 1 设置选项值。如果无法精确设置通过参数v传递的选项值，则后端可能会对其进行修改。
+
+S\+A\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+S\+E\+T\+\_\+\+A\+U\+TO 2 打开自动模式。后端或设备将自动选择适当的值。此模式将保持有效，直到被显式设置值请求覆盖为止。 在这种情况下，参数v的值将被完全忽略，并且可以为\+N\+U\+L\+L。
+
+通过\+S\+A\+N\+E\+\_\+\+A\+C\+T\+I\+O\+N\+\_\+\+S\+E\+T\+\_\+\+V\+A\+L\+U\+E的操作值设置一个值后 ，在$\ast$ i中返回有关如何满足请求的其他信息（如果i为非\+N\+U\+L\+L）。返回的值是一个位集，可以包含表8中描述的值的任何组合。
+
+符号 码 描述
+
+S\+A\+N\+E\+\_\+\+I\+N\+F\+O\+\_\+\+I\+N\+E\+X\+A\+CT 1 当设置选项值导致选择的值与请求的值不完全匹配时，将返回此值。 例如，如果扫描仪只能以30dpi的增量调整分辨率，则将分辨率设置为307dpi可能会导致实际设置为300dpi。 发生这种情况时，$\ast$ i中返回的位集具有此成员集。另外，修改了选项值以反映后端使用的实际（四舍五入）值。 请注意，字符串也可以使用不精确的值。后端可以选择将字符串\`{}`舍入'\textquotesingle{}到最接近的匹配合法字符串以获取受约束的字符串值。
+
+S\+A\+N\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+E\+L\+O\+A\+D\+\_\+\+O\+P\+T\+I\+O\+NS 2 选项的设置可能会影响一个或多个 其他选项的价值或可用性。 发生这种情况时，\+S\+A\+N\+E后端会在$\ast$ i中设置此成员，以指示应用程序应重新加载所有选项。 仅当更改了至少一个选项时，才能设置此成员。
+
+S\+A\+N\+E\+\_\+\+I\+N\+F\+O\+\_\+\+R\+E\+L\+O\+A\+D\+\_\+\+P\+A\+R\+A\+MS 4 选项的设置可能会影响参数值（请参见sane\+\_\+get\+\_\+parameters（））。 如果设置选项影响参数值，则该成员将在$\ast$ i中设置。请注意，即使参数没有实际更改，也可以设置该成员。 但是，可以确保不设置此成员就不会更改参数。
+
+此功能可能因以下状态代码之一而失败。
+
+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D：
+
+指定的句柄和选项号不支持该操作。
+
+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+V\+A\+L：
+
+选项值无效。
+
+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+O\+\_\+\+E\+R\+R\+O\+R：
+
+与设备通信时发生错误。
+
+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+\_\+\+M\+E\+M：
+
+可用的内存量不足。
+
+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+D\+E\+N\+I\+E\+D：
+
+由于身份验证不充分或无效，因此无法访问该选件。 \mbox{\Hypertarget{sane_8h_adee134f0b60b099d3ddb144ec7266c6a}\label{sane_8h_adee134f0b60b099d3ddb144ec7266c6a}} 
+\index{sane.h@{sane.h}!sane\_exit@{sane\_exit}}
+\index{sane\_exit@{sane\_exit}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{sane\_exit()}{sane\_exit()}}
+{\footnotesize\ttfamily void sane\+\_\+exit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+退出后端 
+
+
+\begin{DoxyPre}\end{DoxyPre}
+
+
+
+\begin{DoxyPre}必须调用此函数以终止使用后端。
+该函数将首先关闭所有可能仍处于打开状态的设备句柄（建议通过调用sane\_close（）显式关闭设备句柄，但要求后端在调用此函数时释放所有资源）。
+此函数返回后，不能调用sane\_init（）以外的任何函数（无论sane\_exit（）返回的状态值如何。忽略调用此函数可能会导致某些资源无法正确释放。
+\end{DoxyPre}
+
+
+
+\begin{DoxyParams}{参数}
+{\em a} & 变量a \\
+\hline
+{\em a} & 变量a \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+void 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{返回值}
+{\em 1} & result1 2\+: result2 \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{sane_8h_adee134f0b60b099d3ddb144ec7266c6a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sane_8h_a86a720cead710936ba84b6de59b16623}\label{sane_8h_a86a720cead710936ba84b6de59b16623}} 
+\index{sane.h@{sane.h}!sane\_get\_devices@{sane\_get\_devices}}
+\index{sane\_get\_devices@{sane\_get\_devices}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{sane\_get\_devices()}{sane\_get\_devices()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} sane\+\_\+get\+\_\+devices (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structSANE__Device}{S\+A\+N\+E\+\_\+\+Device}} $\ast$$\ast$$\ast$}]{device\+\_\+list,  }\item[{\mbox{\hyperlink{sane_8h_afb77ef4d4ce97f57e5a9e54393f979ee}{S\+A\+N\+E\+\_\+\+Bool}}}]{local\+\_\+only }\end{DoxyParamCaption})}
+
+此功能可用于查询可用设备的列表。 如果函数成功执行，它将 在$\ast$ device\+\_\+list中存储指向\+N\+U\+L\+L终止数组的指针，该数组指向\+S\+A\+N\+E\+\_\+\+Device结构。 保证返回的列表保持不变并有效，直到（a）对该函数的另一次调用或（b）对sane\+\_\+exit（）的调用。 可以重复调用此功能以检测何时有新设备可用。如果参数local\+\_\+only为true，则仅返回本地设备（直接连接到运行\+S\+A\+N\+E的计算机的设备）。 如果为假，则设备列表包括\+S\+A\+N\+E库可访问的所有远程设备。
+
+如果没有足够的内存，此功能可能会因\+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+\_\+\+M\+E\+M而失败。
+
+后端实施说明 S\+A\+N\+E不需要在执行sane\+\_\+open（）调用之前调用此函数 。设备名称可以由用户明确指定，这将导致不必要且不希望先调用此功能。 这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sane_8h_a86a720cead710936ba84b6de59b16623_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sane_8h_a7728e01a38c5e18385e383a6ce4a108d}\label{sane_8h_a7728e01a38c5e18385e383a6ce4a108d}} 
+\index{sane.h@{sane.h}!sane\_get\_option\_descriptor@{sane\_get\_option\_descriptor}}
+\index{sane\_get\_option\_descriptor@{sane\_get\_option\_descriptor}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{sane\_get\_option\_descriptor()}{sane\_get\_option\_descriptor()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structSANE__Option__Descriptor}{S\+A\+N\+E\+\_\+\+Option\+\_\+\+Descriptor}}$\ast$ sane\+\_\+get\+\_\+option\+\_\+descriptor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}}}]{option }\end{DoxyParamCaption})}
+
+此函数用于访问选项描述符。该函数返回由句柄h表示的设备的选项号n的选项描述符。 选项号0保证是有效的选项。它的值是一个整数，它指定可用于设备句柄h的选项数量（计数包括选项0）。 如果n不是有效的选项索引，则该函数返回\+N\+U\+L\+L。保证返回的选项描述符在关闭设备之前一直保持有效（并在返回的地址处）。 \mbox{\Hypertarget{sane_8h_a28ba54307cb61e48fc1a361be7ad2c6e}\label{sane_8h_a28ba54307cb61e48fc1a361be7ad2c6e}} 
+\index{sane.h@{sane.h}!sane\_get\_parameters@{sane\_get\_parameters}}
+\index{sane\_get\_parameters@{sane\_get\_parameters}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{sane\_get\_parameters()}{sane\_get\_parameters()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} sane\+\_\+get\+\_\+parameters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{structSANE__Parameters}{S\+A\+N\+E\+\_\+\+Parameters}} $\ast$}]{params }\end{DoxyParamCaption})}
+
+此功能用于获取当前的扫描参数。 在开始扫描（调用sane\+\_\+start（））与完成请求之间，保证返回的参数是准确的。 在该窗口之外，返回值是在调用sane\+\_\+start（）时参数将尽力而为的估计 。 例如，在实际开始扫描之前调用此函数可以例如估算出扫描图像的大小。 传递给此函数的参数是应为其获取参数的设备的句柄h，以及指向参数结构的指针p。参数结构在下面更详细地描述。 扫描参数以\+S\+A\+N\+E\+\_\+\+Parameters类型的结构返回 。 这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sane_8h_a28ba54307cb61e48fc1a361be7ad2c6e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sane_8h_a6699a6bb08baa461b98d62fcdd82d8d4}\label{sane_8h_a6699a6bb08baa461b98d62fcdd82d8d4}} 
+\index{sane.h@{sane.h}!sane\_get\_select\_fd@{sane\_get\_select\_fd}}
+\index{sane\_get\_select\_fd@{sane\_get\_select\_fd}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{sane\_get\_select\_fd()}{sane\_get\_select\_fd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} sane\+\_\+get\+\_\+select\+\_\+fd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}} $\ast$}]{fd }\end{DoxyParamCaption})}
+
+此函数用于获取句柄h的（特定于平台的）文件描述符 当且仅当图像数据可用时（即，对sane\+\_\+read（）的调用将返回至少一个字节的数据），该文件描述符才可读。如果调用成功完成，则在$\ast$ fd中返回选择文件描述符。 仅在执行对sane\+\_\+start（）的调用 并且已保证返回的文件描述符在当前图像获取期间保持有效 （即，直到再次调用sane\+\_\+cancel（）或sane\+\_\+start（）或直到sane\+\_\+read（）返回状态 S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+O\+F）。 实际上，后端必须保证在下一个sane\+\_\+read（）调用返回\+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+O\+F时关闭返回的选择 文件描述符。 这是确保应用程序可以检测到何时发生这种情况而不必实际调用sane\+\_\+read（）所必需的。
+
+后端可以选择不支持此操作。在这种情况下，该函数将返回状态码 S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D。
+
+请注意，返回的文件描述符支持的唯一操作是与主机操作系统相关的测试，以确定文件描述符是否可读 （例如，可以在\+U\+N\+I\+X下使用select（） 或poll（）来实现此测试）。如果对文件描述符执行任何其他操作，则后端的行为将变得不可预测。 一旦文件描述符发出\`{}`可读'\textquotesingle{}状态的信号，它将保持该状态，直到执行对sane\+\_\+read（）的调用为止。 由于许多输入设备非常慢，因此强烈建议支持此操作，因为它允许应用程序在进行图像采集时执行其他工作。
+
+此功能可能因以下状态代码之一而失败： \begin{DoxyVerb}SANE_STATUS_INVAL：
+
+没有图像采集正在等待。
+
+SANE_STATUS_UNSUPPORTED：
+
+后端不支持此操作。
+\end{DoxyVerb}
+ \mbox{\Hypertarget{sane_8h_a1498918f9c7e543a4a757482bcffd7a9}\label{sane_8h_a1498918f9c7e543a4a757482bcffd7a9}} 
+\index{sane.h@{sane.h}!sane\_init@{sane\_init}}
+\index{sane\_init@{sane\_init}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{sane\_init()}{sane\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} sane\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}} $\ast$}]{version\+\_\+code,  }\item[{\mbox{\hyperlink{sane_8h_a65071043cb6021bddedc7f249d9338ea}{S\+A\+N\+E\+\_\+\+Auth\+\_\+\+Callback}}}]{authorize }\end{DoxyParamCaption})}
+
+
+\begin{DoxyPre}
+  代码流\end{DoxyPre}
+
+
+
+\begin{DoxyPre}  -\/\mbox{\hyperlink{sane_8h_a1498918f9c7e543a4a757482bcffd7a9}{sane\_init()}}
+       -\/pick desired device, possibly by using \mbox{\hyperlink{sane_8h_a86a720cead710936ba84b6de59b16623}{sane\_get\_devices()}}
+       -\/\mbox{\hyperlink{sane_8h_adfeda33e4d60e0d6a4e19634cc9c2bae}{sane\_open()}}
+           //device setup
+           -\/use: 
+                   sane\_get\_option\_description()
+                   \mbox{\hyperlink{sane_8h_af97b5a648c359cdeb17844f24e74f21d}{sane\_control\_option()}}
+           repeatedly to configure device as desired\end{DoxyPre}
+
+
+
+\begin{DoxyPre}           //image acquisition
+           -\/\mbox{\hyperlink{sane_8h_a633f90b105f09ca798ecbf9a77711e7b}{sane\_start()}}
+           -\/use: 
+                   \mbox{\hyperlink{sane_8h_a28ba54307cb61e48fc1a361be7ad2c6e}{sane\_get\_parameters()}}
+                   \mbox{\hyperlink{sane_8h_ae5426bddf1bfe3d30370c9fe2d209cc3}{sane\_read()}}
+           repeatedly until read returns EOF
+           -\/go back to \mbox{\hyperlink{sane_8h_a633f90b105f09ca798ecbf9a77711e7b}{sane\_start()}} if more frames desired
+       -\/\mbox{\hyperlink{sane_8h_a86bc6c8bf32a9e1ab2dc681dcf8489f1}{sane\_close()}}
+  -\/\mbox{\hyperlink{sane_8h_adee134f0b60b099d3ddb144ec7266c6a}{sane\_exit()}}\end{DoxyPre}
+
+
+
+\begin{DoxyPre}  流程详解：
+  可以在调用sane\_init（）之后的任何时间调用 函数sane\_get\_devices（）。它返回呼叫时已知的设备列表。
+  由于某些设备可能已打开或关闭，或者远程主机可能在不同的呼叫之间启动或关闭，因此该列表可能会随时间变化。
+  应当注意，此操作可能相对较慢，因为它需要联系所有已配置的设备（其中一些可能在远程主机上）。
+  因此，前端可能希望为用户提供直接选择所需设备的功能，而无需调用此功能。\end{DoxyPre}
+
+
+
+\begin{DoxyPre}  选择设备后，可通过调用sane\_open（）将其打开 。可以在任何给定时间打开多个设备。SANE后端不得在任何给定时间对可以打开多少个设备施加人为约束。\end{DoxyPre}
+
+
+
+\begin{DoxyPre}  可以使用功能sane\_get\_option\_descriptor（）和 sane\_control\_option（）通过相应的设备句柄设置打开的设备。
+  设置设备时，可以自由地混合使用选项描述符以及设置和读取选项值。前端通常会在开始时读出所有可用选项，
+  然后建立一个对话框（图形或命令行选项列表），以控制可用选项。应当注意，对于给定的句柄，选项的数量是固定的。
+  但是，随着选项的设置，其他选项可能会变为活动或非活动状态。因此，在设置选项之后，可能需要重新读取一些或所有选项描述符。
+  设置设备时，也可以拨打电话 sane\_get\_parameters（）以获取图像获取开始后图像参数的估算值。\end{DoxyPre}
+
+
+
+\begin{DoxyPre}  通过调用sane\_set\_io\_mode（）可以将设备句柄置于阻塞或非阻塞模式。
+  要求设备支持阻止模式（这是默认模式），但是对于诸如UNIX之类的操作系统，强烈建议支持非阻止I / O。\end{DoxyPre}
+
+
+
+\begin{DoxyPre}  正确设置设备后，可以通过调用sane\_start（）来启动图像获取。后端此时会计算出确切的图像参数。
+  因此，将来对sane\_get\_parameters（）的调用 将返回确切的值，而不是估计值。
+  SANE API未指定是在这一点上还是在第一次调用sane\_read（）时开始物理图像获取。
+  如果需要无阻塞的I / O和/或选择样式的接口，则前端可能会在此时尝试调用 sane\_set\_io\_mode（）和/或sane\_get\_select\_fd（）。
+  如果后端不支持请求的操作，则这些功能中的任何一个都可能失败。\end{DoxyPre}
+
+
+
+\begin{DoxyPre}  通过重复调用sane\_read（）来收集图像数据。最终，此函数将返回文件结束状态（SANE\_STATUS\_EOF）。
+  这指示当前帧的结束。如果前端需要其他帧（例如，红色/绿色/蓝色图像或多个图像中的各个通道），则可以再次调用sane\_start（）。
+  一旦获取了所有所需的帧，就必须调用函数sane\_cancel（）。也可以在任何其他时间调用此操作以取消挂起的操作。
+  请注意，即使最后一次读取操作返回了SANE\_STATUS\_EOF，也必须调用sane\_cancel（）。\end{DoxyPre}
+
+
+
+\begin{DoxyPre}  使用设备完成操作后，应通过调用sane\_close（）关闭句柄 。最后，在退出应用程序之前，必须调用函数sane\_exit（）。
+  重要的是不要忘记调用此函数，否则可能会导致某些资源（例如临时文件或锁）无人认领。\end{DoxyPre}
+
+
+
+\begin{DoxyPre}  其他选项
+  尽管大多数后端选项都是完全自描述的，但在某些情况下，用户界面可能希望对某些选项进行特殊处理。
+  例如，扫描区域通常由四个选项定义，这些选项指定区域的左上角和右下角。使用图形用户界面，迫使用户键入这四个数字将很繁琐。
+  相反，大多数此类界面都希望向用户呈现扫描仪表面的预览（低分辨率扫描），并让用户通过将矩形拖动到所需位置来选择扫描区域。
+  因此，SANE API指定了少数具有明确定义含义的选项名称。\end{DoxyPre}
+
+
+
+\begin{DoxyPre}  选件编号计数
+  选项号0的名称为空字符串。此选项的值的类型为SANE\_TYPE\_INT，它指定给定设备可用的选项总数（计数包括选项号0）。
+  这意味着有两种计算可用选项数量的方法：前端可以循环从一个选项开始的所有选项编号，
+  直到 sane\_get\_option\_descriptor（）返回NULL，或者前端可以直接读出选项编号0的值。\end{DoxyPre}
+
+
+
+\begin{DoxyPre}  扫描分辨率选项
+  选项分辨率用于选择应获取图像的分辨率。此选项的类型为 SANE\_TYPE\_INT或SANE\_TYPE\_FIXED。单位是 SANE\_UNIT\_DPI（点/英寸）。
+  此选项不是强制性的，但是如果后端确实支持它，则它必须以与上述定义一致的方式来实现。\end{DoxyPre}
+
+
+
+\begin{DoxyPre}  预览模式选项
+  前端使用布尔选项预览来通知后端何时应针对速度而非质量（``预览模式''）优化图像采集。
+  设置为SANE\_TRUE时，预览模式有效；设置为SANE\_FALSE时，图像采集应以普通质量模式进行。
+  此选项的设置不得影响任何其他选项。也就是说，就其他选项而言，预览模式完全没有副作用。
+  后端可以假定前端将适当地设置预览模式的扫描分辨率（通过option resolution）。
+  后端可以随意覆盖 分辨率 可以选择自己的预览模式，但建议尽可能将其保留在前端。
+  此选项不是强制性的，但是如果后端确实支持它，则它必须以与上述定义一致的方式来实现。\end{DoxyPre}
+
+
+
+\begin{DoxyPre}  扫描区域选项
+  四个最重要的众所周知的选项是定义扫描区域的选项。扫描区域由指定左上角和右下角的两个点（x / y坐标对）定义。
+  这在图5中示出。请注意，坐标系的原点位于传感器所看到的扫描表面的左上角（通常是用户看到的扫描表面的镜像）。
+  因此，左上角是横坐标和纵坐标值同时最小的角，右下角是横坐标和纵坐标值近似最大的角。
+  如果此坐标系对于给定的设备而言不是自然的，则后端的工作就是执行必要的转换。\end{DoxyPre}
+
+
+
+\begin{DoxyPre}× 扫描区域选项
+                                               → x
+        0 -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/
+        |             scan surface             |
+        |                                      |
+        |                                      |
+        |      top-\/left                        |
+        |          -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/           |
+        |          |  scan area    |           |
+        |          -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/           |
+        |                       bottom-\/right   |
+        |                                      |
+        |                                      |
+   ↓ y  |-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\end{DoxyPre}
+
+
+
+\begin{DoxyPre}  下表列出了定义扫描区域的四个选项的名称：
+  名称    描述
+  tl-\/x  左上角x坐标值
+  tl-\/y  左上y坐标值
+  br-\/x  右下x坐标值
+  br-\/y  右下y坐标值\end{DoxyPre}
+
+
+
+\begin{DoxyPre}  关于这些选项，前端和后端应遵循几个规则：\end{DoxyPre}
+
+
+
+\begin{DoxyPre}      后端必须将像素（SANE\_UNIT\_PIXEL）或毫米（SANE\_UNIT\_MM）的单位附加到这些选项。所有四个选项的单位必须相同。
+      每当有意义时，后端应将范围或单词列表约束附加到这些选项。
+      前端可以通过首先检查选项是否具有关联的范围约束来确定扫描表面的大小。
+      如果存在范围或单词列表约束，则前端可以采用x和y选项范围约束之一的最小值和最大值来确定扫描表面大小。
+      前端必须正确运行，而缺少任何或所有这些选项。\end{DoxyPre}
+
+
+
+\begin{DoxyPre}  网络协议
+  SANE接口的设计，方便图像采集设备的网络接入。特别是，
+  大多数SANE实施都有望支持网络后端（网络客户端）和相应的网络守护程序（网络服务器），
+  该网络后台程序允许通过网络连接访问图像采集设备。网络访问在以下几种情况下很有用：
+       1）为了提供给那些无法进入正规的用户资源受控访问。例如，用户可能想访问没有帐户的主机上的设备。
+          使用网络协议，可以允许某些用户访问扫描仪而无需给予他们对系统的完全访问权限。\end{DoxyPre}
+
+
+
+\begin{DoxyPre}       2) 即使在本地情况下，通过网络守护程序控制访问也会很有用：例如，某些后端可能需要root特权才能访问设备。
+           系统管理员可以将SANE网络守护程序安装为setuid-\/root，而不是将每个前端都安装为setuid-\/root。
+           这使普通用户可以通过SANE守护程序访问特权设备（该守护程序可能比简单的setuid方法支持更细粒度的访问控制机制）。
+           这具有额外的好处，即系统管理员只需要信任SANE守护程序，而不是可能需要访问特权设备的每个前端。
+           网络访问提供了可用的图像采集设备的普及之感。例如，在局域网环境中，这允许用户登录到任何计算机上，
+           并可以方便地访问网络上任何计算机可用的任何资源（受权限限制）。\end{DoxyPre}
+
+
+
+\begin{DoxyPre}       3）对于使用时不需要物理访问的设备（例如摄像机），网络访问允许用户控制和使用这些设备而无需物理接近。
+           实际上，如果将此类设备连接到Internet，则可以从世界上任何地方进行访问。\end{DoxyPre}
+
+
+
+\begin{DoxyPre}  在设计本章中描述的网络协议时，要牢记以下目标：\end{DoxyPre}
+
+
+
+\begin{DoxyPre}      1. 图像传输应该高效（编码开销较低）。
+      2. 在客户端访问选项描述符必须高效（因为这是非常常见的操作）。
+      3. 其他操作（如设置或查询选项的值）对性能的要求不高，因为它们通常需要明确的用户操作。
+      4. 网络协议应该简单易行，可以在任何主机体系结构和任何编程语言上实现。\end{DoxyPre}
+
+
+
+\begin{DoxyPre}  SANE协议可以在任何提供可靠数据传输的传输协议上运行。尽管SANE没有指定特定的传输协议，但是可以预期TCP / IP将成为最常用的协议之一。\end{DoxyPre}
+
+
+
+\begin{DoxyPre}  \end{DoxyPre}
+ 初始化后端 必须先调用此函数，然后才能调用任何其他\+S\+A\+N\+E函数。 如果此功能未先叫或\+S\+A\+N\+E后端的行为都是不确定如果返回的状态代码sane\+\_\+init不同于 S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+G\+O\+O\+D。 后端的版本代码以version\+\_\+code指向的值返回。如果该指针为 N\+U\+L\+L，则不返回任何版本代码。 参数授权是指向后端要求对特定资源进行身份验证时调用的函数的指针，或者如果前端不支持身份验证则为\+N\+U\+L\+L。
+
+后端可以响应以下任何调用来调用授权功能：
+
+sane\+\_\+open，sane\+\_\+control\+\_\+option，sane\+\_\+start
+
+如果后端在没有授权功能的情况下初始化，那么后端本身无法处理的授权请求将自动失败，并且可能会阻止用户访问受保护的资源。 鼓励后端实施不需要用户协助的身份验证方法。例如，在通过登录过程验证用户身份的多用户系统上，后端可以根据资源和用户名自动查找适当的密码。 这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{sane_8h_a1498918f9c7e543a4a757482bcffd7a9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sane_8h_adfeda33e4d60e0d6a4e19634cc9c2bae}\label{sane_8h_adfeda33e4d60e0d6a4e19634cc9c2bae}} 
+\index{sane.h@{sane.h}!sane\_open@{sane\_open}}
+\index{sane\_open@{sane\_open}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{sane\_open()}{sane\_open()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} sane\+\_\+open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sane_8h_a9a47323dab2a36db080f1bcc11585af4}{S\+A\+N\+E\+\_\+\+String\+\_\+\+Const}}}]{devicename,  }\item[{\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+此功能用于建立到特定设备的连接。 要打开的设备的名称在参数name中传递 。如果调用成功完成，则在$\ast$ h中返回设备的句柄。 在特殊情况下，将零长度字符串指定为设备会请求打开第一个可用设备（如果有的话）。 此功能可能因以下状态代码之一而失败。
+
+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+B\+U\+S\+Y： 设备当前正忙（其他人正在使用）。
+
+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+V\+A\+L： 设备名称无效。
+
+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+O\+\_\+\+E\+R\+R\+O\+R： 与设备通信时发生错误。
+
+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+N\+O\+\_\+\+M\+E\+M： 可用的内存量不足。
+
+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+D\+E\+N\+I\+E\+D： 由于身份验证不充分或无效，因此无法访问设备。 这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{sane_8h_adfeda33e4d60e0d6a4e19634cc9c2bae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sane_8h_ae5426bddf1bfe3d30370c9fe2d209cc3}\label{sane_8h_ae5426bddf1bfe3d30370c9fe2d209cc3}} 
+\index{sane.h@{sane.h}!sane\_read@{sane\_read}}
+\index{sane\_read@{sane\_read}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{sane\_read()}{sane\_read()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} sane\+\_\+read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{sane_8h_ae81a9c562538e486d29a0e86537763cf}{S\+A\+N\+E\+\_\+\+Byte}} $\ast$}]{data,  }\item[{\mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}}}]{max\+\_\+length,  }\item[{\mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}} $\ast$}]{length }\end{DoxyParamCaption})}
+
+此功能用于从手柄h代表的设备中读取图像数据。 参数buf是一个指向至少maxlen个字节长的存储区的指针。返回的字节数存储在$\ast$ len中。当返回\+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+G\+O\+O\+D以外的状态时，后端必须将此值设置为零。当调用成功，返回的字节的数目可以在从0到的范围内的任何地方的maxlen字节。 如果在没有可用数据时调用此函数，则可能发生两种情况之一，具体取决于对句柄h生效的I / O模式。 \begin{DoxyVerb}如果设备处于阻止I / O模式（默认模式），则调用将阻止直到至少一个数据字节可用（或直到发生某些错误）为止。
+
+
+如果设备处于非阻塞I / O模式，则调用立即返回，状态为SANE_STATUS_GOOD，并且 * len设置为零。
+\end{DoxyVerb}
+
+
+可以通过调用sane\+\_\+set\+\_\+io\+\_\+mode（）来设置 句柄h的I / O模式。
+
+此功能可能因以下状态代码之一而失败。 \begin{DoxyVerb}SANE_STATUS_CANCELLED：
+通过调用sane_cancel取消了该操作。
+
+SANE_STATUS_EOF：
+当前帧没有更多数据。
+
+SANE_STATUS_JAMMED：
+文档进纸器被卡住。
+
+SANE_STATUS_NO_DOCS：
+文件进纸器中没有文件。
+
+SANE_STATUS_COVER_OPEN：
+扫描仪盖板打开。
+
+SANE_STATUS_IO_ERROR：
+与设备通信时发生错误。
+
+SANE_STATUS_NO_MEM：
+可用的内存量不足。
+
+SANE_STATUS_ACCESS_DENIED：
+由于身份验证不充分或无效，因此无法访问设备。
+\end{DoxyVerb}
+ 这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sane_8h_ae5426bddf1bfe3d30370c9fe2d209cc3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sane_8h_a1ee82e5f0a83ca9c96c17dbbba7cf543}\label{sane_8h_a1ee82e5f0a83ca9c96c17dbbba7cf543}} 
+\index{sane.h@{sane.h}!sane\_set\_io\_mode@{sane\_set\_io\_mode}}
+\index{sane\_set\_io\_mode@{sane\_set\_io\_mode}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{sane\_set\_io\_mode()}{sane\_set\_io\_mode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} sane\+\_\+set\+\_\+io\+\_\+mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}}}]{handle,  }\item[{\mbox{\hyperlink{sane_8h_afb77ef4d4ce97f57e5a9e54393f979ee}{S\+A\+N\+E\+\_\+\+Bool}}}]{non\+\_\+blocking }\end{DoxyParamCaption})}
+
+此功能用于设置手柄h的I / O模式。 I / O模式可以是阻塞或非阻塞。如果参数m为 S\+A\+N\+E\+\_\+\+T\+R\+U\+E，则将模式设置为非阻塞模式，否则将其设置为阻塞模式。仅在对sane\+\_\+start（）的调用完成后才能调用此函数 。 默认情况下，新打开的句柄以阻止模式运行。后端可以选择不支持非阻塞I / O模式。在这种情况下，将返回状态值\+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+E\+D。 所有后端都必须支持阻塞I / O，因此可以确保将参数m设置为\+S\+A\+N\+E\+\_\+\+F\+A\+L\+S\+E调用此函数。
+
+此功能可能因以下状态代码之一而失败： \begin{DoxyVerb}SANE_STATUS_INVAL：
+
+没有图像采集正在等待。
+
+SANE_STATUS_UNSUPPORTED：
+
+后端不支持请求的I / O模式。
+\end{DoxyVerb}
+ \mbox{\Hypertarget{sane_8h_a633f90b105f09ca798ecbf9a77711e7b}\label{sane_8h_a633f90b105f09ca798ecbf9a77711e7b}} 
+\index{sane.h@{sane.h}!sane\_start@{sane\_start}}
+\index{sane\_start@{sane\_start}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{sane\_start()}{sane\_start()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} sane\+\_\+start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}}}]{handle }\end{DoxyParamCaption})}
+
+此功能启动从手柄h表示的设备获取图像。 此功能可能因以下状态代码之一而失败。 \begin{DoxyVerb}SANE_STATUS_CANCELLED：
+通过调用sane_cancel取消了该操作。
+
+SANE_STATUS_DEVICE_BUSY：
+设备忙。该操作应稍后重试。
+
+SANE_STATUS_JAMMED：
+文档进纸器被卡住。
+
+SANE_STATUS_NO_DOCS：
+文件进纸器中没有文件。
+
+SANE_STATUS_COVER_OPEN：
+扫描仪盖板打开。
+
+SANE_STATUS_IO_ERROR：
+与设备通信时发生错误。
+
+SANE_STATUS_NO_MEM：
+可用的内存量不足。
+
+SANE_STATUS_INVAL：
+无法使用当前选项集开始扫描。前端应该重新加载选项描述符，就像 SANE_INFO_RELOAD_OPTIONS已从对sane_control_option（）的调用返回 ，因为设备的功能可能已更改。
+\end{DoxyVerb}
+ 这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sane_8h_a633f90b105f09ca798ecbf9a77711e7b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{sane_8h_a005fc36c746f3b57fcf8108435f0684d}\label{sane_8h_a005fc36c746f3b57fcf8108435f0684d}} 
+\index{sane.h@{sane.h}!sane\_strstatus@{sane\_strstatus}}
+\index{sane\_strstatus@{sane\_strstatus}!sane.h@{sane.h}}
+\doxysubsubsection{\texorpdfstring{sane\_strstatus()}{sane\_strstatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sane_8h_a9a47323dab2a36db080f1bcc11585af4}{S\+A\+N\+E\+\_\+\+String\+\_\+\+Const}} sane\+\_\+strstatus (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}}}]{status }\end{DoxyParamCaption})}
+
+此功能可用于将\+S\+A\+N\+E状态代码转换为可打印的字符串。 返回的字符串是形成完整句子的单行文本，但没有结尾句号（句号）。该函数保证永远不会返回\+N\+U\+L\+L。返回的指针至少在下一次调用此函数之前是有效的。 这是这个函数的调用关系图\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{sane_8h_a005fc36c746f3b57fcf8108435f0684d_icgraph}
+\end{center}
+\end{figure}

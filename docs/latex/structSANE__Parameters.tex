@@ -1,0 +1,84 @@
+\hypertarget{structSANE__Parameters}{}\doxysection{S\+A\+N\+E\+\_\+\+Parameters结构体 参考}
+\label{structSANE__Parameters}\index{SANE\_Parameters@{SANE\_Parameters}}
+
+
+{\ttfamily \#include $<$sane.\+h$>$}
+
+\doxysubsection*{成员变量}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sane_8h_ac5182b25bf83c5e16c4e6e8d998eecac}{S\+A\+N\+E\+\_\+\+Frame}} \mbox{\hyperlink{structSANE__Parameters_a86bae88d477d1803ea37af900e029334}{format}}
+\item 
+\mbox{\hyperlink{sane_8h_afb77ef4d4ce97f57e5a9e54393f979ee}{S\+A\+N\+E\+\_\+\+Bool}} \mbox{\hyperlink{structSANE__Parameters_afca30ddfdced766e29e3ac328f14f737}{last\+\_\+frame}}
+\item 
+\mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}} \mbox{\hyperlink{structSANE__Parameters_aca06c63a777ef5a377fd59455c2e6dcf}{bytes\+\_\+per\+\_\+line}}
+\item 
+\mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}} \mbox{\hyperlink{structSANE__Parameters_a4205f462c4fa84fbf31cc4848ba9046c}{pixels\+\_\+per\+\_\+line}}
+\item 
+\mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}} \mbox{\hyperlink{structSANE__Parameters_acca4d0df97ee91fd081dfff7e7908143}{lines}}
+\item 
+\mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}} \mbox{\hyperlink{structSANE__Parameters_a96226ce43f21e11bffb86e7ddb170d65}{depth}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{详细描述}
+扫描参数类型 成员格式指定要返回的下一帧的格式。\+S\+A\+N\+E\+\_\+\+Frame类型的可能值在表9中进行了描述
+
+帧格式（\+S\+A\+N\+E\+\_\+\+Frame）
+
+符号 码 描述
+
+S\+A\+N\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+G\+R\+AY 0 乐队覆盖了人类的视觉范围。 S\+A\+N\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+R\+GB 1 像素交错的红色/绿色/蓝色带。 S\+A\+N\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+R\+ED 2 红色/绿色/蓝色图像的红色带。 S\+A\+N\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+G\+R\+E\+EN 3 红色/绿色/蓝色图像的绿色带。 S\+A\+N\+E\+\_\+\+F\+R\+A\+M\+E\+\_\+\+B\+L\+UE 4 红色/绿色/蓝色图像的蓝色带。
+
+当且仅当当前正在获取的帧（或者如果当前帧不存在时，下一个将要获取的帧）是多帧图像的最后一个帧（例如，当前帧是当前帧）时， 成员last\+\_\+frame设置为\+S\+A\+N\+E\+\_\+\+T\+R\+U\+E。红色，绿色，蓝色图像的蓝色成分）。
+
+成员行指定框架包含多少条扫描线。如果此值为-\/1，则行数是先验未知的，并且前端应调用sane\+\_\+read（），直到返回状态\+S\+A\+N\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+E\+O\+F为止。 成员bytes\+\_\+per\+\_\+line指定组成一条扫描线的字节数。 成员深度指定每个样本的位数。 成员pixels\+\_\+per\+\_\+line指定组成一条扫描线的像素数。
+
+假设\+B是帧中的通道数，则位深度d（由memer depth给出）和每行像素数n（由此memberpixels\+\_\+per\+\_\+line给出）与c（每行字节数）相关（由成员bytes\+\_\+per\+\_\+line给出 ）如下：
+
+c$>$ = \textbackslash{} left \{ll B $\ast$ \textbackslash{} lfloor（n + 7）/ 8 \textbackslash{} rfloor如果d = 1（1）B $\ast$ n $\ast$ d / 8如果d$>$ 1 \textbackslash{} right。
+
+请注意，每行的字节数可以大于此方程式右侧施加的最小值。前端必须能够正确处理此类\`{}`填充'\textquotesingle{}图像格式。 
+
+\doxysubsection{结构体成员变量说明}
+\mbox{\Hypertarget{structSANE__Parameters_aca06c63a777ef5a377fd59455c2e6dcf}\label{structSANE__Parameters_aca06c63a777ef5a377fd59455c2e6dcf}} 
+\index{SANE\_Parameters@{SANE\_Parameters}!bytes\_per\_line@{bytes\_per\_line}}
+\index{bytes\_per\_line@{bytes\_per\_line}!SANE\_Parameters@{SANE\_Parameters}}
+\doxysubsubsection{\texorpdfstring{bytes\_per\_line}{bytes\_per\_line}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}} S\+A\+N\+E\+\_\+\+Parameters\+::bytes\+\_\+per\+\_\+line}
+
+\mbox{\Hypertarget{structSANE__Parameters_a96226ce43f21e11bffb86e7ddb170d65}\label{structSANE__Parameters_a96226ce43f21e11bffb86e7ddb170d65}} 
+\index{SANE\_Parameters@{SANE\_Parameters}!depth@{depth}}
+\index{depth@{depth}!SANE\_Parameters@{SANE\_Parameters}}
+\doxysubsubsection{\texorpdfstring{depth}{depth}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}} S\+A\+N\+E\+\_\+\+Parameters\+::depth}
+
+\mbox{\Hypertarget{structSANE__Parameters_a86bae88d477d1803ea37af900e029334}\label{structSANE__Parameters_a86bae88d477d1803ea37af900e029334}} 
+\index{SANE\_Parameters@{SANE\_Parameters}!format@{format}}
+\index{format@{format}!SANE\_Parameters@{SANE\_Parameters}}
+\doxysubsubsection{\texorpdfstring{format}{format}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sane_8h_ac5182b25bf83c5e16c4e6e8d998eecac}{S\+A\+N\+E\+\_\+\+Frame}} S\+A\+N\+E\+\_\+\+Parameters\+::format}
+
+\mbox{\Hypertarget{structSANE__Parameters_afca30ddfdced766e29e3ac328f14f737}\label{structSANE__Parameters_afca30ddfdced766e29e3ac328f14f737}} 
+\index{SANE\_Parameters@{SANE\_Parameters}!last\_frame@{last\_frame}}
+\index{last\_frame@{last\_frame}!SANE\_Parameters@{SANE\_Parameters}}
+\doxysubsubsection{\texorpdfstring{last\_frame}{last\_frame}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sane_8h_afb77ef4d4ce97f57e5a9e54393f979ee}{S\+A\+N\+E\+\_\+\+Bool}} S\+A\+N\+E\+\_\+\+Parameters\+::last\+\_\+frame}
+
+\mbox{\Hypertarget{structSANE__Parameters_acca4d0df97ee91fd081dfff7e7908143}\label{structSANE__Parameters_acca4d0df97ee91fd081dfff7e7908143}} 
+\index{SANE\_Parameters@{SANE\_Parameters}!lines@{lines}}
+\index{lines@{lines}!SANE\_Parameters@{SANE\_Parameters}}
+\doxysubsubsection{\texorpdfstring{lines}{lines}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}} S\+A\+N\+E\+\_\+\+Parameters\+::lines}
+
+\mbox{\Hypertarget{structSANE__Parameters_a4205f462c4fa84fbf31cc4848ba9046c}\label{structSANE__Parameters_a4205f462c4fa84fbf31cc4848ba9046c}} 
+\index{SANE\_Parameters@{SANE\_Parameters}!pixels\_per\_line@{pixels\_per\_line}}
+\index{pixels\_per\_line@{pixels\_per\_line}!SANE\_Parameters@{SANE\_Parameters}}
+\doxysubsubsection{\texorpdfstring{pixels\_per\_line}{pixels\_per\_line}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sane_8h_a18b0de32eae6997909ae9ab0117af3d5}{S\+A\+N\+E\+\_\+\+Int}} S\+A\+N\+E\+\_\+\+Parameters\+::pixels\+\_\+per\+\_\+line}
+
+
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+include/sane/\mbox{\hyperlink{sane_8h}{sane.\+h}}\end{DoxyCompactItemize}

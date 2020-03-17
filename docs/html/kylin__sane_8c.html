@@ -1,0 +1,764 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kylin SANE API: kylin_sane.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Kylin SANE API
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">结构体</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">kylin_sane.c 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="kylin__sane_8h_source.html">kylin_sane.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+kylin_sane.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="kylin__sane_8c__incl.png" border="0" usemap="#kylin__sane_8c" alt=""/></div>
+<map name="kylin__sane_8c" id="kylin__sane_8c">
+<area shape="rect" title=" " alt="" coords="303,5,398,32"/>
+<area shape="rect" href="kylin__sane_8h.html" title=" " alt="" coords="303,80,398,107"/>
+<area shape="rect" title=" " alt="" coords="5,155,75,181"/>
+<area shape="rect" title=" " alt="" coords="99,155,160,181"/>
+<area shape="rect" title=" " alt="" coords="185,155,250,181"/>
+<area shape="rect" title=" " alt="" coords="275,155,339,181"/>
+<area shape="rect" title=" " alt="" coords="363,155,429,181"/>
+<area shape="rect" title=" " alt="" coords="453,155,521,181"/>
+<area shape="rect" href="sane_8h.html" title="sane.h API规范文档" alt="" coords="545,155,639,181"/>
+<area shape="rect" href="saneopts_8h.html" title=" " alt="" coords="663,155,782,181"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+结构体</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structImage.html">Image</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:aa97784626b4b4743a0cde0931ad1f903"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kylin__sane_8c.html#aa97784626b4b4743a0cde0931ad1f903">STRIP_HEIGHT</a>&#160;&#160;&#160;256</td></tr>
+<tr class="separator:aa97784626b4b4743a0cde0931ad1f903"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:aa4088e6601580a69ba998f046cda5240"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kylin__sane_8c.html#aa4088e6601580a69ba998f046cda5240">auth_callback</a> (<a class="el" href="sane_8h.html#a9a47323dab2a36db080f1bcc11585af4">SANE_String_Const</a> resource, <a class="el" href="sane_8h.html#a4e81ae30cff3d1b5781b7adbf684aa52">SANE_Char</a> *username, <a class="el" href="sane_8h.html#a4e81ae30cff3d1b5781b7adbf684aa52">SANE_Char</a> *password)</td></tr>
+<tr class="separator:aa4088e6601580a69ba998f046cda5240"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac16114e3818f3e2420b247bc7d9ef6a6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kylin__sane_8c.html#ac16114e3818f3e2420b247bc7d9ef6a6">write_pnm_header</a> (<a class="el" href="sane_8h.html#ac5182b25bf83c5e16c4e6e8d998eecac">SANE_Frame</a> format, int width, int height, int depth, FILE *ofp)</td></tr>
+<tr class="separator:ac16114e3818f3e2420b247bc7d9ef6a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5b41ac303afbd6a47a7e13ce11c5204"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="sane_8h.html#ae5ce8ba47cee42542d1a981be4e4c552">SANE_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kylin__sane_8c.html#ad5b41ac303afbd6a47a7e13ce11c5204">scan_it</a> (FILE *ofp)</td></tr>
+<tr class="separator:ad5b41ac303afbd6a47a7e13ce11c5204"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ed7aa2ebad2fbd9de26ce1c5de31e37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sane_8h.html#ae5ce8ba47cee42542d1a981be4e4c552">SANE_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kylin__sane_8c.html#a1ed7aa2ebad2fbd9de26ce1c5de31e37">do_scan</a> (const char *fileName)</td></tr>
+<tr class="separator:a1ed7aa2ebad2fbd9de26ce1c5de31e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02fd73d861ef2e4aabb38c0c9ff82947"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kylin__sane_8c.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a> ()</td></tr>
+<tr class="separator:a02fd73d861ef2e4aabb38c0c9ff82947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a7c1f5e91c82fa924d2518001ff2a10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sane_8h.html#ae5ce8ba47cee42542d1a981be4e4c552">SANE_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kylin__sane_8c.html#a2a7c1f5e91c82fa924d2518001ff2a10">get_devices</a> (const <a class="el" href="structSANE__Device.html">SANE_Device</a> ***device_list)</td></tr>
+<tr class="separator:a2a7c1f5e91c82fa924d2518001ff2a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c1f490d9734e1b28fdc8954c4502825"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sane_8h.html#ae5ce8ba47cee42542d1a981be4e4c552">SANE_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kylin__sane_8c.html#a0c1f490d9734e1b28fdc8954c4502825">open_device</a> (<a class="el" href="structSANE__Device.html">SANE_Device</a> *<a class="el" href="kylin__sane_8c.html#a9d8d7a78e723d1835dcc546917ff1784">device</a>, <a class="el" href="sane_8h.html#adff38d40c72e14125709194edfd45e1b">SANE_Handle</a> *sane_handle)</td></tr>
+<tr class="separator:a0c1f490d9734e1b28fdc8954c4502825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b640f15a12501131e316d17025fb5ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="sane_8h.html#ae5ce8ba47cee42542d1a981be4e4c552">SANE_Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kylin__sane_8c.html#a2b640f15a12501131e316d17025fb5ac">start_scan</a> (<a class="el" href="sane_8h.html#adff38d40c72e14125709194edfd45e1b">SANE_Handle</a> sane_handle, <a class="el" href="sane_8h.html#a9a47323dab2a36db080f1bcc11585af4">SANE_String_Const</a> fileName)</td></tr>
+<tr class="separator:a2b640f15a12501131e316d17025fb5ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9f4ca655267f3a703c60fd3e876cc63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kylin__sane_8c.html#ad9f4ca655267f3a703c60fd3e876cc63">cancle_scan</a> (<a class="el" href="sane_8h.html#adff38d40c72e14125709194edfd45e1b">SANE_Handle</a> sane_handle)</td></tr>
+<tr class="separator:ad9f4ca655267f3a703c60fd3e876cc63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8550d3bcc382a085ca06334733742949"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kylin__sane_8c.html#a8550d3bcc382a085ca06334733742949">close_device</a> (<a class="el" href="sane_8h.html#adff38d40c72e14125709194edfd45e1b">SANE_Handle</a> sane_handle)</td></tr>
+<tr class="separator:a8550d3bcc382a085ca06334733742949"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82ecc8db19b2f6268059b949233deaeb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kylin__sane_8c.html#a82ecc8db19b2f6268059b949233deaeb">my_sane_exit</a> ()</td></tr>
+<tr class="separator:a82ecc8db19b2f6268059b949233deaeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a9d8d7a78e723d1835dcc546917ff1784"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="sane_8h.html#adff38d40c72e14125709194edfd45e1b">SANE_Handle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kylin__sane_8c.html#a9d8d7a78e723d1835dcc546917ff1784">device</a> = NULL</td></tr>
+<tr class="separator:a9d8d7a78e723d1835dcc546917ff1784"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b2caeb4b6f130be43e5a2f0267dd453"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kylin__sane_8c.html#a0b2caeb4b6f130be43e5a2f0267dd453">verbose</a></td></tr>
+<tr class="separator:a0b2caeb4b6f130be43e5a2f0267dd453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fb4072ccd44ea481eecfa5e74818db4"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kylin__sane_8c.html#a4fb4072ccd44ea481eecfa5e74818db4">progress</a> = 0</td></tr>
+<tr class="separator:a4fb4072ccd44ea481eecfa5e74818db4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae28480f9b8518bc7e6d0e3462f334a41"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="sane_8h.html#ae81a9c562538e486d29a0e86537763cf">SANE_Byte</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kylin__sane_8c.html#ae28480f9b8518bc7e6d0e3462f334a41">buffer</a></td></tr>
+<tr class="separator:ae28480f9b8518bc7e6d0e3462f334a41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a799a743b3abd553a37fc01ad3097df08"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kylin__sane_8c.html#a799a743b3abd553a37fc01ad3097df08">buffer_size</a></td></tr>
+<tr class="separator:a799a743b3abd553a37fc01ad3097df08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="aa97784626b4b4743a0cde0931ad1f903"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa97784626b4b4743a0cde0931ad1f903">&#9670;&nbsp;</a></span>STRIP_HEIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STRIP_HEIGHT&#160;&#160;&#160;256</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="aa4088e6601580a69ba998f046cda5240"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4088e6601580a69ba998f046cda5240">&#9670;&nbsp;</a></span>auth_callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void auth_callback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sane_8h.html#a9a47323dab2a36db080f1bcc11585af4">SANE_String_Const</a>&#160;</td>
+          <td class="paramname"><em>resource</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sane_8h.html#a4e81ae30cff3d1b5781b7adbf684aa52">SANE_Char</a> *&#160;</td>
+          <td class="paramname"><em>username</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sane_8h.html#a4e81ae30cff3d1b5781b7adbf684aa52">SANE_Char</a> *&#160;</td>
+          <td class="paramname"><em>password</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="kylin__sane_8c_aa4088e6601580a69ba998f046cda5240_icgraph.png" border="0" usemap="#kylin__sane_8c_aa4088e6601580a69ba998f046cda5240_icgraph" alt=""/></div>
+<map name="kylin__sane_8c_aa4088e6601580a69ba998f046cda5240_icgraph" id="kylin__sane_8c_aa4088e6601580a69ba998f046cda5240_icgraph">
+<area shape="rect" title=" " alt="" coords="191,5,293,32"/>
+<area shape="rect" href="kylin__sane_8c.html#a02fd73d861ef2e4aabb38c0c9ff82947" title=" " alt="" coords="104,5,143,32"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad9f4ca655267f3a703c60fd3e876cc63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9f4ca655267f3a703c60fd3e876cc63">&#9670;&nbsp;</a></span>cancle_scan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cancle_scan </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sane_8h.html#adff38d40c72e14125709194edfd45e1b">SANE_Handle</a>&#160;</td>
+          <td class="paramname"><em>sane_handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="kylin__sane_8c_ad9f4ca655267f3a703c60fd3e876cc63_cgraph.png" border="0" usemap="#kylin__sane_8c_ad9f4ca655267f3a703c60fd3e876cc63_cgraph" alt=""/></div>
+<map name="kylin__sane_8c_ad9f4ca655267f3a703c60fd3e876cc63_cgraph" id="kylin__sane_8c_ad9f4ca655267f3a703c60fd3e876cc63_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,100,32"/>
+<area shape="rect" href="sane_8h.html#a8facc0281b730ce19e17971e5c042de1" title=" " alt="" coords="148,5,243,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="kylin__sane_8c_ad9f4ca655267f3a703c60fd3e876cc63_icgraph.png" border="0" usemap="#kylin__sane_8c_ad9f4ca655267f3a703c60fd3e876cc63_icgraph" alt=""/></div>
+<map name="kylin__sane_8c_ad9f4ca655267f3a703c60fd3e876cc63_icgraph" id="kylin__sane_8c_ad9f4ca655267f3a703c60fd3e876cc63_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,199,32"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8550d3bcc382a085ca06334733742949"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8550d3bcc382a085ca06334733742949">&#9670;&nbsp;</a></span>close_device()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void close_device </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sane_8h.html#adff38d40c72e14125709194edfd45e1b">SANE_Handle</a>&#160;</td>
+          <td class="paramname"><em>sane_handle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="kylin__sane_8c_a8550d3bcc382a085ca06334733742949_cgraph.png" border="0" usemap="#kylin__sane_8c_a8550d3bcc382a085ca06334733742949_cgraph" alt=""/></div>
+<map name="kylin__sane_8c_a8550d3bcc382a085ca06334733742949_cgraph" id="kylin__sane_8c_a8550d3bcc382a085ca06334733742949_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,104,32"/>
+<area shape="rect" href="sane_8h.html#a86bc6c8bf32a9e1ab2dc681dcf8489f1" title=" " alt="" coords="152,5,240,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="kylin__sane_8c_a8550d3bcc382a085ca06334733742949_icgraph.png" border="0" usemap="#kylin__sane_8c_a8550d3bcc382a085ca06334733742949_icgraph" alt=""/></div>
+<map name="kylin__sane_8c_a8550d3bcc382a085ca06334733742949_icgraph" id="kylin__sane_8c_a8550d3bcc382a085ca06334733742949_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,203,32"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1ed7aa2ebad2fbd9de26ce1c5de31e37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ed7aa2ebad2fbd9de26ce1c5de31e37">&#9670;&nbsp;</a></span>do_scan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sane_8h.html#ae5ce8ba47cee42542d1a981be4e4c552">SANE_Status</a> do_scan </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="kylin__sane_8c_a1ed7aa2ebad2fbd9de26ce1c5de31e37_cgraph.png" border="0" usemap="#kylin__sane_8c_a1ed7aa2ebad2fbd9de26ce1c5de31e37_cgraph" alt=""/></div>
+<map name="kylin__sane_8c_a1ed7aa2ebad2fbd9de26ce1c5de31e37_cgraph" id="kylin__sane_8c_a1ed7aa2ebad2fbd9de26ce1c5de31e37_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,76,83"/>
+<area shape="rect" href="sane_8h.html#a8facc0281b730ce19e17971e5c042de1" title=" " alt="" coords="124,5,219,32"/>
+<area shape="rect" href="sane_8h.html#a633f90b105f09ca798ecbf9a77711e7b" title=" " alt="" coords="299,56,381,83"/>
+<area shape="rect" href="kylin__sane_8c.html#ad5b41ac303afbd6a47a7e13ce11c5204" title=" " alt="" coords="139,107,203,133"/>
+<area shape="rect" href="sane_8h.html#a28ba54307cb61e48fc1a361be7ad2c6e" title=" " alt="" coords="267,107,413,133"/>
+<area shape="rect" href="sane_8h.html#ae5426bddf1bfe3d30370c9fe2d209cc3" title=" " alt="" coords="299,157,381,184"/>
+<area shape="rect" href="kylin__sane_8c.html#ac16114e3818f3e2420b247bc7d9ef6a6" title=" " alt="" coords="276,208,404,235"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="kylin__sane_8c_a1ed7aa2ebad2fbd9de26ce1c5de31e37_icgraph.png" border="0" usemap="#kylin__sane_8c_a1ed7aa2ebad2fbd9de26ce1c5de31e37_icgraph" alt=""/></div>
+<map name="kylin__sane_8c_a1ed7aa2ebad2fbd9de26ce1c5de31e37_icgraph" id="kylin__sane_8c_a1ed7aa2ebad2fbd9de26ce1c5de31e37_icgraph">
+<area shape="rect" title=" " alt="" coords="235,5,305,32"/>
+<area shape="rect" href="kylin__sane_8c.html#a2b640f15a12501131e316d17025fb5ac" title=" " alt="" coords="104,5,187,32"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2a7c1f5e91c82fa924d2518001ff2a10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a7c1f5e91c82fa924d2518001ff2a10">&#9670;&nbsp;</a></span>get_devices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sane_8h.html#ae5ce8ba47cee42542d1a981be4e4c552">SANE_Status</a> get_devices </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structSANE__Device.html">SANE_Device</a> ***&#160;</td>
+          <td class="paramname"><em>device_list</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="kylin__sane_8c_a2a7c1f5e91c82fa924d2518001ff2a10_cgraph.png" border="0" usemap="#kylin__sane_8c_a2a7c1f5e91c82fa924d2518001ff2a10_cgraph" alt=""/></div>
+<map name="kylin__sane_8c_a2a7c1f5e91c82fa924d2518001ff2a10_cgraph" id="kylin__sane_8c_a2a7c1f5e91c82fa924d2518001ff2a10_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,97,57"/>
+<area shape="rect" href="sane_8h.html#a86a720cead710936ba84b6de59b16623" title=" " alt="" coords="145,5,272,32"/>
+<area shape="rect" href="sane_8h.html#a005fc36c746f3b57fcf8108435f0684d" title=" " alt="" coords="155,56,263,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="kylin__sane_8c_a2a7c1f5e91c82fa924d2518001ff2a10_icgraph.png" border="0" usemap="#kylin__sane_8c_a2a7c1f5e91c82fa924d2518001ff2a10_icgraph" alt=""/></div>
+<map name="kylin__sane_8c_a2a7c1f5e91c82fa924d2518001ff2a10_icgraph" id="kylin__sane_8c_a2a7c1f5e91c82fa924d2518001ff2a10_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,196,32"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a02fd73d861ef2e4aabb38c0c9ff82947"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02fd73d861ef2e4aabb38c0c9ff82947">&#9670;&nbsp;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialize SANE </p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="kylin__sane_8c_a02fd73d861ef2e4aabb38c0c9ff82947_cgraph.png" border="0" usemap="#kylin__sane_8c_a02fd73d861ef2e4aabb38c0c9ff82947_cgraph" alt=""/></div>
+<map name="kylin__sane_8c_a02fd73d861ef2e4aabb38c0c9ff82947_cgraph" id="kylin__sane_8c_a02fd73d861ef2e4aabb38c0c9ff82947_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,44,57"/>
+<area shape="rect" href="kylin__sane_8c.html#aa4088e6601580a69ba998f046cda5240" title=" " alt="" coords="92,5,195,32"/>
+<area shape="rect" href="sane_8h.html#a1498918f9c7e543a4a757482bcffd7a9" title=" " alt="" coords="106,56,181,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="kylin__sane_8c_a02fd73d861ef2e4aabb38c0c9ff82947_icgraph.png" border="0" usemap="#kylin__sane_8c_a02fd73d861ef2e4aabb38c0c9ff82947_icgraph" alt=""/></div>
+<map name="kylin__sane_8c_a02fd73d861ef2e4aabb38c0c9ff82947_icgraph" id="kylin__sane_8c_a02fd73d861ef2e4aabb38c0c9ff82947_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,143,32"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a82ecc8db19b2f6268059b949233deaeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82ecc8db19b2f6268059b949233deaeb">&#9670;&nbsp;</a></span>my_sane_exit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void my_sane_exit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="kylin__sane_8c_a82ecc8db19b2f6268059b949233deaeb_cgraph.png" border="0" usemap="#kylin__sane_8c_a82ecc8db19b2f6268059b949233deaeb_cgraph" alt=""/></div>
+<map name="kylin__sane_8c_a82ecc8db19b2f6268059b949233deaeb_cgraph" id="kylin__sane_8c_a82ecc8db19b2f6268059b949233deaeb_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,108,32"/>
+<area shape="rect" href="sane_8h.html#adee134f0b60b099d3ddb144ec7266c6a" title="退出后端" alt="" coords="156,5,235,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="kylin__sane_8c_a82ecc8db19b2f6268059b949233deaeb_icgraph.png" border="0" usemap="#kylin__sane_8c_a82ecc8db19b2f6268059b949233deaeb_icgraph" alt=""/></div>
+<map name="kylin__sane_8c_a82ecc8db19b2f6268059b949233deaeb_icgraph" id="kylin__sane_8c_a82ecc8db19b2f6268059b949233deaeb_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,207,32"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0c1f490d9734e1b28fdc8954c4502825"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c1f490d9734e1b28fdc8954c4502825">&#9670;&nbsp;</a></span>open_device()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sane_8h.html#ae5ce8ba47cee42542d1a981be4e4c552">SANE_Status</a> open_device </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structSANE__Device.html">SANE_Device</a> *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sane_8h.html#adff38d40c72e14125709194edfd45e1b">SANE_Handle</a> *&#160;</td>
+          <td class="paramname"><em>sane_handle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="kylin__sane_8c_a0c1f490d9734e1b28fdc8954c4502825_cgraph.png" border="0" usemap="#kylin__sane_8c_a0c1f490d9734e1b28fdc8954c4502825_cgraph" alt=""/></div>
+<map name="kylin__sane_8c_a0c1f490d9734e1b28fdc8954c4502825_cgraph" id="kylin__sane_8c_a0c1f490d9734e1b28fdc8954c4502825_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,100,57"/>
+<area shape="rect" href="sane_8h.html#adfeda33e4d60e0d6a4e19634cc9c2bae" title=" " alt="" coords="159,5,245,32"/>
+<area shape="rect" href="sane_8h.html#a005fc36c746f3b57fcf8108435f0684d" title=" " alt="" coords="148,56,256,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="kylin__sane_8c_a0c1f490d9734e1b28fdc8954c4502825_icgraph.png" border="0" usemap="#kylin__sane_8c_a0c1f490d9734e1b28fdc8954c4502825_icgraph" alt=""/></div>
+<map name="kylin__sane_8c_a0c1f490d9734e1b28fdc8954c4502825_icgraph" id="kylin__sane_8c_a0c1f490d9734e1b28fdc8954c4502825_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,199,32"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad5b41ac303afbd6a47a7e13ce11c5204"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5b41ac303afbd6a47a7e13ce11c5204">&#9670;&nbsp;</a></span>scan_it()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="sane_8h.html#ae5ce8ba47cee42542d1a981be4e4c552">SANE_Status</a> scan_it </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>ofp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="kylin__sane_8c_ad5b41ac303afbd6a47a7e13ce11c5204_cgraph.png" border="0" usemap="#kylin__sane_8c_ad5b41ac303afbd6a47a7e13ce11c5204_cgraph" alt=""/></div>
+<map name="kylin__sane_8c_ad5b41ac303afbd6a47a7e13ce11c5204_cgraph" id="kylin__sane_8c_ad5b41ac303afbd6a47a7e13ce11c5204_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,69,108"/>
+<area shape="rect" href="sane_8h.html#a28ba54307cb61e48fc1a361be7ad2c6e" title=" " alt="" coords="117,5,264,32"/>
+<area shape="rect" href="sane_8h.html#ae5426bddf1bfe3d30370c9fe2d209cc3" title=" " alt="" coords="149,56,232,83"/>
+<area shape="rect" href="sane_8h.html#a633f90b105f09ca798ecbf9a77711e7b" title=" " alt="" coords="149,107,232,133"/>
+<area shape="rect" href="kylin__sane_8c.html#ac16114e3818f3e2420b247bc7d9ef6a6" title=" " alt="" coords="127,157,255,184"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="kylin__sane_8c_ad5b41ac303afbd6a47a7e13ce11c5204_icgraph.png" border="0" usemap="#kylin__sane_8c_ad5b41ac303afbd6a47a7e13ce11c5204_icgraph" alt=""/></div>
+<map name="kylin__sane_8c_ad5b41ac303afbd6a47a7e13ce11c5204_icgraph" id="kylin__sane_8c_ad5b41ac303afbd6a47a7e13ce11c5204_icgraph">
+<area shape="rect" title=" " alt="" coords="353,5,417,32"/>
+<area shape="rect" href="kylin__sane_8c.html#a1ed7aa2ebad2fbd9de26ce1c5de31e37" title=" " alt="" coords="235,5,305,32"/>
+<area shape="rect" href="kylin__sane_8c.html#a2b640f15a12501131e316d17025fb5ac" title=" " alt="" coords="104,5,187,32"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2b640f15a12501131e316d17025fb5ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b640f15a12501131e316d17025fb5ac">&#9670;&nbsp;</a></span>start_scan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sane_8h.html#ae5ce8ba47cee42542d1a981be4e4c552">SANE_Status</a> start_scan </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sane_8h.html#adff38d40c72e14125709194edfd45e1b">SANE_Handle</a>&#160;</td>
+          <td class="paramname"><em>sane_handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="sane_8h.html#a9a47323dab2a36db080f1bcc11585af4">SANE_String_Const</a>&#160;</td>
+          <td class="paramname"><em>fileName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="kylin__sane_8c_a2b640f15a12501131e316d17025fb5ac_cgraph.png" border="0" usemap="#kylin__sane_8c_a2b640f15a12501131e316d17025fb5ac_cgraph" alt=""/></div>
+<map name="kylin__sane_8c_a2b640f15a12501131e316d17025fb5ac_cgraph" id="kylin__sane_8c_a2b640f15a12501131e316d17025fb5ac_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,88,83"/>
+<area shape="rect" href="kylin__sane_8c.html#a1ed7aa2ebad2fbd9de26ce1c5de31e37" title=" " alt="" coords="136,56,207,83"/>
+<area shape="rect" href="sane_8h.html#a8facc0281b730ce19e17971e5c042de1" title=" " alt="" coords="255,5,349,32"/>
+<area shape="rect" href="sane_8h.html#a633f90b105f09ca798ecbf9a77711e7b" title=" " alt="" coords="429,56,512,83"/>
+<area shape="rect" href="kylin__sane_8c.html#ad5b41ac303afbd6a47a7e13ce11c5204" title=" " alt="" coords="270,107,334,133"/>
+<area shape="rect" href="sane_8h.html#a28ba54307cb61e48fc1a361be7ad2c6e" title=" " alt="" coords="397,107,544,133"/>
+<area shape="rect" href="sane_8h.html#ae5426bddf1bfe3d30370c9fe2d209cc3" title=" " alt="" coords="429,157,512,184"/>
+<area shape="rect" href="kylin__sane_8c.html#ac16114e3818f3e2420b247bc7d9ef6a6" title=" " alt="" coords="407,208,535,235"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="kylin__sane_8c_a2b640f15a12501131e316d17025fb5ac_icgraph.png" border="0" usemap="#kylin__sane_8c_a2b640f15a12501131e316d17025fb5ac_icgraph" alt=""/></div>
+<map name="kylin__sane_8c_a2b640f15a12501131e316d17025fb5ac_icgraph" id="kylin__sane_8c_a2b640f15a12501131e316d17025fb5ac_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,187,32"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac16114e3818f3e2420b247bc7d9ef6a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac16114e3818f3e2420b247bc7d9ef6a6">&#9670;&nbsp;</a></span>write_pnm_header()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void write_pnm_header </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="sane_8h.html#ac5182b25bf83c5e16c4e6e8d998eecac">SANE_Frame</a>&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>depth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>ofp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="kylin__sane_8c_ac16114e3818f3e2420b247bc7d9ef6a6_icgraph.png" border="0" usemap="#kylin__sane_8c_ac16114e3818f3e2420b247bc7d9ef6a6_icgraph" alt=""/></div>
+<map name="kylin__sane_8c_ac16114e3818f3e2420b247bc7d9ef6a6_icgraph" id="kylin__sane_8c_ac16114e3818f3e2420b247bc7d9ef6a6_icgraph">
+<area shape="rect" title=" " alt="" coords="465,5,593,32"/>
+<area shape="rect" href="kylin__sane_8c.html#ad5b41ac303afbd6a47a7e13ce11c5204" title=" " alt="" coords="353,5,417,32"/>
+<area shape="rect" href="kylin__sane_8c.html#a1ed7aa2ebad2fbd9de26ce1c5de31e37" title=" " alt="" coords="235,5,305,32"/>
+<area shape="rect" href="kylin__sane_8c.html#a2b640f15a12501131e316d17025fb5ac" title=" " alt="" coords="104,5,187,32"/>
+<area shape="rect" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="ae28480f9b8518bc7e6d0e3462f334a41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae28480f9b8518bc7e6d0e3462f334a41">&#9670;&nbsp;</a></span>buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sane_8h.html#ae81a9c562538e486d29a0e86537763cf">SANE_Byte</a>* buffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a799a743b3abd553a37fc01ad3097df08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a799a743b3abd553a37fc01ad3097df08">&#9670;&nbsp;</a></span>buffer_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t buffer_size</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9d8d7a78e723d1835dcc546917ff1784"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d8d7a78e723d1835dcc546917ff1784">&#9670;&nbsp;</a></span>device</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="sane_8h.html#adff38d40c72e14125709194edfd45e1b">SANE_Handle</a> device = NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4fb4072ccd44ea481eecfa5e74818db4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fb4072ccd44ea481eecfa5e74818db4">&#9670;&nbsp;</a></span>progress</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int progress = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0b2caeb4b6f130be43e5a2f0267dd453"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b2caeb4b6f130be43e5a2f0267dd453">&#9670;&nbsp;</a></span>verbose</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int verbose</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

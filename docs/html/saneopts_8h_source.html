@@ -1,0 +1,541 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kylin SANE API: include/sane/saneopts.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Kylin SANE API
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_6b4ca2ef1a87f4ee739eb129c4c8253a.html">sane</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">saneopts.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="saneopts_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* sane - Scanner Access Now Easy.</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">   Copyright (C) 1996, 1997 David Mosberger-Tang and Andreas Beck</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">   This file is part of the SANE package.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">   SANE is free software; you can redistribute it and/or modify it under</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">   the terms of the GNU General Public License as published by the Free</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">   Software Foundation; either version 2 of the License, or (at your</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">   option) any later version.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">   SANE is distributed in the hope that it will be useful, but WITHOUT</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">   ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">   FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">   for more details.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">   You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">   along with sane; see the file COPYING.  If not, write to the Free</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">   Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">   As a special exception, the authors of SANE give permission for</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">   additional uses of the libraries contained in this release of SANE.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">   The exception is that, if you link a SANE library with other files</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">   to produce an executable, this does not by itself cause the</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">   resulting executable to be covered by the GNU General Public</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">   License.  Your use of that executable is in no way restricted on</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">   account of linking the SANE library code into it.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">   This exception does not, however, invalidate any other reasons why</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">   the executable file might be covered by the GNU General Public</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">   License.</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">   If you submit changes to SANE to the maintainers to be included in</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">   a subsequent release, you agree by submitting the changes that</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">   those changes may be distributed with this exception intact.</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">   If you write modifications of your own for SANE, it is your choice</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">   whether to permit this exception to apply to your modifications.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">   If you do not wish that, delete this exception notice.</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">   This file declares common option names, titles, and descriptions.  A</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">   backend is not limited to these options but for the sake of</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">   consistency it&#39;s better to use options declared here when appropriate.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">/* This file defines several option NAMEs, TITLEs and DESCs</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">   that are (or should be) used by several backends.</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">   All well known options should be listed here. But this does</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">   not mean that all options that are listed here are well known options.</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">   To find out if an option is a well known option and how well known</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">   options have to be defined please take a look at the sane standard!!!</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#ifndef saneopts_h</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#define saneopts_h</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#ifndef SANE_I18N</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a3c672285cf8d02e3bbebb355c48c3ff9">   57</a></span>&#160;<span class="preprocessor">#define SANE_I18N(text) text</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">/* This _must_ be the first option (index 0): */</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a2e76928a3e471db72cf87ff3d10691cc">   61</a></span>&#160;<span class="preprocessor">#define SANE_NAME_NUM_OPTIONS       &quot;&quot;  </span><span class="comment">/* never settable */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">/* The common option groups */</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a170bf50e0ff8864a3c625c7fa719e9fb">   64</a></span>&#160;<span class="preprocessor">#define SANE_NAME_STANDARD          &quot;standard&quot;</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a58cad59d9db5f4a66b4c2be55b8321c6">   65</a></span>&#160;<span class="preprocessor">#define SANE_NAME_GEOMETRY          &quot;geometry&quot;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a03673b3fbb5ae93e3400e88a996b5eb0">   66</a></span>&#160;<span class="preprocessor">#define SANE_NAME_ENHANCEMENT       &quot;enhancement&quot;</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a6d8b1b1b31e22bf5fc14f19fe29042e4">   67</a></span>&#160;<span class="preprocessor">#define SANE_NAME_ADVANCED          &quot;advanced&quot;</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="saneopts_8h.html#aee7df0170ca5722585fa3a6f3d65daca">   68</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SENSORS           &quot;sensors&quot;</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a089adf9ae5f36a7d01ee5fab704a2b8b">   70</a></span>&#160;<span class="preprocessor">#define SANE_NAME_PREVIEW       &quot;preview&quot;</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a1f78cc2a74fcd1a55c272efd1811ec67">   71</a></span>&#160;<span class="preprocessor">#define SANE_NAME_GRAY_PREVIEW      &quot;preview-in-gray&quot;</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a6b7f0f38abbc06183e1b3b6566e1ceb8">   72</a></span>&#160;<span class="preprocessor">#define SANE_NAME_BIT_DEPTH     &quot;depth&quot;</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a06f72a185a3789fa0acd73a2fca302c1">   73</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SCAN_MODE     &quot;mode&quot;</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a3a52567d2e4996caf0072d61fbdb2816">   74</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SCAN_SPEED        &quot;speed&quot;</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a3dbe6c4d1c53b66787b6b57aa4439aed">   75</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SCAN_SOURCE       &quot;source&quot;</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a191cd530d63d8e3b7066c95c87e6a45f">   76</a></span>&#160;<span class="preprocessor">#define SANE_NAME_BACKTRACK     &quot;backtrack&quot;</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">/* Most user-interfaces will let the user specify the scan area as the</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">   top-left corner and the width/height of the scan area.  The reason</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">   the backend interface uses the top-left/bottom-right corner is so</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">   that the scan area values can be properly constraint independent of</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">   any other option value.  */</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a0db8d0a2ab36b8278de6ed461b7083ef">   82</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SCAN_TL_X     &quot;tl-x&quot;</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="saneopts_8h.html#aab8aa549c530dcf400b44257b1314bb0">   83</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SCAN_TL_Y     &quot;tl-y&quot;</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a4f82ccb8b00c1da6f2d136498f94bb3e">   84</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SCAN_BR_X     &quot;br-x&quot;</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ad83c04381585f3a0106356ecbc6e9b73">   85</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SCAN_BR_Y     &quot;br-y&quot;</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ab8981b8aad7ae181f25e2774a6bf2182">   86</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SCAN_RESOLUTION   &quot;resolution&quot;</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="saneopts_8h.html#aaef35435fc2347918d4c20e9e458414c">   87</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SCAN_X_RESOLUTION &quot;x-resolution&quot;</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a32eb4f9e26c1a5e644466972234a0f50">   88</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SCAN_Y_RESOLUTION &quot;y-resolution&quot;</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a930b4aa4c780b9391bc1cc930fc6f381">   89</a></span>&#160;<span class="preprocessor">#define SANE_NAME_PAGE_WIDTH        &quot;page-width&quot;</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="saneopts_8h.html#aa83749b2cb7307380a0fcb85259fd06e">   90</a></span>&#160;<span class="preprocessor">#define SANE_NAME_PAGE_HEIGHT       &quot;page-height&quot;</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a3632f88d807685ecd482e86b003f0886">   91</a></span>&#160;<span class="preprocessor">#define SANE_NAME_CUSTOM_GAMMA      &quot;custom-gamma&quot;</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a8285126137f440dc3e67abf4b924839a">   92</a></span>&#160;<span class="preprocessor">#define SANE_NAME_GAMMA_VECTOR      &quot;gamma-table&quot;</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a1d408155d07fcdcbf1b4962f991bb3b6">   93</a></span>&#160;<span class="preprocessor">#define SANE_NAME_GAMMA_VECTOR_R    &quot;red-gamma-table&quot;</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a3e8dd0c2256de881756350179735ad4b">   94</a></span>&#160;<span class="preprocessor">#define SANE_NAME_GAMMA_VECTOR_G    &quot;green-gamma-table&quot;</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a6d4a62c3214cc96bc57cc73bc2c05776">   95</a></span>&#160;<span class="preprocessor">#define SANE_NAME_GAMMA_VECTOR_B    &quot;blue-gamma-table&quot;</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a14908db5bb5a8a133aa4e6854b23e7c9">   96</a></span>&#160;<span class="preprocessor">#define SANE_NAME_BRIGHTNESS        &quot;brightness&quot;</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ad34f2770f025e44a0293a52c8b57b0e3">   97</a></span>&#160;<span class="preprocessor">#define SANE_NAME_CONTRAST      &quot;contrast&quot;</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a52543625b1a6d0f9bcab15e13d7f0778">   98</a></span>&#160;<span class="preprocessor">#define SANE_NAME_GRAIN_SIZE        &quot;grain&quot;</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a7a407dfc0c6a49e7b2fd236da8a8cfc9">   99</a></span>&#160;<span class="preprocessor">#define SANE_NAME_HALFTONE      &quot;halftoning&quot;</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ad339b801b9179f3e3c269c803fc9f539">  100</a></span>&#160;<span class="preprocessor">#define SANE_NAME_BLACK_LEVEL           &quot;black-level&quot;</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ae4b7e1311abf1277f1558bfbc53937b5">  101</a></span>&#160;<span class="preprocessor">#define SANE_NAME_WHITE_LEVEL           &quot;white-level&quot;</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ac26f20ae2027af9f54e432ae30236f03">  102</a></span>&#160;<span class="preprocessor">#define SANE_NAME_WHITE_LEVEL_R         &quot;white-level-r&quot;</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a2df3119db642188604dc62ddb328ee7e">  103</a></span>&#160;<span class="preprocessor">#define SANE_NAME_WHITE_LEVEL_G         &quot;white-level-g&quot;</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a9aca09b66357926e765bd22540b8a932">  104</a></span>&#160;<span class="preprocessor">#define SANE_NAME_WHITE_LEVEL_B         &quot;white-level-b&quot;</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a8bfa029e31ff470f2b1edf237416fe8e">  105</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SHADOW        &quot;shadow&quot;</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="saneopts_8h.html#af81822f8d38c4437c547aa0c4d83a7d0">  106</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SHADOW_R      &quot;shadow-r&quot;</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a8d7fd2bebdef35fd93a9d7e722e6cd55">  107</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SHADOW_G      &quot;shadow-g&quot;</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a34303ac138ba8c0d944419b2113d9c05">  108</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SHADOW_B      &quot;shadow-b&quot;</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a90d8496688dba69325e57768b2c57248">  109</a></span>&#160;<span class="preprocessor">#define SANE_NAME_HIGHLIGHT     &quot;highlight&quot;</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ab17479a333539bd5d13342c61800da0a">  110</a></span>&#160;<span class="preprocessor">#define SANE_NAME_HIGHLIGHT_R       &quot;highlight-r&quot;</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a1353d63d14ba59f95b71b2af05e72588">  111</a></span>&#160;<span class="preprocessor">#define SANE_NAME_HIGHLIGHT_G       &quot;highlight-g&quot;</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="saneopts_8h.html#abac70d49b0fb81d88715af1e291a4215">  112</a></span>&#160;<span class="preprocessor">#define SANE_NAME_HIGHLIGHT_B       &quot;highlight-b&quot;</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a153a5c04dc2d2dc9a5180d6cfd749ee6">  113</a></span>&#160;<span class="preprocessor">#define SANE_NAME_HUE           &quot;hue&quot;</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ab319381e6ad103ca2e78f027f9a75d2b">  114</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SATURATION        &quot;saturation&quot;</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ab848b4809bfe93680eb8bdf64f27d673">  115</a></span>&#160;<span class="preprocessor">#define SANE_NAME_FILE          &quot;filename&quot;</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a066935c3bfc4e10009331fe1858f86a1">  116</a></span>&#160;<span class="preprocessor">#define SANE_NAME_HALFTONE_DIMENSION    &quot;halftone-size&quot;</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ac01b223fc6196f8380a5a50937865215">  117</a></span>&#160;<span class="preprocessor">#define SANE_NAME_HALFTONE_PATTERN  &quot;halftone-pattern&quot;</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="saneopts_8h.html#af21cc007f3eb47a973dcb5cafc4bfe54">  118</a></span>&#160;<span class="preprocessor">#define SANE_NAME_RESOLUTION_BIND   &quot;resolution-bind&quot;</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ade732ce6e5d9f6cb43b070669dbb726e">  119</a></span>&#160;<span class="preprocessor">#define SANE_NAME_NEGATIVE      &quot;negative&quot;</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="saneopts_8h.html#aa63c4bce1b3247ca85abdb071d1ca36a">  120</a></span>&#160;<span class="preprocessor">#define SANE_NAME_QUALITY_CAL       &quot;quality-cal&quot;</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="saneopts_8h.html#aac194172a2ab1f5dd27dc28daa8adbc7">  121</a></span>&#160;<span class="preprocessor">#define SANE_NAME_DOR           &quot;double-res&quot;</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a391513386a9cf9fc037d8b495657cab9">  122</a></span>&#160;<span class="preprocessor">#define SANE_NAME_RGB_BIND      &quot;rgb-bind&quot;</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ae2d4169b1744c720e9485e6e8967b979">  123</a></span>&#160;<span class="preprocessor">#define SANE_NAME_THRESHOLD     &quot;threshold&quot;</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a20647d750c3d91837c93c7e9fd323ff2">  124</a></span>&#160;<span class="preprocessor">#define SANE_NAME_ANALOG_GAMMA      &quot;analog-gamma&quot;</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="saneopts_8h.html#aa1158f5bcc6fecff82a1c5c1c419e5f6">  125</a></span>&#160;<span class="preprocessor">#define SANE_NAME_ANALOG_GAMMA_R    &quot;analog-gamma-r&quot;</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ab9a89c94563a2fa4bc837cbcba89070d">  126</a></span>&#160;<span class="preprocessor">#define SANE_NAME_ANALOG_GAMMA_G    &quot;analog-gamma-g&quot;</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a9ad2e2d4b355e9a65b25f16eb4f3bc0a">  127</a></span>&#160;<span class="preprocessor">#define SANE_NAME_ANALOG_GAMMA_B    &quot;analog-gamma-b&quot;</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ae512809d2abf9db5d3e195aede0b453c">  128</a></span>&#160;<span class="preprocessor">#define SANE_NAME_ANALOG_GAMMA_BIND &quot;analog-gamma-bind&quot;</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a822f39f994433f0c2566658948208f9d">  129</a></span>&#160;<span class="preprocessor">#define SANE_NAME_WARMUP        &quot;warmup&quot;</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a06119ff6952d5e8ad3227fcc27ee57f2">  130</a></span>&#160;<span class="preprocessor">#define SANE_NAME_CAL_EXPOS_TIME    &quot;cal-exposure-time&quot;</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ad3dbb14c0f295baf309d826c4c8f752a">  131</a></span>&#160;<span class="preprocessor">#define SANE_NAME_CAL_EXPOS_TIME_R  &quot;cal-exposure-time-r&quot;</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a72479e6d87ccd1905fb658129d88ae14">  132</a></span>&#160;<span class="preprocessor">#define SANE_NAME_CAL_EXPOS_TIME_G  &quot;cal-exposure-time-g&quot;</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a95ad782db6e70be5ff20624aec6c1250">  133</a></span>&#160;<span class="preprocessor">#define SANE_NAME_CAL_EXPOS_TIME_B  &quot;cal-exposure-time-b&quot;</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a6be650305c7db599eac07a2793b57d00">  134</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SCAN_EXPOS_TIME   &quot;scan-exposure-time&quot;</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="saneopts_8h.html#acfe6da14a4c3b251b9470898711420db">  135</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SCAN_EXPOS_TIME_R &quot;scan-exposure-time-r&quot;</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ac572b9c485c89aad749d09c7a7d9843c">  136</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SCAN_EXPOS_TIME_G &quot;scan-exposure-time-g&quot;</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a74b43d375ed73015caecc41b28248735">  137</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SCAN_EXPOS_TIME_B &quot;scan-exposure-time-b&quot;</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="saneopts_8h.html#aca03326e0c77c03953f4e3900e0875c1">  138</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SELECT_EXPOSURE_TIME  &quot;select-exposure-time&quot;</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a0936637ae483645f427fe50cdbe7f688">  139</a></span>&#160;<span class="preprocessor">#define SANE_NAME_CAL_LAMP_DEN      &quot;cal-lamp-density&quot;</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a5a900cc731c7107e2a3227bd91034cd1">  140</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SCAN_LAMP_DEN     &quot;scan-lamp-density&quot;</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ae231714fea73047dd57e7edf3035a83b">  141</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SELECT_LAMP_DENSITY   &quot;select-lamp-density&quot;</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a3ab33af61829aa5eb30f3998b4d064e6">  142</a></span>&#160;<span class="preprocessor">#define SANE_NAME_LAMP_OFF_AT_EXIT  &quot;lamp-off-at-exit&quot;</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">/* well known options from &#39;SENSORS&#39; group*/</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a9e3fd2bfe03286f3d8244d726a00cd06">  145</a></span>&#160;<span class="preprocessor">#define SANE_NAME_SCAN          &quot;scan&quot;</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a2773d1ae46845ddb23c891cc5344d0ef">  146</a></span>&#160;<span class="preprocessor">#define SANE_NAME_EMAIL         &quot;email&quot;</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a3b40bb7bba605a2ac65de5920363cea3">  147</a></span>&#160;<span class="preprocessor">#define SANE_NAME_FAX           &quot;fax&quot;</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a2e5af133500de8dd60ebd932d265da68">  148</a></span>&#160;<span class="preprocessor">#define SANE_NAME_COPY          &quot;copy&quot;</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a2737a3c4ed8961713bd147ff9378cf84">  149</a></span>&#160;<span class="preprocessor">#define SANE_NAME_PDF           &quot;pdf&quot;</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="saneopts_8h.html#aaf9dab9d7775495462ce8ef5f5539c3f">  150</a></span>&#160;<span class="preprocessor">#define SANE_NAME_CANCEL        &quot;cancel&quot;</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ad7fcd6f32c029ef18289b7bc21025b16">  151</a></span>&#160;<span class="preprocessor">#define SANE_NAME_PAGE_LOADED       &quot;page-loaded&quot;</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="saneopts_8h.html#adcc7fc2dcdd53b17356a03b25ce9fe8e">  152</a></span>&#160;<span class="preprocessor">#define SANE_NAME_COVER_OPEN        &quot;cover-open&quot;</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a72b0cf22dcd09f68cd76b180bf6cb75c">  154</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_NUM_OPTIONS      SANE_I18N(&quot;Number of options&quot;)</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="saneopts_8h.html#aec773c4ca47d0d3e685b9af4341b1062">  156</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_STANDARD         SANE_I18N(&quot;Standard&quot;)</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a8384f0c658f7cb59e40a26b3fb68bb19">  157</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_GEOMETRY         SANE_I18N(&quot;Geometry&quot;)</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="saneopts_8h.html#abf0e25e81c1e234bf43fc506c0317cd1">  158</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_ENHANCEMENT      SANE_I18N(&quot;Enhancement&quot;)</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ab997b0f0db36758fb0db906bc79cc2b7">  159</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_ADVANCED         SANE_I18N(&quot;Advanced&quot;)</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a549d9ba63dd5c9557badd56c33a1b84e">  160</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SENSORS          SANE_I18N(&quot;Sensors&quot;)</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a9b0dd7e3a92ef5fd13b883f818f9b65c">  162</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_PREVIEW      SANE_I18N(&quot;Preview&quot;)</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a3714ae7e80eaef626775ea98c98d98e0">  163</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_GRAY_PREVIEW     SANE_I18N(&quot;Force monochrome preview&quot;)</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a74e347aa36cbff88b2e745c788b3de09">  164</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_BIT_DEPTH        SANE_I18N(&quot;Bit depth&quot;)</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a5563255fb1ef819d533dd4b4eb40b25c">  165</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SCAN_MODE        SANE_I18N(&quot;Scan mode&quot;)</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ad2c319451e58335ec5ab2d26f5027d63">  166</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SCAN_SPEED       SANE_I18N(&quot;Scan speed&quot;)</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a2257b414809410f53dde1b4b55aadcd6">  167</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SCAN_SOURCE      SANE_I18N(&quot;Scan source&quot;)</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a22b6c1a927fc81977cdf68af2aa1591d">  168</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_BACKTRACK        SANE_I18N(&quot;Force backtracking&quot;)</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a1d325c0ba9ece96e72845d710851de27">  169</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SCAN_TL_X        SANE_I18N(&quot;Top-left x&quot;)</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ada6a87fba75fcf2d7570262ad29a7b98">  170</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SCAN_TL_Y        SANE_I18N(&quot;Top-left y&quot;)</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a022f8fd75753b31c89c85c58696ea357">  171</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SCAN_BR_X        SANE_I18N(&quot;Bottom-right x&quot;)</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a3aeeea893e99eef0e0f5d1b25634a186">  172</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SCAN_BR_Y        SANE_I18N(&quot;Bottom-right y&quot;)</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a0ca89ef1aa30868e9f1402042ce0962f">  173</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SCAN_RESOLUTION  SANE_I18N(&quot;Scan resolution&quot;)</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="saneopts_8h.html#aaa37d6c34acb4737c06869e9f1f6df18">  174</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SCAN_X_RESOLUTION    SANE_I18N(&quot;X-resolution&quot;)</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a2fed901713211229c2e79f7aa2ed2767">  175</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SCAN_Y_RESOLUTION    SANE_I18N(&quot;Y-resolution&quot;)</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a47251c1f9b32e2d1f25c291db0a05640">  176</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_PAGE_WIDTH       SANE_I18N(&quot;Page width&quot;)</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a5db307e12182ba57d6e40643ba7da246">  177</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_PAGE_HEIGHT      SANE_I18N(&quot;Page height&quot;)</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a5ef027ae652beef973b7febb72acdb87">  178</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_CUSTOM_GAMMA     SANE_I18N(&quot;Use custom gamma table&quot;)</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a19247a0a38a6ef2d001ce1b0e341e5d1">  179</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_GAMMA_VECTOR     SANE_I18N(&quot;Image intensity&quot;)</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a8f26effa0d76ff00a8ab5d67326aed74">  180</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_GAMMA_VECTOR_R   SANE_I18N(&quot;Red intensity&quot;)</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a425a9d6ee7489d9faf1aae0614288e0b">  181</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_GAMMA_VECTOR_G   SANE_I18N(&quot;Green intensity&quot;)</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a403e0431fe2b0cf2b7d74a4a6804525e">  182</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_GAMMA_VECTOR_B   SANE_I18N(&quot;Blue intensity&quot;)</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a76c1c50135dba17dfddedc86dde704e3">  183</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_BRIGHTNESS       SANE_I18N(&quot;Brightness&quot;)</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a5dd2aa52ffd7af05d69acf0f897e7504">  184</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_CONTRAST     SANE_I18N(&quot;Contrast&quot;)</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a5963b0f63d944c7721850db00bbccd02">  185</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_GRAIN_SIZE       SANE_I18N(&quot;Grain size&quot;)</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a724ac40f0933241b36e7c6b891c80bab">  186</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_HALFTONE     SANE_I18N(&quot;Halftoning&quot;)</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ad86d64d7f7b73ce1c03df3177c91fed1">  187</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_BLACK_LEVEL          SANE_I18N(&quot;Black level&quot;)</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ae67bc69866d0ca791797289799cc6a5d">  188</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_WHITE_LEVEL          SANE_I18N(&quot;White level&quot;)</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="saneopts_8h.html#abbe5a2fc9246071c75f710ff10d9d402">  189</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_WHITE_LEVEL_R        SANE_I18N(&quot;White level for red&quot;)</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ad28cfbc632d263901a33932fa7c7c281">  190</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_WHITE_LEVEL_G        SANE_I18N(&quot;White level for green&quot;)</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a0014f7e377ac4e13b1d4e78fe97151a2">  191</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_WHITE_LEVEL_B        SANE_I18N(&quot;White level for blue&quot;)</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a30b19bb9bbd19155ee7d6c8a1f30fa41">  192</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SHADOW       SANE_I18N(&quot;Shadow&quot;)</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="saneopts_8h.html#aaea995784f5a0efdf8ccee8cb014b468">  193</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SHADOW_R     SANE_I18N(&quot;Shadow for red&quot;)</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ae98cd178de1c145378e0bceac56d5577">  194</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SHADOW_G     SANE_I18N(&quot;Shadow for green&quot;)</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a79dbfa02e7a61fb2affc375237482c5f">  195</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SHADOW_B     SANE_I18N(&quot;Shadow for blue&quot;)</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a3922f1e756de5f26425d7f87dc9de1dd">  196</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_HIGHLIGHT        SANE_I18N(&quot;Highlight&quot;)</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a5b4080d778f0ead40a135c1ed8d3d88a">  197</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_HIGHLIGHT_R      SANE_I18N(&quot;Highlight for red&quot;)</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a0cb8d495bd969e6fad06dae78f237dea">  198</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_HIGHLIGHT_G      SANE_I18N(&quot;Highlight for green&quot;)</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a7011899cd5fe76f9da91a4116f99ae08">  199</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_HIGHLIGHT_B      SANE_I18N(&quot;Highlight for blue&quot;)</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a4157f28b15d6472c3c0c9a38b8c89ccf">  200</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_HUE          SANE_I18N(&quot;Hue&quot;)</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a9822b8bdb07b3c97facd222f27006d7e">  201</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SATURATION       SANE_I18N(&quot;Saturation&quot;)</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a554e555d04188890e2d6e0889e7140a5">  202</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_FILE         SANE_I18N(&quot;Filename&quot;)</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a3bd5f51f63da61e7f3c62f63dead8a60">  203</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_HALFTONE_DIMENSION   SANE_I18N(&quot;Halftone pattern size&quot;)</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a9495a3a6e8c8f8eec36cb488c8350f83">  204</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_HALFTONE_PATTERN SANE_I18N(&quot;Halftone pattern&quot;)</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a1b22ea9ec437fdf5a932158da9db0f9c">  205</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_RESOLUTION_BIND  SANE_I18N(&quot;Bind X and Y resolution&quot;)</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a74eb0fec61cd17f030c1ae630571df13">  206</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_NEGATIVE     SANE_I18N(&quot;Negative&quot;)</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="saneopts_8h.html#aa8aa41f4f9d118375b7b10bc666ff64b">  207</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_QUALITY_CAL      SANE_I18N(&quot;Quality calibration&quot;)</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a1be1b63f5c05b87f79ce36e044016fb7">  208</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_DOR          SANE_I18N(&quot;Double Optical Resolution&quot;)</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a5fdc4614bfdffb2bb27bab31586146fe">  209</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_RGB_BIND     SANE_I18N(&quot;Bind RGB&quot;)</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a5457c6240a1db75d3262e38a7f857786">  210</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_THRESHOLD        SANE_I18N(&quot;Threshold&quot;)</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno"><a class="line" href="saneopts_8h.html#aa74a63858c81c4d157aba7c81cf2f24c">  211</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_ANALOG_GAMMA     SANE_I18N(&quot;Analog gamma correction&quot;)</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a13e5a6363a2dd2dc2ee9b1c292e497ca">  212</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_ANALOG_GAMMA_R   SANE_I18N(&quot;Analog gamma red&quot;)</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a43164fff50446aeb7bdbe7d0aa7db607">  213</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_ANALOG_GAMMA_G   SANE_I18N(&quot;Analog gamma green&quot;)</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a53847a2cdfab607de802ac317d3ad7a6">  214</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_ANALOG_GAMMA_B   SANE_I18N(&quot;Analog gamma blue&quot;)</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ace75f94f45f08f0bf271b16177d80e42">  215</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_ANALOG_GAMMA_BIND    SANE_I18N(&quot;Bind analog gamma&quot;)</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a090f87ec56a720b2c2b381b764d77a35">  216</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_WARMUP       SANE_I18N(&quot;Warmup lamp&quot;)</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a60dad7580fba3f84f9041c55e5e05b70">  217</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_CAL_EXPOS_TIME   SANE_I18N(&quot;Cal. exposure-time&quot;)</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a85c412c788867ae6553a98d62b4c7192">  218</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_CAL_EXPOS_TIME_R SANE_I18N(&quot;Cal. exposure-time for red&quot;)</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a5495d88573acc614453873ed9002aa23">  219</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_CAL_EXPOS_TIME_G SANE_I18N(&quot;Cal. exposure-time for &quot; \</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="preprocessor">&quot;green&quot;)</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a2055c9578634cbecf82836a9e6a9f698">  221</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_CAL_EXPOS_TIME_B SANE_I18N(&quot;Cal. exposure-time for blue&quot;)</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a8e20d9d2846e5f89433a68d87cff4e47">  222</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SCAN_EXPOS_TIME  SANE_I18N(&quot;Scan exposure-time&quot;)</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ac8094a89e32a3ed848a04851e66f026b">  223</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SCAN_EXPOS_TIME_R    SANE_I18N(&quot;Scan exposure-time for red&quot;)</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a93f191ea39d866cb4e8c93116b6bbb54">  224</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SCAN_EXPOS_TIME_G    SANE_I18N(&quot;Scan exposure-time for &quot; \</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="preprocessor">&quot;green&quot;)</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a2bd6406b203b0861ba4609cadc692c04">  226</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SCAN_EXPOS_TIME_B    SANE_I18N(&quot;Scan exposure-time for blue&quot;)</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a764f9cf005a9475339fc559cc4c70b0a">  227</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SELECT_EXPOSURE_TIME SANE_I18N(&quot;Set exposure-time&quot;)</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a213b2fccde09cd9060475c58194d96b9">  228</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_CAL_LAMP_DEN     SANE_I18N(&quot;Cal. lamp density&quot;)</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a4f6e811d640cce34cc457ddfc2e8e724">  229</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SCAN_LAMP_DEN    SANE_I18N(&quot;Scan lamp density&quot;)</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a8ff9eb33c36025bb6489318fb4d55c92">  230</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SELECT_LAMP_DENSITY  SANE_I18N(&quot;Set lamp density&quot;)</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a5282e654951e78787ada39ea1cede4eb">  231</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_LAMP_OFF_AT_EXIT SANE_I18N(&quot;Lamp off at exit&quot;)</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment">/* well known options from &#39;SENSORS&#39; group*/</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a33ea007f047bfd85525fd11c26884d3a">  234</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_SCAN         &quot;Scan button&quot;</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno"><a class="line" href="saneopts_8h.html#aaf1d0a66bf81f8c6543963ae6d569894">  235</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_EMAIL        &quot;Email button&quot;</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a70c3bed03ff439c6d646f35b89711fe0">  236</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_FAX          &quot;Fax button&quot;</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a3e65b31076ccc0a7bc06a0eed7e6d117">  237</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_COPY         &quot;Copy button&quot;</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a1849732e70ac8ae9b474d2d02de8c600">  238</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_PDF          &quot;PDF button&quot;</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ad8718627c97da1598d432601a255c9e7">  239</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_CANCEL       &quot;Cancel button&quot;</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno"><a class="line" href="saneopts_8h.html#aa02df216982efd0b3ed4f0be6987f45a">  240</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_PAGE_LOADED      &quot;Page loaded&quot;</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a0aedd6f2425e9281881db9014a22bcbf">  241</a></span>&#160;<span class="preprocessor">#define SANE_TITLE_COVER_OPEN       &quot;Cover open&quot;</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="comment">/* Descriptive/help strings for above options: */</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a1cc3eaece5c745bb9fe714f7c7b059e5">  244</a></span>&#160;<span class="preprocessor">#define SANE_DESC_NUM_OPTIONS \</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Read-only option that specifies how many options a specific &quot; \</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="preprocessor">&quot;devices supports.&quot;)</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a2487b84179b4bb564b2f0f8b0ef6c579">  248</a></span>&#160;<span class="preprocessor">#define SANE_DESC_STANDARD    SANE_I18N(&quot;Source, mode and resolution options&quot;)</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno"><a class="line" href="saneopts_8h.html#acf1cf4cc26ef2a697cc8a790bca1640a">  249</a></span>&#160;<span class="preprocessor">#define SANE_DESC_GEOMETRY    SANE_I18N(&quot;Scan area and media size options&quot;)</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ac39415cf7ce432481631200dfe3977d2">  250</a></span>&#160;<span class="preprocessor">#define SANE_DESC_ENHANCEMENT SANE_I18N(&quot;Image modification options&quot;)</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a149ceec5ec25f864d6f186a5988c1fd3">  251</a></span>&#160;<span class="preprocessor">#define SANE_DESC_ADVANCED    SANE_I18N(&quot;Hardware specific options&quot;)</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ab24ee80cd0351ad3167be00fbd1050b4">  252</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SENSORS     SANE_I18N(&quot;Scanner sensors and buttons&quot;)</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
+<div class="line"><a name="l00254"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a27406b95247b2678c59f45598a528f23">  254</a></span>&#160;<span class="preprocessor">#define SANE_DESC_PREVIEW \</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Request a preview-quality scan.&quot;)</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ac8e4af072032b86ec0e06c55dfb93d5e">  257</a></span>&#160;<span class="preprocessor">#define SANE_DESC_GRAY_PREVIEW \</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Request that all previews are done in monochrome mode.  On a &quot; \</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="preprocessor">&quot;three-pass scanner this cuts down the number of passes to one and on a &quot; \</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="preprocessor">&quot;one-pass scanner, it reduces the memory requirements and scan-time of the &quot; \</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="preprocessor">&quot;preview.&quot;)</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a11800dafb769ebfa8a3e4c591d86287e">  263</a></span>&#160;<span class="preprocessor">#define SANE_DESC_BIT_DEPTH \</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Number of bits per sample, typical values are 1 for \&quot;line-art\&quot; &quot; \</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="preprocessor">&quot;and 8 for multibit scans.&quot;)</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
+<div class="line"><a name="l00267"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ad54c385d23b9a1bdc1d98bbe68aa1e65">  267</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SCAN_MODE \</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Selects the scan mode (e.g., lineart, monochrome, or color).&quot;)</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ac02a9af9f98decedaa7bacdc4d278f02">  270</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SCAN_SPEED \</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Determines the speed at which the scan proceeds.&quot;)</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
+<div class="line"><a name="l00273"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ae8f1c3c0d97cfbf0fb7efe8f026828dc">  273</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SCAN_SOURCE \</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Selects the scan source (such as a document-feeder).&quot;)</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
+<div class="line"><a name="l00276"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a6b6d98131a9f9a413b4a396c4d1a0d45">  276</a></span>&#160;<span class="preprocessor">#define SANE_DESC_BACKTRACK \</span></div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Controls whether backtracking is forced.&quot;)</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
+<div class="line"><a name="l00279"></a><span class="lineno"><a class="line" href="saneopts_8h.html#acd7ce4e23a972044e7c8e69a535012f1">  279</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SCAN_TL_X \</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Top-left x position of scan area.&quot;)</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
+<div class="line"><a name="l00282"></a><span class="lineno"><a class="line" href="saneopts_8h.html#adcad17c8b833fb7c04d4806843a80cbf">  282</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SCAN_TL_Y \</span></div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Top-left y position of scan area.&quot;)</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
+<div class="line"><a name="l00285"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a2ca923686e6a32ac7f38db52f30b6429">  285</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SCAN_BR_X \</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Bottom-right x position of scan area.&quot;)</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00288"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a7e2b06a78bb917656ead9279c1ee67ee">  288</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SCAN_BR_Y \</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Bottom-right y position of scan area.&quot;)</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
+<div class="line"><a name="l00291"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ad5aea4d93c96b62d3c514192dea18ef8">  291</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SCAN_RESOLUTION \</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Sets the resolution of the scanned image.&quot;)</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a7ea59f8bbe1ae85ede54069658b493e8">  294</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SCAN_X_RESOLUTION \</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Sets the horizontal resolution of the scanned image.&quot;)</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a536ebba8b2e9c9e19e13ea3704d6c9ea">  297</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SCAN_Y_RESOLUTION \</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Sets the vertical resolution of the scanned image.&quot;)</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
+<div class="line"><a name="l00300"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a414356c5b90f54e5b93ff331b6e7e911">  300</a></span>&#160;<span class="preprocessor">#define SANE_DESC_PAGE_WIDTH \</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Specifies the width of the media.  Required for automatic &quot; \</span></div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="preprocessor">&quot;centering of sheet-fed scans.&quot;)</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
+<div class="line"><a name="l00304"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ad2ba634f00f502854895f88b5a505129">  304</a></span>&#160;<span class="preprocessor">#define SANE_DESC_PAGE_HEIGHT \</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Specifies the height of the media.&quot;)</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
+<div class="line"><a name="l00307"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a740972cae67ee9d173746bdbf0cde9fb">  307</a></span>&#160;<span class="preprocessor">#define SANE_DESC_CUSTOM_GAMMA \</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Determines whether a builtin or a custom gamma-table should be &quot; \</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="preprocessor">&quot;used.&quot;)</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
+<div class="line"><a name="l00311"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a7d06aa267b7db439a1e326bc99ccbff4">  311</a></span>&#160;<span class="preprocessor">#define SANE_DESC_GAMMA_VECTOR \</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Gamma-correction table.  In color mode this option equally &quot; \</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="preprocessor">&quot;affects the red, green, and blue channels simultaneously (i.e., it is an &quot; \</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="preprocessor">&quot;intensity gamma table).&quot;)</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
+<div class="line"><a name="l00316"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ac3bd9d404c3b498bb1f74d6280e25d22">  316</a></span>&#160;<span class="preprocessor">#define SANE_DESC_GAMMA_VECTOR_R \</span></div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Gamma-correction table for the red band.&quot;)</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00319"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a305c7da6f96b19bc1a17b3a5a98cd1e4">  319</a></span>&#160;<span class="preprocessor">#define SANE_DESC_GAMMA_VECTOR_G \</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Gamma-correction table for the green band.&quot;)</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
+<div class="line"><a name="l00322"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a913adf519e4b39da30b1d9b222592ea3">  322</a></span>&#160;<span class="preprocessor">#define SANE_DESC_GAMMA_VECTOR_B \</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Gamma-correction table for the blue band.&quot;)</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
+<div class="line"><a name="l00325"></a><span class="lineno"><a class="line" href="saneopts_8h.html#aac9d7e90969c73c7af05c10a94efd4b3">  325</a></span>&#160;<span class="preprocessor">#define SANE_DESC_BRIGHTNESS \</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Controls the brightness of the acquired image.&quot;)</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
+<div class="line"><a name="l00328"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a99078a2d085152b196f8b31bf7c19ac8">  328</a></span>&#160;<span class="preprocessor">#define SANE_DESC_CONTRAST \</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Controls the contrast of the acquired image.&quot;)</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
+<div class="line"><a name="l00331"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a1ffff81e18c6b6637303d258c394944c">  331</a></span>&#160;<span class="preprocessor">#define SANE_DESC_GRAIN_SIZE \</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Selects the \&quot;graininess\&quot; of the acquired image.  Smaller values &quot; \</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="preprocessor">&quot;result in sharper images.&quot;)</span></div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
+<div class="line"><a name="l00335"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ad6494deb251c96819878901752c29a28">  335</a></span>&#160;<span class="preprocessor">#define SANE_DESC_HALFTONE \</span></div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Selects whether the acquired image should be halftoned (dithered).&quot;)</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a513d452cd8d98ab6a333fc35658e5d9d">  338</a></span>&#160;<span class="preprocessor">#define SANE_DESC_BLACK_LEVEL \</span></div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Selects what radiance level should be considered \&quot;black\&quot;.&quot;)</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
+<div class="line"><a name="l00341"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a26467317f6db581cc078684a20cc89ef">  341</a></span>&#160;<span class="preprocessor">#define SANE_DESC_WHITE_LEVEL \</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Selects what radiance level should be considered \&quot;white\&quot;.&quot;)</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160; </div>
+<div class="line"><a name="l00344"></a><span class="lineno"><a class="line" href="saneopts_8h.html#aa8d5aa14dc83ca262d2c64a8334c2d89">  344</a></span>&#160;<span class="preprocessor">#define SANE_DESC_WHITE_LEVEL_R \</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Selects what red radiance level should be considered \&quot;white\&quot;.&quot;)</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
+<div class="line"><a name="l00347"></a><span class="lineno"><a class="line" href="saneopts_8h.html#aae9419faef69af45ae79719e4f34fd97">  347</a></span>&#160;<span class="preprocessor">#define SANE_DESC_WHITE_LEVEL_G \</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Selects what green radiance level should be considered \&quot;white\&quot;.&quot;)</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
+<div class="line"><a name="l00350"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a61359cde1af886d95b1264a853db8c41">  350</a></span>&#160;<span class="preprocessor">#define SANE_DESC_WHITE_LEVEL_B \</span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Selects what blue radiance level should be considered \&quot;white\&quot;.&quot;)</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
+<div class="line"><a name="l00353"></a><span class="lineno"><a class="line" href="saneopts_8h.html#aece118434f7aae097ff2290bed64d445">  353</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SHADOW \</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Selects what radiance level should be considered \&quot;black\&quot;.&quot;)</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a5b23e9db262cba66d43f5028512c7f57">  355</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SHADOW_R \</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Selects what red radiance level should be considered \&quot;black\&quot;.&quot;)</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a2410569b77d63ca10c41bd0bd5769fb2">  357</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SHADOW_G \</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Selects what green radiance level should be considered \&quot;black\&quot;.&quot;)</span></div>
+<div class="line"><a name="l00359"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a86b3d278bcca0d1b3aefac6bcdb05433">  359</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SHADOW_B \</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Selects what blue radiance level should be considered \&quot;black\&quot;.&quot;)</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
+<div class="line"><a name="l00362"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a0fa5f31acccc34f8147a8979837402dc">  362</a></span>&#160;<span class="preprocessor">#define SANE_DESC_HIGHLIGHT \</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Selects what radiance level should be considered \&quot;white\&quot;.&quot;)</span></div>
+<div class="line"><a name="l00364"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ab77263d774a9b1e62a818dcc0ff55a97">  364</a></span>&#160;<span class="preprocessor">#define SANE_DESC_HIGHLIGHT_R \</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Selects what red radiance level should be considered \&quot;full red\&quot;.&quot;)</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno"><a class="line" href="saneopts_8h.html#abf5966c296d177648a34b8270f9db0d2">  366</a></span>&#160;<span class="preprocessor">#define SANE_DESC_HIGHLIGHT_G \</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Selects what green radiance level should be considered \&quot;full &quot; \</span></div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="preprocessor">&quot;green\&quot;.&quot;)</span></div>
+<div class="line"><a name="l00369"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a0c36bdc51b05890738095cf45e4919aa">  369</a></span>&#160;<span class="preprocessor">#define SANE_DESC_HIGHLIGHT_B \</span></div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Selects what blue radiance level should be considered \&quot;full &quot; \</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;<span class="preprocessor">&quot;blue\&quot;.&quot;)</span></div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
+<div class="line"><a name="l00373"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a60e92483e98de1354a4910643b21144f">  373</a></span>&#160;<span class="preprocessor">#define SANE_DESC_HUE \</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Controls the \&quot;hue\&quot; (blue-level) of the acquired image.&quot;)</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
+<div class="line"><a name="l00376"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a0b9f2cb3ddd80f2b82bb84ceff0fd0c7">  376</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SATURATION \</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="preprocessor">SANE_I18N(&quot;The saturation level controls the amount of \&quot;blooming\&quot; that &quot; \</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="preprocessor">&quot;occurs when acquiring an image with a camera. Larger values cause more &quot; \</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="preprocessor">&quot;blooming.&quot;)</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
+<div class="line"><a name="l00381"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ad3a5988360596740f6a807bd6363d720">  381</a></span>&#160;<span class="preprocessor">#define SANE_DESC_FILE \</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="preprocessor">SANE_I18N(&quot;The filename of the image to be loaded.&quot;)</span></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
+<div class="line"><a name="l00384"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ab5d6623c5694cdc977f01ebaccc4ea96">  384</a></span>&#160;<span class="preprocessor">#define SANE_DESC_HALFTONE_DIMENSION \</span></div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Sets the size of the halftoning (dithering) pattern used when &quot; \</span></div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="preprocessor">&quot;scanning halftoned images.&quot;)</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; </div>
+<div class="line"><a name="l00388"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ad3b1caf242e4b2b19d105a77946d6f40">  388</a></span>&#160;<span class="preprocessor">#define SANE_DESC_HALFTONE_PATTERN \</span></div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Defines the halftoning (dithering) pattern for scanning &quot; \</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;<span class="preprocessor">&quot;halftoned images.&quot;)</span></div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
+<div class="line"><a name="l00392"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a0b8c24f11da355ccb4fa3c8be78adac1">  392</a></span>&#160;<span class="preprocessor">#define SANE_DESC_RESOLUTION_BIND \</span></div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Use same values for X and Y resolution&quot;)</span></div>
+<div class="line"><a name="l00394"></a><span class="lineno"><a class="line" href="saneopts_8h.html#aa6d50449d1f058dd4bb0c9789ed66721">  394</a></span>&#160;<span class="preprocessor">#define SANE_DESC_NEGATIVE \</span></div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Swap black and white&quot;)</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a91c54229cedb89e8a992d859bb4d2d0f">  396</a></span>&#160;<span class="preprocessor">#define SANE_DESC_QUALITY_CAL \</span></div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Do a quality white-calibration&quot;)</span></div>
+<div class="line"><a name="l00398"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ab64b32e902c9d3dc180870251b920cd0">  398</a></span>&#160;<span class="preprocessor">#define SANE_DESC_DOR \</span></div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Use lens that doubles optical resolution&quot;)</span></div>
+<div class="line"><a name="l00400"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a4a0f8a9c3f45dee54c4680fd5f9d503a">  400</a></span>&#160;<span class="preprocessor">#define SANE_DESC_RGB_BIND \</span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;<span class="preprocessor">SANE_I18N(&quot;In RGB-mode use same values for each color&quot;)</span></div>
+<div class="line"><a name="l00402"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a278da2799dd5251077a0bfda20ae576d">  402</a></span>&#160;<span class="preprocessor">#define SANE_DESC_THRESHOLD \</span></div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Select minimum-brightness to get a white point&quot;)</span></div>
+<div class="line"><a name="l00404"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a3c5ab42482782d0267d75514d09b37dd">  404</a></span>&#160;<span class="preprocessor">#define SANE_DESC_ANALOG_GAMMA \</span></div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Analog gamma-correction&quot;)</span></div>
+<div class="line"><a name="l00406"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ab3cfa85078a04250b45efc71fa5463be">  406</a></span>&#160;<span class="preprocessor">#define SANE_DESC_ANALOG_GAMMA_R \</span></div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Analog gamma-correction for red&quot;)</span></div>
+<div class="line"><a name="l00408"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ad798c5607f843eb0abf4002b018c8620">  408</a></span>&#160;<span class="preprocessor">#define SANE_DESC_ANALOG_GAMMA_G \</span></div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Analog gamma-correction for green&quot;)</span></div>
+<div class="line"><a name="l00410"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a153fd78d9788486cbff1969800bbac30">  410</a></span>&#160;<span class="preprocessor">#define SANE_DESC_ANALOG_GAMMA_B \</span></div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Analog gamma-correction for blue&quot;)</span></div>
+<div class="line"><a name="l00412"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a1a63ad59f985bc23ebf4b5d72715e5b9">  412</a></span>&#160;<span class="preprocessor">#define SANE_DESC_ANALOG_GAMMA_BIND \</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;<span class="preprocessor">SANE_I18N(&quot;In RGB-mode use same values for each color&quot;)</span></div>
+<div class="line"><a name="l00414"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a33899ed0accab673af0caebc7d89e7b5">  414</a></span>&#160;<span class="preprocessor">#define SANE_DESC_WARMUP \</span></div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Warmup lamp before scanning&quot;)</span></div>
+<div class="line"><a name="l00416"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ae5c396b4e0a26855d29de1d985cb1719">  416</a></span>&#160;<span class="preprocessor">#define SANE_DESC_CAL_EXPOS_TIME \</span></div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Define exposure-time for calibration&quot;)</span></div>
+<div class="line"><a name="l00418"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a261e4ec63531a4fc2a7df2fd8f5af2f2">  418</a></span>&#160;<span class="preprocessor">#define SANE_DESC_CAL_EXPOS_TIME_R \</span></div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Define exposure-time for red calibration&quot;)</span></div>
+<div class="line"><a name="l00420"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a78ece144a7a8c42899d5467931a9d10a">  420</a></span>&#160;<span class="preprocessor">#define SANE_DESC_CAL_EXPOS_TIME_G \</span></div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Define exposure-time for green calibration&quot;)</span></div>
+<div class="line"><a name="l00422"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ae4e830d69752f437ed2972bd18045377">  422</a></span>&#160;<span class="preprocessor">#define SANE_DESC_CAL_EXPOS_TIME_B \</span></div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Define exposure-time for blue calibration&quot;)</span></div>
+<div class="line"><a name="l00424"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a233f3c9a1c57ee93a063cf1d5bf66ca0">  424</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SCAN_EXPOS_TIME \</span></div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Define exposure-time for scan&quot;)</span></div>
+<div class="line"><a name="l00426"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a83eaca15dbf1685e32b537340b9557f4">  426</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SCAN_EXPOS_TIME_R \</span></div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Define exposure-time for red scan&quot;)</span></div>
+<div class="line"><a name="l00428"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a58522d3e39986740f83a2f94bc44cb98">  428</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SCAN_EXPOS_TIME_G \</span></div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Define exposure-time for green scan&quot;)</span></div>
+<div class="line"><a name="l00430"></a><span class="lineno"><a class="line" href="saneopts_8h.html#afeec4b0a783a1f18337bf4e14168f8cd">  430</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SCAN_EXPOS_TIME_B \</span></div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Define exposure-time for blue scan&quot;)</span></div>
+<div class="line"><a name="l00432"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a23199b18c743ee972c91c63ab75a08fd">  432</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SELECT_EXPOSURE_TIME \</span></div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Enable selection of exposure-time&quot;)</span></div>
+<div class="line"><a name="l00434"></a><span class="lineno"><a class="line" href="saneopts_8h.html#acdc74f03fc2417a90fc9c53cd74f289e">  434</a></span>&#160;<span class="preprocessor">#define SANE_DESC_CAL_LAMP_DEN \</span></div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Define lamp density for calibration&quot;)</span></div>
+<div class="line"><a name="l00436"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a06f66530684c56c56b59d0e7e457fdd2">  436</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SCAN_LAMP_DEN \</span></div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Define lamp density for scan&quot;)</span></div>
+<div class="line"><a name="l00438"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a85ca3f62914522b78c47c0e7ab74ff9f">  438</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SELECT_LAMP_DENSITY \</span></div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Enable selection of lamp density&quot;)</span></div>
+<div class="line"><a name="l00440"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a62eda54b0590f648d68b87a7eada542e">  440</a></span>&#160;<span class="preprocessor">#define SANE_DESC_LAMP_OFF_AT_EXIT \</span></div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;<span class="preprocessor">SANE_I18N(&quot;Turn off lamp when program exits&quot;)</span></div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;<span class="comment">/* well known options from &#39;SENSORS&#39; group*/</span></div>
+<div class="line"><a name="l00444"></a><span class="lineno"><a class="line" href="saneopts_8h.html#acdde41093970e5dddcd72e4bcbff1b8f">  444</a></span>&#160;<span class="preprocessor">#define SANE_DESC_SCAN      SANE_I18N(&quot;Scan button&quot;)</span></div>
+<div class="line"><a name="l00445"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a62faf2fb587d042a1893eefed19251b7">  445</a></span>&#160;<span class="preprocessor">#define SANE_DESC_EMAIL     SANE_I18N(&quot;Email button&quot;)</span></div>
+<div class="line"><a name="l00446"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a64df19761078d51e6a221c66fb3e4c17">  446</a></span>&#160;<span class="preprocessor">#define SANE_DESC_FAX       SANE_I18N(&quot;Fax button&quot;)</span></div>
+<div class="line"><a name="l00447"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a0539c50f8904bf6dffd05c5e0c64b925">  447</a></span>&#160;<span class="preprocessor">#define SANE_DESC_COPY      SANE_I18N(&quot;Copy button&quot;)</span></div>
+<div class="line"><a name="l00448"></a><span class="lineno"><a class="line" href="saneopts_8h.html#afa2a0331adf4102abc310194a0afa204">  448</a></span>&#160;<span class="preprocessor">#define SANE_DESC_PDF       SANE_I18N(&quot;PDF button&quot;)</span></div>
+<div class="line"><a name="l00449"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a2b60897c12fa99e8cb3e34c260d7aae4">  449</a></span>&#160;<span class="preprocessor">#define SANE_DESC_CANCEL    SANE_I18N(&quot;Cancel button&quot;)</span></div>
+<div class="line"><a name="l00450"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a076f5559ee324309e288a425f35f7c54">  450</a></span>&#160;<span class="preprocessor">#define SANE_DESC_PAGE_LOADED   SANE_I18N(&quot;Page loaded&quot;)</span></div>
+<div class="line"><a name="l00451"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a2d4b173cbce85a2c5f3a6dda5ca9764d">  451</a></span>&#160;<span class="preprocessor">#define SANE_DESC_COVER_OPEN    SANE_I18N(&quot;Cover open&quot;)</span></div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; </div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;<span class="comment">/* Typical values for stringlists (to keep the backends consistent) */</span></div>
+<div class="line"><a name="l00454"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a753d2cd18c6f7843f577fcdb59cc714f">  454</a></span>&#160;<span class="preprocessor">#define SANE_VALUE_SCAN_MODE_COLOR      SANE_I18N(&quot;Color&quot;)</span></div>
+<div class="line"><a name="l00455"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ac9a88b403cad2f6af69541c9c470a17b">  455</a></span>&#160;<span class="preprocessor">#define SANE_VALUE_SCAN_MODE_COLOR_LINEART  SANE_I18N(&quot;Color Lineart&quot;)</span></div>
+<div class="line"><a name="l00456"></a><span class="lineno"><a class="line" href="saneopts_8h.html#add89d5e54774f1f58ece6c14abedbb5c">  456</a></span>&#160;<span class="preprocessor">#define SANE_VALUE_SCAN_MODE_COLOR_HALFTONE     SANE_I18N(&quot;Color Halftone&quot;)</span></div>
+<div class="line"><a name="l00457"></a><span class="lineno"><a class="line" href="saneopts_8h.html#ae668170fa821157b0c3497342fa9d780">  457</a></span>&#160;<span class="preprocessor">#define SANE_VALUE_SCAN_MODE_GRAY       SANE_I18N(&quot;Gray&quot;)</span></div>
+<div class="line"><a name="l00458"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a9b42a6b1c67ab79a0782d4eaae3ca49b">  458</a></span>&#160;<span class="preprocessor">#define SANE_VALUE_SCAN_MODE_HALFTONE           SANE_I18N(&quot;Halftone&quot;)</span></div>
+<div class="line"><a name="l00459"></a><span class="lineno"><a class="line" href="saneopts_8h.html#a885b6483b582808d79c2aacbf5bdc431">  459</a></span>&#160;<span class="preprocessor">#define SANE_VALUE_SCAN_MODE_LINEART        SANE_I18N(&quot;Lineart&quot;)</span></div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160; </div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* saneopts_h */</span><span class="preprocessor"></span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>
