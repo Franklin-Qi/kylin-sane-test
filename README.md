@@ -1,8 +1,9 @@
 # Simple Linux SANE Scanning Application in C
-    :earth_asia: :cn:
+:earth_asia:
+:cn:
 
 The sample demonstrates how to implement a simple document scanning application on Linux in C.
-Switch to chinese :arrow_right: [chinese](README_CN.h)
+Switch to chinese :arrow_right: [chinese](README_CN.md)
 
 ## Getting Started
 1. Install SANE:
@@ -33,8 +34,7 @@ Switch to chinese :arrow_right: [chinese](README_CN.h)
 
     default: SANE_INCLUDE=/usr/include
 
-5. Build the project:
-
+5. Build the project: 
     ```
     make
     ```
@@ -53,7 +53,7 @@ Switch to chinese :arrow_right: [chinese](README_CN.h)
     file:///home/yusq/sane-test/docs/html/index.html
     ```
     call main graph:
-    ![main](images/main.png?raw=true)
+    ![main](images/main.png)
 
 ## Reference
 * [SANE - Documentation][2]
