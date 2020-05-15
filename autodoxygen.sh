@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sed -i '/^OUTPUT_DIRECTORY/c  OUTPUT_DIRECTORY  =  /home/yusq/sane-test/docs/' Doxyfile
-sed -i '/^INPUT /c  INPUT  =  /home/yusq/sane-test/' Doxyfile
+sed -i '/^OUTPUT_DIRECTORY/c  OUTPUT_DIRECTORY  =  /home/yusq/kylin-sane-test/docs/' Doxyfile
+sed -i '/^INPUT /c  INPUT  =  /home/yusq/kylin-sane-test/' Doxyfile
 sed -i '/^PROJECT_NAME /c  PROJECT_NAME  =  "Kylin SANE API"' Doxyfile
 
 # Chinese

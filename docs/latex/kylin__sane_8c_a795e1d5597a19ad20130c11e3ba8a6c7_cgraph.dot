@@ -1,0 +1,13 @@
+digraph "get_optdesc_by_name"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node35 [label="get_optdesc_by_name",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node35 -> Node36 [color="midnightblue",fontsize="10",style="solid"];
+  Node36 [label="sane_control_option",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sane_8h.html#af97b5a648c359cdeb17844f24e74f21d"];
+  Node35 -> Node37 [color="midnightblue",fontsize="10",style="solid"];
+  Node37 [label="sane_strstatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sane_8h.html#a005fc36c746f3b57fcf8108435f0684d"];
+  Node35 -> Node38 [color="midnightblue",fontsize="10",style="solid"];
+  Node38 [label="sane_get_option_descriptor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sane_8h.html#a7728e01a38c5e18385e383a6ce4a108d"];
+}

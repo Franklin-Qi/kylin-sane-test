@@ -1,0 +1,15 @@
+digraph "display_option_value"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node14 [label="display_option_value",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node14 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="get_option_value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$kylin__sane_8c.html#af892e52d691cd52602c4d2b5c72f6e02"];
+  Node15 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="kylin_display_scan\l_parameters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$kylin__sane_8c.html#aaf24d1bc9e8c8b43afa56bbfd6a71475"];
+  Node16 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="start_scan",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$kylin__sane_8h.html#a2b640f15a12501131e316d17025fb5ac"];
+  Node17 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4"];
+}

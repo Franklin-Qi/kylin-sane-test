@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['max_455',['max',['../structSANE__Range.html#abbf732668d90812e9a3f4a5983249657',1,'SANE_Range']]],
-  ['min_456',['min',['../structSANE__Range.html#a97de9e26d86aba290906af55bc9a716a',1,'SANE_Range']]],
-  ['model_457',['model',['../structSANE__Device.html#a053a3964744fbd7a304c00332678e200',1,'SANE_Device']]]
+  ['last_5fframe',['last_frame',['../structSANE__Parameters.html#afca30ddfdced766e29e3ac328f14f737',1,'SANE_Parameters']]],
+  ['lines',['lines',['../structSANE__Parameters.html#acca4d0df97ee91fd081dfff7e7908143',1,'SANE_Parameters']]]
 ];

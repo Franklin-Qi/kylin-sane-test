@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['pixels_5fper_5fline_459',['pixels_per_line',['../structSANE__Parameters.html#a4205f462c4fa84fbf31cc4848ba9046c',1,'SANE_Parameters']]],
-  ['progress_460',['progress',['../kylin__sane_8c.html#a4fb4072ccd44ea481eecfa5e74818db4',1,'kylin_sane.c']]]
+  ['name',['name',['../structSANE__Device.html#a6ade6e5e2cf659520c0ceae0c50adc55',1,'SANE_Device::name()'],['../structSANE__Option__Descriptor.html#ac4155621a2154ad3160c415fef6ca643',1,'SANE_Option_Descriptor::name()'],['../structoption.html#a92c850a23c7828c1dba453bf8d15e1f0',1,'option::name()']]]
 ];

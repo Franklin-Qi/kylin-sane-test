@@ -1,0 +1,16 @@
+digraph "sane_cancel"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="sane_cancel",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="do_scan",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$kylin__sane_8c.html#a1ed7aa2ebad2fbd9de26ce1c5de31e37"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="start_scan",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$kylin__sane_8h.html#a2b640f15a12501131e316d17025fb5ac"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="cancle_scan",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$kylin__sane_8h.html#ad9f4ca655267f3a703c60fd3e876cc63"];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

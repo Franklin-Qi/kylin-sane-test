@@ -1,9 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Kylin SANE API: Simple Linux SANE Scanning Application in C</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -29,21 +29,18 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- 制作者 Doxygen 1.8.18 -->
+<!-- 制作者 Doxygen 1.8.13 -->
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 var searchBox = new SearchBox("searchBox", "search",false,'搜索');
-/* @license-end */
 </script>
 <script type="text/javascript" src="menudata.js"></script>
 <script type="text/javascript" src="menu.js"></script>
 <script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
 $(function() {
   initMenu('',true,false,'search.php','搜索');
   $(document).ready(function() { init_search(); });
 });
-/* @license-end */</script>
+</script>
 <div id="main-nav"></div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -60,48 +57,49 @@ $(function() {
 </div>
 
 </div><!-- top -->
-<div class="PageDoc"><div class="header">
+<div class="header">
   <div class="headertitle">
 <div class="title">Simple Linux SANE Scanning Application in C </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The sample demonstrates how to implement a simple document scanning application on Linux in C.</p>
-<h1><a class="anchor" id="autotoc_md1"></a>
-Getting Started</h1>
+<div class="textblock"><p>:earth_asia: :cn:</p>
+<p>The sample demonstrates how to implement a simple document scanning application on Linux in C. Switch to chinese :arrow_right: <a class="el" href="md_README_CN.html">chinese</a></p>
+<h2>Getting Started</h2>
 <ol type="1">
 <li><p class="startli">Install SANE:</p>
 <p class="startli">``` sudo apt-get update sudo apt-get install sane sudo apt-get install sane-utils sudo apt-get install libsane-dev ```</p>
 </li>
-<li>Download <a href="https://alioth.debian.org/frs/?group_id=30186">sane-backends-1.0.25</a>.</li>
+<li>Download <a href="https://alioth.debian.org/frs/?group_id=30186">sane-backends-1.0.25</a>. This is not necessary.</li>
 <li><p class="startli">Extract the package and generate a symlink:</p>
 <p class="startli">Ubuntu</p>
 <p class="startli">```bash sudo ln –s /usr/lib/x86_64-linux-gnu/libsane.so.1 /usr/lib/libsane.so ```</p>
 </li>
 <li><p class="startli">Get the source code and change the include path:</p>
-<p class="startli">``` SANE_INCLUDE=&lt;Your SANE package path&gt;/include ```</p>
+<p class="startli">``` SANE_INCLUDE=&lt;Your sane="" package="" path&gt;=""&gt;/include ```</p>
 <p class="startli">default: SANE_INCLUDE=/usr/include</p>
 </li>
-<li><p class="startli">Build the project:</p>
-<p class="startli">``` make ```</p>
-</li>
+<li>Build the project: ``` make ```</li>
 <li><p class="startli">Run the application:</p>
 <p class="startli">``` sudo ./kylinSane ```</p>
 </li>
+<li><p class="startli">Preview docs on web</p>
+<p class="startli">``` firefox docs/html/index.html or <a href="file:///home/yusq/sane-test/docs/html/index.html">file:///home/yusq/sane-test/docs/html/index.html</a> ``` call main graph: </p><div class="image">
+<img src="images/main.png" alt="main"/>
+</div>
+</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md2"></a>
-Reference</h1>
+<h2>Reference</h2>
 <ul>
 <li><a href="http://www.sane-project.org/docs.html">SANE - Documentation</a></li>
 <li><a href="https://github.com/yushulx/linux-document-scanning">SANE - Other github</a></li>
 <li><a href="https://blog.csdn.net/weixin_39743893/article/details/83350568">SANE - Documentation CN</a> </li>
 </ul>
 </div></div><!-- contents -->
-</div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 制作者 &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.18
+</a> 1.8.13
 </small></address>
 </body>
 </html>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['quant_461',['quant',['../structSANE__Range.html#a88ea83dce447e4edfc7dc60867d038e4',1,'SANE_Range']]]
+  ['pixels_5fper_5fline',['pixels_per_line',['../structSANE__Parameters.html#a4205f462c4fa84fbf31cc4848ba9046c',1,'SANE_Parameters']]],
+  ['progress',['progress',['../kylin__sane_8c.html#a4fb4072ccd44ea481eecfa5e74818db4',1,'kylin_sane.c']]]
 ];

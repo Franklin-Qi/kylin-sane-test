@@ -178,13 +178,13 @@ SANE_Value_Type;
 
 typedef enum
   {
-    SANE_UNIT_NONE = 0,		/**< the value is unit-less (e.g., # of scans) */
-    SANE_UNIT_PIXEL,		/**< value is number of pixels */
-    SANE_UNIT_BIT,		/**< value is number of bits */
-    SANE_UNIT_MM,		/**< value is millimeters */
-    SANE_UNIT_DPI,		/**< value is resolution in dots/inch */
-    SANE_UNIT_PERCENT,		/**< value is a percentage */
-    SANE_UNIT_MICROSECOND	/* value is micro seconds */
+    SANE_UNIT_NONE = 0,		/**< 值是无单位的，例如页数*/
+    SANE_UNIT_PIXEL,		/**< 值以像素数为单位 */
+    SANE_UNIT_BIT,		/**< 值以位数为单位 */
+    SANE_UNIT_MM,		/**< 值以毫米为单位 */
+    SANE_UNIT_DPI,		/**< 值是以点/英寸为单位的分辨率 */
+    SANE_UNIT_PERCENT,		/**< 值是一个百分比 */
+    SANE_UNIT_MICROSECOND	/* 值是以秒为单位的时间 */
   }
 SANE_Unit;
 
@@ -250,7 +250,7 @@ SANE_Range;
  * 相反，扫描仪可以描述其控件，而无需了解前端的操作方式。
  */
 typedef struct
-  {
+{
     /**
      * 成员名称
      * 是唯一标识该选项的字符串。该名称对于给定的设备必须是唯一的（即，跨不同后端或设备的选项名称不必是唯一的）。
@@ -405,8 +405,9 @@ typedef struct
 	const SANE_Range *range;
       }
     constraint;
-  }
+}
 SANE_Option_Descriptor;
+//*(desc_ptr->constraint.string_list+i));
 
 typedef enum
   {
@@ -542,7 +543,7 @@ typedef void (*SANE_Auth_Callback) (SANE_String_Const resource,
  * 设置设备时，可以自由地混合使用选项描述符以及设置和读取选项值。前端通常会在开始时读出所有可用选项，
  * 然后建立一个对话框（图形或命令行选项列表），以控制可用选项。应当注意，对于给定的句柄，选项的数量是固定的。
  * 但是，随着选项的设置，其他选项可能会变为活动或非活动状态。因此，在设置选项之后，可能需要重新读取一些或所有选项描述符。
- * 设置设备时，也可以拨打电话 sane_get_parameters（）以获取图像获取开始后图像参数的估算值。
+ * 设置设备时，也可以调用 sane_get_parameters（）以获取图像获取开始后图像参数的估算值。
  * 
  * 通过调用sane_set_io_mode（）可以将设备句柄置于阻塞或非阻塞模式。
  * 要求设备支持阻止模式（这是默认模式），但是对于诸如UNIX之类的操作系统，强烈建议支持非阻止I / O。

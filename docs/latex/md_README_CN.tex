@@ -1,0 +1,41 @@
+\#\# 开始安装\+S\+A\+N\+E及对应的开发库 
+\begin{DoxyCode}
+sudo apt-get update
+sudo apt-get sane sane-utils libsane-dev
+
+sudo ln -s /usr/lib/x86\_64-linux-gnu/libsane.so.1 /usr/lib/libsane.so
+\end{DoxyCode}
+
+
+\subsection*{源码演示}
+
+
+\begin{DoxyEnumerate}
+\item 更改\+Makefile的头文件路径 
+\begin{DoxyCode}
+SANE\_INCLUDE=/home/yusq/kylin-sane-test/include/
+\end{DoxyCode}
+
+\item 编译并执行 
+\begin{DoxyCode}
+make
+./kylinSane
+\end{DoxyCode}
+
+\item 在线文档查看 
+\begin{DoxyCode}
+firefox docs/html/index.html
+or
+file:///home/yusq/sane-test/docs/html/index.html
+\end{DoxyCode}
+
+\end{DoxyEnumerate}
+
+\subsection*{参考文档}
+
+
+\begin{DoxyItemize}
+\item \href{http://www.sane-project.org/docs.html}{\tt S\+A\+NE -\/ Documentation}
+\item \href{https://github.com/yushulx/linux-document-scanning}{\tt S\+A\+NE -\/ Other github}
+\item \href{https://blog.csdn.net/weixin_39743893/article/details/83350568}{\tt S\+A\+NE -\/ Documentation CN} 
+\end{DoxyItemize}

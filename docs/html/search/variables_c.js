@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['title_465',['title',['../structSANE__Option__Descriptor.html#a069392f9b5739153679dcccfd2bb50fe',1,'SANE_Option_Descriptor']]],
-  ['type_466',['type',['../structSANE__Device.html#ac66eea9d60c35fea4af804e6fecbe473',1,'SANE_Device::type()'],['../structSANE__Option__Descriptor.html#a0f7c7e0902094d466389a82671b5b150',1,'SANE_Option_Descriptor::type()']]]
+  ['size',['size',['../structSANE__Option__Descriptor.html#a9b1f811d7c85d008d8a60e0b8d3e4a25',1,'SANE_Option_Descriptor']]],
+  ['string_5flist',['string_list',['../structSANE__Option__Descriptor.html#a9526628ce75d40ebb74cc917dc919fde',1,'SANE_Option_Descriptor']]]
 ];

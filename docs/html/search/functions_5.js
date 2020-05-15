@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['main_421',['main',['../main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.c']]],
-  ['my_5fsane_5fexit_422',['my_sane_exit',['../kylin__sane_8c.html#a82ecc8db19b2f6268059b949233deaeb',1,'my_sane_exit():&#160;kylin_sane.c'],['../kylin__sane_8h.html#a82ecc8db19b2f6268059b949233deaeb',1,'my_sane_exit():&#160;kylin_sane.c']]]
+  ['kylin_5fdisplay_5fscan_5fparameters',['kylin_display_scan_parameters',['../kylin__sane_8c.html#aaf24d1bc9e8c8b43afa56bbfd6a71475',1,'kylin_sane.c']]],
+  ['kylin_5fsane_5fget_5fparameters',['kylin_sane_get_parameters',['../kylin__sane_8c.html#ad4066928b5161136d134bea99143c08f',1,'kylin_sane.c']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['last_5fframe_453',['last_frame',['../structSANE__Parameters.html#afca30ddfdced766e29e3ac328f14f737',1,'SANE_Parameters']]],
-  ['lines_454',['lines',['../structSANE__Parameters.html#acca4d0df97ee91fd081dfff7e7908143',1,'SANE_Parameters']]]
+  ['has_5farg',['has_arg',['../structoption.html#a90d7ee9a51eea5c002682dbd0af149e4',1,'option']]],
+  ['height',['height',['../structImage.html#a51df43db420c9c0b57536cb2dd36de5c',1,'Image']]]
 ];

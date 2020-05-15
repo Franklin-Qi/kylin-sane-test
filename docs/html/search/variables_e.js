@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['vendor_468',['vendor',['../structSANE__Device.html#a30329d1b829b0d7308c31e18f8a81ccf',1,'SANE_Device']]],
-  ['verbose_469',['verbose',['../kylin__sane_8c.html#a0b2caeb4b6f130be43e5a2f0267dd453',1,'kylin_sane.c']]]
+  ['unit',['unit',['../structSANE__Option__Descriptor.html#a25b4534fcc925c6f316a3f180ec34435',1,'SANE_Option_Descriptor']]]
 ];

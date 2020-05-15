@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['data_447',['data',['../structImage.html#ac149fdf39be15025af7c3d8659f80999',1,'Image']]],
-  ['depth_448',['depth',['../structSANE__Parameters.html#a96226ce43f21e11bffb86e7ddb170d65',1,'SANE_Parameters']]],
-  ['desc_449',['desc',['../structSANE__Option__Descriptor.html#a668582efe29f5a4c9aab395afcd6ea18',1,'SANE_Option_Descriptor']]],
-  ['device_450',['device',['../kylin__sane_8c.html#a9d8d7a78e723d1835dcc546917ff1784',1,'kylin_sane.c']]]
+  ['cap',['cap',['../structSANE__Option__Descriptor.html#a884b023bc72593766267a98ee0333607',1,'SANE_Option_Descriptor']]],
+  ['constraint',['constraint',['../structSANE__Option__Descriptor.html#a80649aa043f3209173efcb22a6bcd5e5',1,'SANE_Option_Descriptor']]],
+  ['constraint_5ftype',['constraint_type',['../structSANE__Option__Descriptor.html#a10767a0944d00b3dad2de45086512e76',1,'SANE_Option_Descriptor']]]
 ];

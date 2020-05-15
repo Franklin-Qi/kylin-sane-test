@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['name_458',['name',['../structSANE__Device.html#a6ade6e5e2cf659520c0ceae0c50adc55',1,'SANE_Device::name()'],['../structSANE__Option__Descriptor.html#ac4155621a2154ad3160c415fef6ca643',1,'SANE_Option_Descriptor::name()']]]
+  ['max',['max',['../structSANE__Range.html#abbf732668d90812e9a3f4a5983249657',1,'SANE_Range']]],
+  ['min',['min',['../structSANE__Range.html#a97de9e26d86aba290906af55bc9a716a',1,'SANE_Range']]],
+  ['model',['model',['../structSANE__Device.html#a053a3964744fbd7a304c00332678e200',1,'SANE_Device']]]
 ];

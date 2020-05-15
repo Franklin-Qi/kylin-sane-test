@@ -1,0 +1,33 @@
+digraph "sane_strstatus"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node79 [label="sane_strstatus",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node79 -> Node80 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node80 [label="scan_it",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$kylin__sane_8c.html#ad5b41ac303afbd6a47a7e13ce11c5204"];
+  Node80 -> Node81 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node81 [label="do_scan",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$kylin__sane_8c.html#a1ed7aa2ebad2fbd9de26ce1c5de31e37"];
+  Node81 -> Node82 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node82 [label="start_scan",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$kylin__sane_8h.html#a2b640f15a12501131e316d17025fb5ac"];
+  Node82 -> Node83 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node83 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4"];
+  Node79 -> Node84 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node84 [label="kylin_sane_get_parameters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$kylin__sane_8c.html#ad4066928b5161136d134bea99143c08f"];
+  Node79 -> Node85 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node85 [label="get_devices",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$kylin__sane_8h.html#a2a7c1f5e91c82fa924d2518001ff2a10"];
+  Node85 -> Node83 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node79 -> Node86 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node86 [label="open_device",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$kylin__sane_8h.html#a0c1f490d9734e1b28fdc8954c4502825"];
+  Node86 -> Node83 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node79 -> Node87 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node87 [label="get_optdesc_by_name",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$kylin__sane_8c.html#a795e1d5597a19ad20130c11e3ba8a6c7"];
+  Node87 -> Node88 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node88 [label="get_option_value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$kylin__sane_8c.html#af892e52d691cd52602c4d2b5c72f6e02"];
+  Node88 -> Node89 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node89 [label="kylin_display_scan\l_parameters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$kylin__sane_8c.html#aaf24d1bc9e8c8b43afa56bbfd6a71475"];
+  Node89 -> Node82 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node79 -> Node90 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node90 [label="set_option_value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$kylin__sane_8c.html#abe6861f587b4c9f29d63eac127e78843"];
+  Node79 -> Node88 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+}
