@@ -46,6 +46,15 @@ or
 file:///home/yusq/sane-test/docs/html/index.html
 ```
 
+## API文档在线生成
+``` bash
+doxygen -g
+./autodoxygen.sh   # 更改Doxygen配置
+doxygen Doxygen
+
+```
+
+
 ## 参考文档
 * [SANE - Documentation][2]
 * [SANE - Other github][3]

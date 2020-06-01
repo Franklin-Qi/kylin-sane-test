@@ -14,6 +14,17 @@
 #define PATH_MAX 1024
 #endif
 
+
+// 尺寸枚举
+enum sizes_type
+{
+    A2 = 1,
+    A3,
+    A4,
+    A5,
+    A6
+};
+
 #ifdef __cplusplus
 extern "C" {
 #endif
