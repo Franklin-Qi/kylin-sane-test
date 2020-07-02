@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kylin SANE API: 简单扫描SANE API 使用</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Kylin SANE API
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">简单扫描SANE API 使用 </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>:earth_asia: :cn:</p>
+<p>中英文切换 :arrow_right: <a class="el" href="md_README_EN.html">English</a></p>
+<p>经过对sane-backends, xsane源码的研究，已经能满足扫描仪基础功能。</p>
+<p>目前测试通过了的设备有佳能(canon)210型号扫描仪,其他类型设备处理逻辑也类似，相信很有参考价值。</p>
+<p>此扫描仪分析源码支持的特性有:</p>
+<ol type="1">
+<li>支持获取当前扫描仪的设备类型(平板式, 馈纸式);</li>
+<li>支持设置不同的分辨率(4800, 2400, 1200, 600, 300, 150, 100, 75)扫描;</li>
+<li>支持设置不同的纸张尺寸(A4, A3)扫描;</li>
+<li>支持设置不同的色彩模式(黑白, 彩色, 灰度)扫描;</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md1"></a>
+开始安装SANE及对应的开发库</h1>
+<div class="fragment"><div class="line">sudo apt-get update</div>
+<div class="line">sudo apt-get sane sane-utils libsane-dev</div>
+<div class="line"> </div>
+<div class="line">sudo ln -s /usr/lib/x86_64-linux-gnu/libsane.so.1 /usr/lib/libsane.so</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md2"></a>
+源码演示</h1>
+<ol type="1">
+<li>更改Makefile的头文件路径 <div class="fragment"><div class="line">SANE_INCLUDE=/home/yusq/kylin-sane-test/include/</div>
+</div><!-- fragment --></li>
+<li>编译并执行 <div class="fragment"><div class="line">make</div>
+<div class="line">./kylinSane</div>
+</div><!-- fragment --></li>
+<li>在线文档查看 <div class="fragment"><div class="line">firefox docs/html/index.html</div>
+<div class="line">or</div>
+<div class="line">file:///home/yusq/sane-test/docs/html/index.html</div>
+</div><!-- fragment --></li>
+</ol>
+<h1><a class="anchor" id="autotoc_md3"></a>
+API文档在线生成</h1>
+<div class="fragment"><div class="line">doxygen -g</div>
+<div class="line">./autodoxygen.sh   # 更改Doxygen配置</div>
+<div class="line">doxygen Doxygen</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
+参考文档</h1>
+<ul>
+<li><a href="http://www.sane-project.org/docs.html">SANE - Documentation</a></li>
+<li><a href="https://github.com/yushulx/linux-document-scanning">SANE - Other github</a></li>
+<li><a href="https://blog.csdn.net/weixin_39743893/article/details/83350568">SANE - Documentation CN</a> </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

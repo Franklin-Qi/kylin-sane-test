@@ -1,0 +1,59 @@
+\+:earth\+\_\+asia\+: \+:cn\+:
+
+中英文切换 \+:arrow\+\_\+right\+: \mbox{\hyperlink{md_README_EN}{English}}
+
+经过对sane-\/backends, xsane源码的研究，已经能满足扫描仪基础功能。
+
+目前测试通过了的设备有佳能(canon)210型号扫描仪,其他类型设备处理逻辑也类似，相信很有参考价值。
+
+此扫描仪分析源码支持的特性有\+:
+
+
+\begin{DoxyEnumerate}
+\item 支持获取当前扫描仪的设备类型(平板式, 馈纸式);
+\item 支持设置不同的分辨率(4800, 2400, 1200, 600, 300, 150, 100, 75)扫描;
+\item 支持设置不同的纸张尺寸(\+A4, A3)扫描;
+\item 支持设置不同的色彩模式(黑白, 彩色, 灰度)扫描;
+\end{DoxyEnumerate}\hypertarget{md_README_autotoc_md1}{}\doxysection{开始安装\+S\+A\+N\+E及对应的开发库}\label{md_README_autotoc_md1}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo apt-\/get update}
+\DoxyCodeLine{sudo apt-\/get sane sane-\/utils libsane-\/dev}
+\DoxyCodeLine{}
+\DoxyCodeLine{sudo ln -\/s /usr/lib/x86\_64-\/linux-\/gnu/libsane.so.1 /usr/lib/libsane.so}
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md2}{}\doxysection{源码演示}\label{md_README_autotoc_md2}
+
+\begin{DoxyEnumerate}
+\item 更改\+Makefile的头文件路径 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{SANE\_INCLUDE=/home/yusq/kylin-\/sane-\/test/include/}
+\end{DoxyCode}
+
+\item 编译并执行 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make}
+\DoxyCodeLine{./kylinSane}
+\end{DoxyCode}
+
+\item 在线文档查看 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{firefox docs/html/index.html}
+\DoxyCodeLine{or}
+\DoxyCodeLine{file:///home/yusq/sane-\/test/docs/html/index.html}
+\end{DoxyCode}
+
+\end{DoxyEnumerate}\hypertarget{md_README_autotoc_md3}{}\doxysection{A\+P\+I文档在线生成}\label{md_README_autotoc_md3}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{doxygen -\/g}
+\DoxyCodeLine{./autodoxygen.sh   \# 更改Doxygen配置}
+\DoxyCodeLine{doxygen Doxygen}
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md4}{}\doxysection{参考文档}\label{md_README_autotoc_md4}
+
+\begin{DoxyItemize}
+\item \href{http://www.sane-project.org/docs.html}{\texttt{ S\+A\+NE -\/ Documentation}}
+\item \href{https://github.com/yushulx/linux-document-scanning}{\texttt{ S\+A\+NE -\/ Other github}}
+\item \href{https://blog.csdn.net/weixin_39743893/article/details/83350568}{\texttt{ S\+A\+NE -\/ Documentation CN}} 
+\end{DoxyItemize}

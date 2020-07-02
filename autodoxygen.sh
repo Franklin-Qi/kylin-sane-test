@@ -1,7 +1,9 @@
 #!/bin/bash
 
-sed -i '/^OUTPUT_DIRECTORY/c  OUTPUT_DIRECTORY  =  /home/yusq/kylin-sane-test/docs/' Doxyfile
-sed -i '/^INPUT /c  INPUT  =  /home/yusq/kylin-sane-test/' Doxyfile
+curPath=$(pwd)
+
+sed -i "/^OUTPUT_DIRECTORY/c  OUTPUT_DIRECTORY  =  $curPath/docs/" Doxyfile
+sed -i "/^INPUT /c  INPUT  =  $curPath" Doxyfile
 sed -i '/^PROJECT_NAME /c  PROJECT_NAME  =  "Kylin SANE API"' Doxyfile
 
 # Chinese

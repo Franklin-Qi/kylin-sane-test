@@ -1,0 +1,33 @@
+\+:earth\+\_\+asia\+: \+:cn\+:
+
+The sample demonstrates how to implement a simple document scanning application on Linux in C. Switch to chinese \+:arrow\+\_\+right\+: \mbox{\hyperlink{md_README}{Chinese}}\hypertarget{md_README_EN_autotoc_md6}{}\doxysection{Getting Started}\label{md_README_EN_autotoc_md6}
+
+\begin{DoxyEnumerate}
+\item Install S\+A\+NE\+:
+
+\`{}\`{}\`{} sudo apt-\/get update sudo apt-\/get install sane sudo apt-\/get install sane-\/utils sudo apt-\/get install libsane-\/dev \`{}\`{}\`{}
+\item Download \href{https://alioth.debian.org/frs/?group_id=30186}{\texttt{ sane-\/backends-\/1.\+0.\+25}}. This is not necessary.
+\item Extract the package and generate a symlink\+:
+
+Ubuntu
+
+\`{}\`{}\`{}bash sudo ln –s /usr/lib/x86\+\_\+64-\/linux-\/gnu/libsane.so.\+1 /usr/lib/libsane.so \`{}\`{}\`{}
+\item Get the source code and change the include path\+:
+
+\`{}\`{}\`{} S\+A\+N\+E\+\_\+\+I\+N\+C\+L\+U\+DE=$<$\+Your S\+A\+N\+E package path$>$/include \`{}\`{}\`{}
+
+default\+: S\+A\+N\+E\+\_\+\+I\+N\+C\+L\+U\+DE=/usr/include
+\item Build the project\+: \`{}\`{}\`{} make \`{}\`{}\`{}
+\item Run the application\+:
+
+\`{}\`{}\`{} sudo ./kylin\+Sane \`{}\`{}\`{}
+\item Preview docs on web
+
+\`{}\`{}\`{} firefox docs/html/index.\+html or \href{file:///home/yusq/sane-test/docs/html/index.html}{\texttt{ file\+:///home/yusq/sane-\/test/docs/html/index.\+html}} \`{}\`{}\`{} call main graph\+: 
+\end{DoxyEnumerate}\hypertarget{md_README_EN_autotoc_md7}{}\doxysection{Reference}\label{md_README_EN_autotoc_md7}
+
+\begin{DoxyItemize}
+\item \href{http://www.sane-project.org/docs.html}{\texttt{ S\+A\+NE -\/ Documentation}}
+\item \href{https://github.com/yushulx/linux-document-scanning}{\texttt{ S\+A\+NE -\/ Other github}}
+\item \href{https://blog.csdn.net/weixin_39743893/article/details/83350568}{\texttt{ S\+A\+NE -\/ Documentation CN}} 
+\end{DoxyItemize}

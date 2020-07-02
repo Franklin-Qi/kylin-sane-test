@@ -1,0 +1,257 @@
+\hypertarget{kylin__sane_8h}{}\doxysection{kylin\+\_\+sane.\+h 文件参考}
+\label{kylin__sane_8h}\index{kylin\_sane.h@{kylin\_sane.h}}
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}sane/sane.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sane/saneopts.\+h\char`\"{}}\newline
+kylin\+\_\+sane.\+h 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kylin__sane_8h__incl}
+\end{center}
+\end{figure}
+此图展示该文件直接或间接的被哪些文件引用了\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{kylin__sane_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{kylin__sane_8h_ae688d728e1acdfe5988c7db45d6f0166}{P\+A\+T\+H\+\_\+\+M\+AX}}~1024
+\end{DoxyCompactItemize}
+\doxysubsection*{枚举}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{kylin__sane_8h_a6074762471f04f38b7fa42359ae4fe27}{sizes\+\_\+type}} \{ \newline
+\mbox{\hyperlink{kylin__sane_8h_a6074762471f04f38b7fa42359ae4fe27a47329f455692c2a8284d7594405f16d4}{A2}} = 1, 
+\mbox{\hyperlink{kylin__sane_8h_a6074762471f04f38b7fa42359ae4fe27a47dbfcefc8fabadcd82806b21de14bfc}{A3}}, 
+\mbox{\hyperlink{kylin__sane_8h_a6074762471f04f38b7fa42359ae4fe27ada06582608e19a3f2438f54eeb0bcad5}{A4}}, 
+\mbox{\hyperlink{kylin__sane_8h_a6074762471f04f38b7fa42359ae4fe27aacdd5acf9dd0376a4073a1f27d8df74e}{A5}}, 
+\newline
+\mbox{\hyperlink{kylin__sane_8h_a6074762471f04f38b7fa42359ae4fe27a260faf43232fc57a22e280e8912d6689}{A6}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{kylin__sane_8h_a02fd73d861ef2e4aabb38c0c9ff82947}{init}} ()
+\item 
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} \mbox{\hyperlink{kylin__sane_8h_a2a7c1f5e91c82fa924d2518001ff2a10}{get\+\_\+devices}} (const \mbox{\hyperlink{structSANE__Device}{S\+A\+N\+E\+\_\+\+Device}} $\ast$$\ast$$\ast$device\+\_\+list)
+\item 
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} \mbox{\hyperlink{kylin__sane_8h_a0c1f490d9734e1b28fdc8954c4502825}{open\+\_\+device}} (\mbox{\hyperlink{structSANE__Device}{S\+A\+N\+E\+\_\+\+Device}} $\ast$\mbox{\hyperlink{kylin__sane_8cpp_a9d8d7a78e723d1835dcc546917ff1784}{device}}, \mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}} $\ast$sane\+\_\+handle)
+\item 
+\mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} \mbox{\hyperlink{kylin__sane_8h_a2b640f15a12501131e316d17025fb5ac}{start\+\_\+scan}} (\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}} sane\+\_\+handle, \mbox{\hyperlink{sane_8h_a181cc526e8d08c8199363d2c84b0c2bb}{S\+A\+N\+E\+\_\+\+String\+\_\+\+Const}} file\+Name)
+\item 
+void \mbox{\hyperlink{kylin__sane_8h_ad9f4ca655267f3a703c60fd3e876cc63}{cancle\+\_\+scan}} (\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}} sane\+\_\+handle)
+\item 
+void \mbox{\hyperlink{kylin__sane_8h_a8550d3bcc382a085ca06334733742949}{close\+\_\+device}} (\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}} sane\+\_\+handle)
+\item 
+void \mbox{\hyperlink{kylin__sane_8h_a82ecc8db19b2f6268059b949233deaeb}{my\+\_\+sane\+\_\+exit}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{宏定义说明}
+\mbox{\Hypertarget{kylin__sane_8h_ae688d728e1acdfe5988c7db45d6f0166}\label{kylin__sane_8h_ae688d728e1acdfe5988c7db45d6f0166}} 
+\index{kylin\_sane.h@{kylin\_sane.h}!PATH\_MAX@{PATH\_MAX}}
+\index{PATH\_MAX@{PATH\_MAX}!kylin\_sane.h@{kylin\_sane.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_MAX}{PATH\_MAX}}
+{\footnotesize\ttfamily \#define P\+A\+T\+H\+\_\+\+M\+AX~1024}
+
+
+
+\doxysubsection{枚举类型说明}
+\mbox{\Hypertarget{kylin__sane_8h_a6074762471f04f38b7fa42359ae4fe27}\label{kylin__sane_8h_a6074762471f04f38b7fa42359ae4fe27}} 
+\index{kylin\_sane.h@{kylin\_sane.h}!sizes\_type@{sizes\_type}}
+\index{sizes\_type@{sizes\_type}!kylin\_sane.h@{kylin\_sane.h}}
+\doxysubsubsection{\texorpdfstring{sizes\_type}{sizes\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{kylin__sane_8h_a6074762471f04f38b7fa42359ae4fe27}{sizes\+\_\+type}}}
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A2@{A2}!kylin\_sane.h@{kylin\_sane.h}}\index{kylin\_sane.h@{kylin\_sane.h}!A2@{A2}}}\mbox{\Hypertarget{kylin__sane_8h_a6074762471f04f38b7fa42359ae4fe27a47329f455692c2a8284d7594405f16d4}\label{kylin__sane_8h_a6074762471f04f38b7fa42359ae4fe27a47329f455692c2a8284d7594405f16d4}} 
+A2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A3@{A3}!kylin\_sane.h@{kylin\_sane.h}}\index{kylin\_sane.h@{kylin\_sane.h}!A3@{A3}}}\mbox{\Hypertarget{kylin__sane_8h_a6074762471f04f38b7fa42359ae4fe27a47dbfcefc8fabadcd82806b21de14bfc}\label{kylin__sane_8h_a6074762471f04f38b7fa42359ae4fe27a47dbfcefc8fabadcd82806b21de14bfc}} 
+A3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A4@{A4}!kylin\_sane.h@{kylin\_sane.h}}\index{kylin\_sane.h@{kylin\_sane.h}!A4@{A4}}}\mbox{\Hypertarget{kylin__sane_8h_a6074762471f04f38b7fa42359ae4fe27ada06582608e19a3f2438f54eeb0bcad5}\label{kylin__sane_8h_a6074762471f04f38b7fa42359ae4fe27ada06582608e19a3f2438f54eeb0bcad5}} 
+A4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A5@{A5}!kylin\_sane.h@{kylin\_sane.h}}\index{kylin\_sane.h@{kylin\_sane.h}!A5@{A5}}}\mbox{\Hypertarget{kylin__sane_8h_a6074762471f04f38b7fa42359ae4fe27aacdd5acf9dd0376a4073a1f27d8df74e}\label{kylin__sane_8h_a6074762471f04f38b7fa42359ae4fe27aacdd5acf9dd0376a4073a1f27d8df74e}} 
+A5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A6@{A6}!kylin\_sane.h@{kylin\_sane.h}}\index{kylin\_sane.h@{kylin\_sane.h}!A6@{A6}}}\mbox{\Hypertarget{kylin__sane_8h_a6074762471f04f38b7fa42359ae4fe27a260faf43232fc57a22e280e8912d6689}\label{kylin__sane_8h_a6074762471f04f38b7fa42359ae4fe27a260faf43232fc57a22e280e8912d6689}} 
+A6&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{函数说明}
+\mbox{\Hypertarget{kylin__sane_8h_ad9f4ca655267f3a703c60fd3e876cc63}\label{kylin__sane_8h_ad9f4ca655267f3a703c60fd3e876cc63}} 
+\index{kylin\_sane.h@{kylin\_sane.h}!cancle\_scan@{cancle\_scan}}
+\index{cancle\_scan@{cancle\_scan}!kylin\_sane.h@{kylin\_sane.h}}
+\doxysubsubsection{\texorpdfstring{cancle\_scan()}{cancle\_scan()}}
+{\footnotesize\ttfamily void cancle\+\_\+scan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}}}]{sane\+\_\+handle }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{kylin__sane_8h_ad9f4ca655267f3a703c60fd3e876cc63_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{kylin__sane_8h_ad9f4ca655267f3a703c60fd3e876cc63_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{kylin__sane_8h_a8550d3bcc382a085ca06334733742949}\label{kylin__sane_8h_a8550d3bcc382a085ca06334733742949}} 
+\index{kylin\_sane.h@{kylin\_sane.h}!close\_device@{close\_device}}
+\index{close\_device@{close\_device}!kylin\_sane.h@{kylin\_sane.h}}
+\doxysubsubsection{\texorpdfstring{close\_device()}{close\_device()}}
+{\footnotesize\ttfamily void close\+\_\+device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}}}]{sane\+\_\+handle }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{kylin__sane_8h_a8550d3bcc382a085ca06334733742949_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{kylin__sane_8h_a8550d3bcc382a085ca06334733742949_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{kylin__sane_8h_a2a7c1f5e91c82fa924d2518001ff2a10}\label{kylin__sane_8h_a2a7c1f5e91c82fa924d2518001ff2a10}} 
+\index{kylin\_sane.h@{kylin\_sane.h}!get\_devices@{get\_devices}}
+\index{get\_devices@{get\_devices}!kylin\_sane.h@{kylin\_sane.h}}
+\doxysubsubsection{\texorpdfstring{get\_devices()}{get\_devices()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} get\+\_\+devices (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structSANE__Device}{S\+A\+N\+E\+\_\+\+Device}} $\ast$$\ast$$\ast$}]{device\+\_\+list }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{kylin__sane_8h_a2a7c1f5e91c82fa924d2518001ff2a10_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{kylin__sane_8h_a2a7c1f5e91c82fa924d2518001ff2a10_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{kylin__sane_8h_a02fd73d861ef2e4aabb38c0c9ff82947}\label{kylin__sane_8h_a02fd73d861ef2e4aabb38c0c9ff82947}} 
+\index{kylin\_sane.h@{kylin\_sane.h}!init@{init}}
+\index{init@{init}!kylin\_sane.h@{kylin\_sane.h}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initialize S\+A\+NE 函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{kylin__sane_8h_a02fd73d861ef2e4aabb38c0c9ff82947_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{kylin__sane_8h_a02fd73d861ef2e4aabb38c0c9ff82947_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{kylin__sane_8h_a82ecc8db19b2f6268059b949233deaeb}\label{kylin__sane_8h_a82ecc8db19b2f6268059b949233deaeb}} 
+\index{kylin\_sane.h@{kylin\_sane.h}!my\_sane\_exit@{my\_sane\_exit}}
+\index{my\_sane\_exit@{my\_sane\_exit}!kylin\_sane.h@{kylin\_sane.h}}
+\doxysubsubsection{\texorpdfstring{my\_sane\_exit()}{my\_sane\_exit()}}
+{\footnotesize\ttfamily void my\+\_\+sane\+\_\+exit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{kylin__sane_8h_a82ecc8db19b2f6268059b949233deaeb_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{kylin__sane_8h_a82ecc8db19b2f6268059b949233deaeb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{kylin__sane_8h_a0c1f490d9734e1b28fdc8954c4502825}\label{kylin__sane_8h_a0c1f490d9734e1b28fdc8954c4502825}} 
+\index{kylin\_sane.h@{kylin\_sane.h}!open\_device@{open\_device}}
+\index{open\_device@{open\_device}!kylin\_sane.h@{kylin\_sane.h}}
+\doxysubsubsection{\texorpdfstring{open\_device()}{open\_device()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} open\+\_\+device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSANE__Device}{S\+A\+N\+E\+\_\+\+Device}} $\ast$}]{device,  }\item[{\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}} $\ast$}]{sane\+\_\+handle }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{kylin__sane_8h_a0c1f490d9734e1b28fdc8954c4502825_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{kylin__sane_8h_a0c1f490d9734e1b28fdc8954c4502825_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{kylin__sane_8h_a2b640f15a12501131e316d17025fb5ac}\label{kylin__sane_8h_a2b640f15a12501131e316d17025fb5ac}} 
+\index{kylin\_sane.h@{kylin\_sane.h}!start\_scan@{start\_scan}}
+\index{start\_scan@{start\_scan}!kylin\_sane.h@{kylin\_sane.h}}
+\doxysubsubsection{\texorpdfstring{start\_scan()}{start\_scan()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sane_8h_ae5ce8ba47cee42542d1a981be4e4c552}{S\+A\+N\+E\+\_\+\+Status}} start\+\_\+scan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sane_8h_adff38d40c72e14125709194edfd45e1b}{S\+A\+N\+E\+\_\+\+Handle}}}]{sane\+\_\+handle,  }\item[{\mbox{\hyperlink{sane_8h_a181cc526e8d08c8199363d2c84b0c2bb}{S\+A\+N\+E\+\_\+\+String\+\_\+\+Const}}}]{file\+Name }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kylin__sane_8h_a2b640f15a12501131e316d17025fb5ac_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{kylin__sane_8h_a2b640f15a12501131e316d17025fb5ac_icgraph}
+\end{center}
+\end{figure}
